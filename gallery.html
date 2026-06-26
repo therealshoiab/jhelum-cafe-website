@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jhelum Cafe & Fine Dine | Gallery | Srinagar</title>
+<meta name="description" content="Explore the gallery of Jhelum Cafe & Fine Dine, Srinagar. See our food, ambiance, events, and team. A riverside dining experience in the heart of Kashmir.">
+<meta property="og:title" content="Jhelum Cafe & Fine Dine | Gallery | Srinagar">
+<meta property="og:description" content="Explore the gallery of Jhelum Cafe & Fine Dine, Srinagar. See our food, ambiance, events, and team. A riverside dining experience in the heart of Kashmir.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0F1419">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ═══════════════════════════════════════════
+   CSS VARIABLES
+   ═══════════════════════════════════════════ */
+:root {
+  --bg: #0F1419;
+  --surface: #1A2332;
+  --primary: #D4A853;
+  --secondary: #C0392B;
+  --text: #F0EDE6;
+  --muted: #6B7B8D;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --nav-height: 72px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ═══════════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a { color: var(--primary); text-decoration: none; transition: var(--transition); }
+a:hover { color: var(--text); }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+ul { list-style: none; }
+
+/* ═══════════════════════════════════════════
+   SCROLL ANIMATIONS
+   ═══════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* ═══════════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════════ */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-height);
+  background: rgba(15, 20, 25, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(212, 168, 83, 0.1);
+  z-index: 1000;
+  transition: var(--transition);
+}
+.navbar.scrolled {
+  background: rgba(15, 20, 25, 0.98);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.5px;
+}
+.nav-logo span { color: var(--primary); }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.nav-links a {
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 4px;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 2px;
+  background: var(--primary);
+  transition: var(--transition);
+}
+.nav-links a:hover { color: var(--text); }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a.active {
+  color: var(--primary);
+}
+.nav-links a.active::after { width: 100%; }
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  z-index: 1100;
+}
+.hamburger span {
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--text);
+  transition: var(--transition);
+  border-radius: 2px;
+}
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* Mobile Menu Overlay */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 20, 25, 0.98);
+  backdrop-filter: blur(30px);
+  z-index: 1050;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.mobile-menu.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.mobile-menu a {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  color: var(--muted);
+  transition: var(--transition);
+}
+.mobile-menu a:hover, .mobile-menu a.active { color: var(--primary); }
+
+/* ═══════════════════════════════════════════
+   HERO SECTION
+   ═══════════════════════════════════════════ */
+.hero {
+  height: 40vh;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(135deg, var(--bg) 0%, var(--surface) 40%, #1e2d3d 70%, var(--bg) 100%);
+  overflow: hidden;
+  margin-top: var(--nav-height);
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(212, 168, 83, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 120px;
+  background: linear-gradient(to top, var(--bg) 0%, transparent 100%);
+  pointer-events: none;
+}
+/* Decorative floating particles */
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero-particles span {
+  position: absolute;
+  width: 4px; height: 4px;
+  background: var(--primary);
+  border-radius: 50%;
+  opacity: 0.2;
+  animation: float-particle 8s infinite ease-in-out;
+}
+.hero-particles span:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; animation-duration: 7s; }
+.hero-particles span:nth-child(2) { left: 25%; top: 60%; animation-delay: 1s; animation-duration: 9s; }
+.hero-particles span:nth-child(3) { left: 50%; top: 30%; animation-delay: 2s; animation-duration: 6s; }
+.hero-particles span:nth-child(4) { left: 70%; top: 70%; animation-delay: 3s; animation-duration: 8s; }
+.hero-particles span:nth-child(5) { left: 85%; top: 40%; animation-delay: 1.5s; animation-duration: 10s; }
+.hero-particles span:nth-child(6) { left: 40%; top: 80%; animation-delay: 4s; animation-duration: 7.5s; }
+@keyframes float-particle {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.15; }
+  50% { transform: translateY(-30px) scale(1.5); opacity: 0.4; }
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 20px;
+  background: rgba(212, 168, 83, 0.1);
+  border: 1px solid rgba(212, 168, 83, 0.25);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--primary);
+}
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--muted);
+  max-width: 550px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+/* ═══════════════════════════════════════════
+   WAVE DIVIDER
+   ═══════════════════════════════════════════ */
+.wave-divider {
+  width: 100%;
+  line-height: 0;
+  margin: -2px 0;
+  overflow: hidden;
+}
+.wave-divider svg {
+  width: 100%;
+  height: 60px;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════
+   CONTAINER
+   ═══════════════════════════════════════════ */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.section-padding {
+  padding: 80px 0;
+}
+
+/* ═══════════════════════════════════════════
+   SECTION HEADERS
+   ═══════════════════════════════════════════ */
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+.section-label::before,
+.section-label::after {
+  content: '';
+  width: 24px; height: 1px;
+  background: var(--primary);
+  opacity: 0.5;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ═══════════════════════════════════════════
+   FILTER TABS
+   ═══════════════════════════════════════════ */
+.filter-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+.filter-btn {
+  padding: 10px 24px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid rgba(107, 123, 141, 0.2);
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: var(--transition);
+  cursor: pointer;
+  position: relative;
+}
+.filter-btn:hover {
+  color: var(--text);
+  border-color: rgba(212, 168, 83, 0.3);
+  background: rgba(212, 168, 83, 0.05);
+}
+.filter-btn.active {
+  color: var(--bg);
+  background: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 4px 20px rgba(212, 168, 83, 0.3);
+}
+
+/* ═══════════════════════════════════════════
+   MASONRY GALLERY GRID
+   ═══════════════════════════════════════════ */
+.gallery-grid {
+  columns: 4;
+  column-gap: 16px;
+}
+.gallery-tile {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+.gallery-tile:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+.tile-inner {
+  width: 100%;
+  display: block;
+  position: relative;
+}
+/* Varied heights for masonry feel */
+.gallery-tile.tall .tile-inner { padding-top: 140%; }
+.gallery-tile.medium .tile-inner { padding-top: 110%; }
+.gallery-tile.short .tile-inner { padding-top: 85%; }
+.gallery-tile.square .tile-inner { padding-top: 100%; }
+
+.tile-gradient {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+}
+/* Subtle texture overlay for depth */
+.tile-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 2px,
+    rgba(255,255,255,0.015) 2px,
+    rgba(255,255,255,0.015) 4px
+  );
+  pointer-events: none;
+  border-radius: var(--radius);
+}
+
+/* Label overlay */
+.tile-label {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 40px 20px 20px;
+  background: linear-gradient(to top, rgba(15, 20, 25, 0.85) 0%, transparent 100%);
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+.tile-label h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.tile-label span {
+  font-size: 0.75rem;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+
+/* Hover overlay */
+.tile-hover {
+  position: absolute;
+  inset: 0;
+  background: rgba(212, 168, 83, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: var(--radius);
+}
+.tile-hover-icon {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: rgba(212, 168, 83, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transform: scale(0.8);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 24px rgba(212, 168, 83, 0.4);
+}
+.gallery-tile:hover .tile-hover {
+  opacity: 1;
+}
+.gallery-tile:hover .tile-hover-icon {
+  transform: scale(1);
+}
+/* Fade out items when filtering */
+.gallery-tile.hidden {
+  display: none;
+}
+
+/* ═══════════════════════════════════════════
+   LIGHTBOX
+   ═══════════════════════════════════════════ */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 20, 25, 0.95);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.lightbox.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.lightbox-content {
+  max-width: 800px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+}
+.lightbox-display {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: var(--radius);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.lightbox-gradient {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+}
+.lightbox-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 3px,
+    rgba(255,255,255,0.02) 3px,
+    rgba(255,255,255,0.02) 6px
+  );
+  pointer-events: none;
+  border-radius: var(--radius);
+}
+.lightbox-info {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 40px 32px 28px;
+  background: linear-gradient(to top, rgba(15, 20, 25, 0.9) 0%, transparent 100%);
+  text-align: left;
+}
+.lightbox-info h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.lightbox-info span {
+  font-size: 0.8rem;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+.lightbox-close {
+  position: absolute;
+  top: -60px; right: 0;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: rgba(240, 237, 230, 0.1);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 300;
+  transition: var(--transition);
+  border: 1px solid rgba(240, 237, 230, 0.1);
+}
+.lightbox-close:hover {
+  background: var(--secondary);
+  border-color: var(--secondary);
+}
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: rgba(240, 237, 230, 0.08);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  transition: var(--transition);
+  border: 1px solid rgba(240, 237, 230, 0.1);
+}
+.lightbox-arrow:hover {
+  background: rgba(212, 168, 83, 0.2);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.lightbox-prev { left: -76px; }
+.lightbox-next { right: -76px; }
+.lightbox-counter {
+  margin-top: 20px;
+  font-size: 0.875rem;
+  color: var(--muted);
+  letter-spacing: 2px;
+}
+
+/* ═══════════════════════════════════════════
+   INSTAGRAM SECTION
+   ═══════════════════════════════════════════ */
+.instagram-section {
+  background: var(--surface);
+  position: relative;
+  overflow: hidden;
+}
+.instagram-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 50% 80% at 50% 0%, rgba(212, 168, 83, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+.insta-handle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 8px;
+}
+.insta-handle span { color: var(--primary); }
+.insta-tagline {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 40px;
+  font-size: 1rem;
+}
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-bottom: 40px;
+}
+.insta-tile {
+  aspect-ratio: 1;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+.insta-tile:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+}
+.insta-tile-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+}
+.insta-tile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  transition: var(--transition);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.insta-tile:hover::after {
+  background: rgba(212, 168, 83, 0.15);
+}
+/* Instagram icon overlay on hover */
+.insta-icon-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+.insta-tile:hover .insta-icon-overlay {
+  opacity: 1;
+}
+.insta-icon-overlay svg {
+  width: 32px;
+  height: 32px;
+  fill: var(--text);
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+}
+
+.insta-cta {
+  text-align: center;
+}
+.btn-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 36px;
+  background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 24px rgba(131, 58, 180, 0.3);
+}
+.btn-instagram:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(131, 58, 180, 0.5);
+  color: #fff;
+}
+.btn-instagram svg {
+  width: 20px; height: 20px;
+  fill: currentColor;
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
+.footer {
+  background: var(--surface);
+  border-top: 1px solid rgba(212, 168, 83, 0.1);
+  padding: 64px 0 0;
+  position: relative;
+}
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 200px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.footer-brand h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+.footer-brand h3 span { color: var(--primary); }
+.footer-brand p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+.footer-social a {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: rgba(212, 168, 83, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  border: 1px solid rgba(212, 168, 83, 0.15);
+}
+.footer-social a:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+.footer-social a:hover svg { fill: var(--bg); }
+.footer-social svg {
+  width: 18px; height: 18px;
+  fill: var(--primary);
+  transition: var(--transition);
+}
+.footer-col h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 16px;
+  position: relative;
+  padding-bottom: 10px;
+}
+.footer-col h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 24px; height: 2px;
+  background: var(--primary);
+}
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul a {
+  color: var(--muted);
+  font-size: 0.875rem;
+  transition: var(--transition);
+}
+.footer-col ul a:hover { color: var(--primary); transform: translateX(4px); display: inline-block; }
+.footer-col .hours-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.footer-col .hours-item span:last-child { color: var(--text); font-weight: 500; }
+.footer-bottom {
+  margin-top: 48px;
+  padding: 20px 24px;
+  border-top: 1px solid rgba(107, 123, 141, 0.15);
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* ═══════════════════════════════════════════
+   FLOATING WHATSAPP BUTTON
+   ═══════════════════════════════════════════ */
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 60px; height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 900;
+  box-shadow: 0 4px 24px rgba(37, 211, 102, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: wa-pulse 2s infinite;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 32px rgba(37, 211, 102, 0.6);
+}
+.whatsapp-float svg {
+  width: 30px; height: 30px;
+  fill: #fff;
+}
+@keyframes wa-pulse {
+  0%, 100% { box-shadow: 0 4px 24px rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 4px 24px rgba(37, 211, 102, 0.7), 0 0 0 12px rgba(37, 211, 102, 0.1); }
+}
+
+/* ═══════════════════════════════════════════
+   BACK-TO-TOP BUTTON
+   ═══════════════════════════════════════════ */
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  width: 48px; height: 48px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 900;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 20px rgba(212, 168, 83, 0.3);
+}
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  background: var(--text);
+  box-shadow: 0 6px 28px rgba(212, 168, 83, 0.5);
+}
+.back-to-top svg {
+  width: 20px; height: 20px;
+  fill: var(--bg);
+}
+
+/* ═══════════════════════════════════════════
+   MOBILE BOTTOM NAV
+   ═══════════════════════════════════════════ */
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(15, 20, 25, 0.97);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(212, 168, 83, 0.1);
+  z-index: 950;
+  padding: 8px 0 calc(8px + env(safe-area-inset-bottom));
+}
+.mobile-bottom-nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.mobile-bottom-nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--muted);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  transition: var(--transition);
+}
+.mobile-bottom-nav a.active,
+.mobile-bottom-nav a:hover { color: var(--primary); }
+.mobile-bottom-nav svg {
+  width: 22px; height: 22px;
+  fill: currentColor;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .mobile-menu { display: flex; }
+  .gallery-grid { columns: 3; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .lightbox-prev { left: 12px; }
+  .lightbox-next { right: 12px; }
+  .insta-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  :root { --nav-height: 64px; }
+  .mobile-bottom-nav { display: block; }
+  .whatsapp-float { bottom: 90px; right: 20px; width: 52px; height: 52px; }
+  .back-to-top { bottom: 90px; left: 20px; width: 42px; height: 42px; }
+  .gallery-grid { columns: 2; column-gap: 12px; }
+  .gallery-tile { margin-bottom: 12px; }
+  .section-padding { padding: 60px 0; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer { padding-bottom: 80px; }
+  .lightbox-prev { left: 8px; width: 42px; height: 42px; }
+  .lightbox-next { right: 8px; width: 42px; height: 42px; }
+  .lightbox-close { top: -50px; width: 40px; height: 40px; }
+  .insta-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .filter-btn { padding: 8px 16px; font-size: 0.8rem; }
+}
+@media (max-width: 480px) {
+  .gallery-grid { columns: 2; column-gap: 10px; }
+  .gallery-tile { margin-bottom: 10px; }
+  .tile-label { padding: 28px 14px 14px; }
+  .tile-label h3 { font-size: 0.9rem; }
+  .tile-label span { font-size: 0.65rem; }
+  .hero { min-height: 280px; }
+  .insta-grid { grid-template-columns: repeat(2, 1fr); }
+  .lightbox-content { width: 95%; }
+  .lightbox-info h3 { font-size: 1.15rem; }
+  .filter-bar { gap: 6px; }
+  .filter-btn { padding: 7px 14px; font-size: 0.75rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">Jhelum <span>Cafe</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="signatures.html">Signatures</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="order.html">Order</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Full-screen Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="menu.html">Menu</a>
+  <a href="signatures.html">Signatures</a>
+  <a href="gallery.html" class="active">Gallery</a>
+  <a href="reviews.html">Reviews</a>
+  <a href="order.html">Order</a>
+  <a href="contact.html">Contact</a>
+  <a href="faq.html">FAQ</a>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     HERO SECTION
+     ═══════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-particles">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">📸 Visual Journey</div>
+    <h1>Our <em>Gallery</em></h1>
+    <p class="hero-subtitle">A glimpse into the flavors, ambiance, and soul of Jhelum Cafe & Fine Dine — on the banks of the Jhelum River, Srinagar.</p>
+  </div>
+</section>
+
+<!-- Wave Divider -->
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,15 1440,30 L1440,60 L0,60 Z" fill="var(--primary)" opacity="0.15"/>
+    <path d="M0,35 C360,5 720,55 1080,25 C1260,15 1380,45 1440,35" fill="none" stroke="var(--primary)" stroke-width="1.5" opacity="0.4"/>
+  </svg>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     GALLERY SECTION
+     ═══════════════════════════════════════════ -->
+<section class="section-padding" id="gallery">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Captured Moments</div>
+      <h2 class="section-title">Moments Worth Savouring</h2>
+      <p class="section-subtitle">From sizzling dishes to riverside evenings — every corner of Jhelum Cafe tells a story.</p>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="filter-bar reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="food">Food</button>
+      <button class="filter-btn" data-filter="ambiance">Ambiance</button>
+      <button class="filter-btn" data-filter="events">Events</button>
+      <button class="filter-btn" data-filter="team">Team</button>
+    </div>
+
+    <!-- Masonry Gallery Grid -->
+    <div class="gallery-grid" id="galleryGrid">
+
+      <!-- FOOD TILE 1 — Harissa Special Pizza -->
+      <div class="gallery-tile tall reveal" data-category="food" data-index="0">
+        <div class="tile-inner">
+          <div class="tile-gradient" style="background: linear-gradient(135deg, #D4A853 0%, #C0392B 60%, #8B0000 100%);"></div>
+          <div class="tile-label">
+            <h3>Harissa Special Pizza</h3>
+            <span>Food</span>
+          </div>
+          <div class="tile-hover">
+            <div class="tile-hover-icon">View</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AMBIANCE TILE 1 — Riverside View -->
+      <div class="gallery-tile medium reveal reveal-delay-1" data-category="ambiance" data-index="1">
+        <div class="tile-inner">
+          <div class="tile-gradient" style="background: linear-gradient(160deg, #1A2332 0%, #2C3E50 50%, #1e3a4a 100%);"></div>
+          <div class="tile-label">
+            <h3>Riverside View</h3>
+            <span>Ambiance</span>
+          </div>
+          <div class="tile-hover">
+            <div class="tile-hover-icon">View</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOD TILE 2 — Czochwaur Burger -->
+      <div class="gallery-tile short reveal reveal-delay-2" data-category="food" data-index="2">
+        <div class="tile-inner">
+          <div class="tile-gradient" style="background: linear-gradient(200deg, #D4A853 0%, #b8863a 40%, #C0392B 100%);"></div>
+          <div class="tile-label">
+            <h3>Czochwaur Burger</h3>
+            <span>Food</span>
+          </div>
+          <div class="tile-hover">
+            <div class="tile-hover-icon">View</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EVENTS TILE 1 — Anniversary Night -->
+      <div class="gallery-tile square reveal reveal-delay-3" data-category="events" data-index="3">
+        <div class="tile-inner">
+          <div class="tile-gradient" style="background: linear-gradient(135deg, #D4A853 0%, #b5432a 50%, #8B0000 100%);"></div>
+          <div class="tile-label">
+            <h3>Anniversary Night</h3>
+            <span>Events</span>
+          </div>
+          <div class="tile-hover">
+            <div class="tile-hover-icon">View</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TEAM TILE 1 — Our Team -->
+      <div class="gallery-tile medium reveal" data-category="team" data-index="4">
+        <div class="tile-inner">
+          <div class="tile-gradient" style="background: linear-gradient(145deg, #1A2332 0%, #4a5d6e 50%, #6B7B8D 100%);"></div>
+          <div class="tile-label">
+            <h3>Our Team</h3>
+            <span>Team</span>
+          </div>
+          <div class="tile-hover">
+            <div class="tile-hover-icon">View</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOD TILE 3 — Butter Chicken -->
+      <div class="gallery-tile tall reveal reveal-delay-1" data-category="food" data-index="5">
+        <div class="tile-inner">
+          <div class="tile-gradient" style="background: linear-gradient(180deg, #C0392B 0%, #D4A853 50%, #e8c77b 100%);"></div>
+          <div class="tile-label">
+            <h3>Butter Chicken</h3>
+            <span>Food</span>
+          </div>
+          <div class="tile-hover">
+            <div class="tile-hover-icon">View</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AMBIANCE TILE 2 — Fine Dining Basement -->
+      <div class="gallery-tile square reveal reveal-delay-2" data-category="ambiance" data-index="6">
+        <div class="tile-inner">
+          <div class="tile-gradient" style="background: linear-gradient(225deg, #2C3E50 0%, #1A2332 50%, #0F1419 100%);"></div>
+          <div class="tile-label">
+            <h3>Fine Dining Basement</h3>
+            <span>Ambiance</span>
+          </div>
+          <div class="tile-hover">
+            <div class="tile-hover-icon">View</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EVENTS TILE 2 — Birthday Celebrations -->
+      <div class="gallery-tile short reveal reveal-delay-3" data-category="events" data-index="7">
+        <div class="tile-inner">
+          <div class="tile-gradient" style="background: linear-gradient(170deg, #e0b960 0%, #D4A853 30%, #8B0000 100%);"></div>
+          <div class="tile-label">
+            <h3>Birthday Celebrations</h3>
+            <span>Events</span>
+          </div>
+          <div class="tile-hover">
+            <div class="tile-hover-icon">View</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AMBIANCE TILE 3 — Colourful Cafe Upstairs -->
+      <div class="gallery-tile tall reveal" data-category="ambiance" data-index="8">
+        <div class="tile-inner">
+          <div class="tile-gradient" style="background: linear-gradient(300deg, #1A2332 0%, #243447 40%, #2C3E50 80%, #1e3a4a 100%);"></div>
+          <div class="tile-label">
+            <h3>Colourful Cafe Upstairs</h3>
+            <span>Ambiance</span>
+          </div>
+          <div class="tile-hover">
+            <div class="tile-hover-icon">View</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOD TILE 4 — Kashmiri Kahwa -->
+      <div class="gallery-tile medium reveal reveal-delay-1" data-category="food" data-index="9">
+        <div class="tile-inner">
+          <div class="tile-gradient" style="background: linear-gradient(45deg, #D4A853 0%, #e2c47a 30%, #C0392B 100%);"></div>
+          <div class="tile-label">
+            <h3>Kashmiri Kahwa</h3>
+            <span>Food</span>
+          </div>
+          <div class="tile-hover">
+            <div class="tile-hover-icon">View</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EVENTS TILE 3 — Family Gatherings -->
+      <div class="gallery-tile square reveal reveal-delay-2" data-category="events" data-index="10">
+        <div class="tile-inner">
+          <div class="tile-gradient" style="background: linear-gradient(200deg, #D4A853 0%, #c4883a 40%, #8B0000 100%);"></div>
+          <div class="tile-label">
+            <h3>Family Gatherings</h3>
+            <span>Events</span>
+          </div>
+          <div class="tile-hover">
+            <div class="tile-hover-icon">View</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TEAM TILE 2 — Kitchen Heroes -->
+      <div class="gallery-tile short reveal reveal-delay-3" data-category="team" data-index="11">
+        <div class="tile-inner">
+          <div class="tile-gradient" style="background: linear-gradient(135deg, #2a3d50 0%, #6B7B8D 50%, #1A2332 100%);"></div>
+          <div class="tile-label">
+            <h3>Kitchen Heroes</h3>
+            <span>Team</span>
+          </div>
+          <div class="tile-hover">
+            <div class="tile-hover-icon">View</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Wave Divider -->
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,15 1440,30 L1440,60 L0,60 Z" fill="var(--primary)" opacity="0.15"/>
+    <path d="M0,35 C360,5 720,55 1080,25 C1260,15 1380,45 1440,35" fill="none" stroke="var(--primary)" stroke-width="1.5" opacity="0.4"/>
+  </svg>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     INSTAGRAM SECTION
+     ═══════════════════════════════════════════ -->
+<section class="instagram-section section-padding">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Follow Us</div>
+      <h2 class="insta-handle"><span>@</span>jhelumcafe</h2>
+      <p class="insta-tagline">Follow our journey on Instagram — behind the scenes, daily specials, and riverside moments.</p>
+    </div>
+
+    <!-- Instagram Grid -->
+    <div class="insta-grid reveal">
+      <!-- Insta Tile 1 -->
+      <div class="insta-tile">
+        <div class="insta-tile-bg" style="background: linear-gradient(135deg, #D4A853 0%, #C0392B 100%);"></div>
+        <div class="insta-icon-overlay">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </div>
+      </div>
+      <!-- Insta Tile 2 -->
+      <div class="insta-tile">
+        <div class="insta-tile-bg" style="background: linear-gradient(180deg, #1A2332 0%, #2C3E50 100%);"></div>
+        <div class="insta-icon-overlay">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </div>
+      </div>
+      <!-- Insta Tile 3 -->
+      <div class="insta-tile">
+        <div class="insta-tile-bg" style="background: linear-gradient(225deg, #D4A853 0%, #8B0000 100%);"></div>
+        <div class="insta-icon-overlay">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </div>
+      </div>
+      <!-- Insta Tile 4 -->
+      <div class="insta-tile">
+        <div class="insta-tile-bg" style="background: linear-gradient(135deg, #2C3E50 0%, #1A2332 50%, #D4A853 100%);"></div>
+        <div class="insta-icon-overlay">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </div>
+      </div>
+      <!-- Insta Tile 5 -->
+      <div class="insta-tile">
+        <div class="insta-tile-bg" style="background: linear-gradient(160deg, #C0392B 0%, #D4A853 100%);"></div>
+        <div class="insta-icon-overlay">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </div>
+      </div>
+      <!-- Insta Tile 6 -->
+      <div class="insta-tile">
+        <div class="insta-tile-bg" style="background: linear-gradient(180deg, #1A2332 0%, #6B7B8D 100%);"></div>
+        <div class="insta-icon-overlay">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="insta-cta reveal">
+      <a href="https://www.instagram.com/jhelumcafe/" target="_blank" rel="noopener noreferrer" class="btn-instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        Follow on Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Wave Divider -->
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,15 1440,30 L1440,60 L0,60 Z" fill="var(--primary)" opacity="0.15"/>
+    <path d="M0,35 C360,5 720,55 1080,25 C1260,15 1380,45 1440,35" fill="none" stroke="var(--primary)" stroke-width="1.5" opacity="0.4"/>
+  </svg>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>Jhelum <span>Cafe</span> & Fine Dine</h3>
+      <p>A two-storey culinary wonder on the banks of the Jhelum River — blending traditional Kashmiri heritage with modern cafe culture in the heart of Srinagar.</p>
+      <div class="footer-social">
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/jhelumcafe/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/jhelumcafe" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <!-- Zomato -->
+        <a href="https://www.zomato.com/srinagar/jhelum-cafe-fine-dine-lal-chowk/order" target="_blank" rel="noopener noreferrer" aria-label="Zomato">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm.258 4.8h5.26c.27 0 .482.213.482.482v.397c0 .268-.213.482-.482.482H13.74l3.615 3.614a.482.482 0 010 .682l-.28.28a.482.482 0 01-.682 0L12 6.343l-4.393 4.394a.482.482 0 01-.682 0l-.28-.28a.482.482 0 010-.682L10.26 6.16H6.482A.482.482 0 016 5.679v-.397c0-.27.213-.482.482-.482h5.776zM6.482 12h11.036c.27 0 .482.213.482.482v.397c0 .268-.213.482-.482.482H6.482A.482.482 0 016 12.879v-.397c0-.27.213-.482.482-.482zm0 3.6h11.036c.27 0 .482.213.482.482v.397c0 .268-.213.482-.482.482H6.482A.482.482 0 016 16.479v-.397c0-.27.213-.482.482-.482z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="menu.html">Full Menu</a></li>
+        <li><a href="signatures.html">Signatures</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <ul>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="order.html">Order Online</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="tel:+919484104295">Call Us</a></li>
+        <li><a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20👋" target="_blank">WhatsApp</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Hours</h4>
+      <div class="hours-item"><span>Monday</span><span>10 AM – 10 PM</span></div>
+      <div class="hours-item"><span>Tuesday</span><span>10 AM – 10 PM</span></div>
+      <div class="hours-item"><span>Wednesday</span><span>10 AM – 10 PM</span></div>
+      <div class="hours-item"><span>Thursday</span><span>10 AM – 10 PM</span></div>
+      <div class="hours-item"><span>Friday</span><span>10 AM – 10 PM</span></div>
+      <div class="hours-item"><span>Saturday</span><span>10 AM – 10 PM</span></div>
+      <div class="hours-item"><span>Sunday</span><span>10 AM – 10 PM</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Jhelum Cafe & Fine Dine. All rights reserved. Budshah Bridge, Lal Chowk, Srinagar, J&K 190001</p>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     LIGHTBOX
+     ═══════════════════════════════════════════ -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-content">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+    <button class="lightbox-arrow lightbox-prev" id="lightboxPrev" aria-label="Previous">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="lightbox-arrow lightbox-next" id="lightboxNext" aria-label="Next">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 6 15 12 9 18"/></svg>
+    </button>
+    <div class="lightbox-display" id="lightboxDisplay">
+      <div class="lightbox-gradient" id="lightboxGradient"></div>
+      <div class="lightbox-info">
+        <h3 id="lightboxTitle"></h3>
+        <span id="lightboxCategory"></span>
+      </div>
+    </div>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     FLOATING WHATSAPP BUTTON
+     ═══════════════════════════════════════════ -->
+<a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20👋" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- ═══════════════════════════════════════════
+     BACK-TO-TOP BUTTON
+     ═══════════════════════════════════════════ -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+</button>
+
+<!-- ═══════════════════════════════════════════
+     MOBILE BOTTOM NAV
+     ═══════════════════════════════════════════ -->
+<div class="mobile-bottom-nav">
+  <ul>
+    <li>
+      <a href="index.html">
+        <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="menu.html">
+        <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+        Menu
+      </a>
+    </li>
+    <li>
+      <a href="contact.html">
+        <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+        Reserve
+      </a>
+    </li>
+    <li>
+      <a href="tel:+919484104295">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        Call
+      </a>
+    </li>
+    <li>
+      <a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20👋" target="_blank" rel="noopener noreferrer" style="color: #25D366;">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+     ═══════════════════════════════════════════ -->
+<script>
+(function() {
+  'use strict';
+
+  /* ─── Navbar Scroll Effect ─── */
+  const navbar = document.getElementById('navbar');
+  const scrollHandler = () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  };
+  window.addEventListener('scroll', scrollHandler, { passive: true });
+
+  /* ─── Hamburger Menu ─── */
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+  // Close on link click
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  /* ─── Back to Top ─── */
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* ─── Intersection Observer (Scroll Animations) ─── */
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  /* ─── Gallery Filter ─── */
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const galleryTiles = document.querySelectorAll('.gallery-tile');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Update active button
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+
+      galleryTiles.forEach(tile => {
+        if (filter === 'all' || tile.dataset.category === filter) {
+          tile.classList.remove('hidden');
+        } else {
+          tile.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  /* ─── Lightbox ─── */
+  const lightbox = document.getElementById('lightbox');
+  const lightboxGradient = document.getElementById('lightboxGradient');
+  const lightboxTitle = document.getElementById('lightboxTitle');
+  const lightboxCategory = document.getElementById('lightboxCategory');
+  const lightboxCounter = document.getElementById('lightboxCounter');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+
+  // Build gallery data array
+  const galleryData = [];
+  galleryTiles.forEach(tile => {
+    const gradient = tile.querySelector('.tile-gradient');
+    const title = tile.querySelector('.tile-label h3');
+    const category = tile.querySelector('.tile-label span');
+    galleryData.push({
+      gradient: gradient.getAttribute('style'),
+      title: title.textContent,
+      category: category.textContent,
+      element: tile
+    });
+  });
+
+  let currentIndex = 0;
+  let visibleIndices = [];
+
+  function updateVisibleIndices() {
+    visibleIndices = [];
+    galleryTiles.forEach((tile, i) => {
+      if (!tile.classList.contains('hidden')) {
+        visibleIndices.push(i);
+      }
+    });
+  }
+
+  function showLightbox(index) {
+    updateVisibleIndices();
+    const posInVisible = visibleIndices.indexOf(index);
+    if (posInVisible === -1) return;
+    currentIndex = posInVisible;
+    updateLightboxContent();
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function updateLightboxContent() {
+    const realIndex = visibleIndices[currentIndex];
+    const data = galleryData[realIndex];
+    lightboxGradient.setAttribute('style', data.gradient);
+    lightboxTitle.textContent = data.title;
+    lightboxCategory.textContent = data.category;
+    lightboxCounter.textContent = (currentIndex + 1) + ' / ' + visibleIndices.length;
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + visibleIndices.length) % visibleIndices.length;
+    updateLightboxContent();
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % visibleIndices.length;
+    updateLightboxContent();
+  }
+
+  // Click on tile to open lightbox
+  galleryTiles.forEach(tile => {
+    tile.addEventListener('click', () => {
+      const idx = parseInt(tile.dataset.index);
+      showLightbox(idx);
+    });
+  });
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightboxPrev.addEventListener('click', prevSlide);
+  lightboxNext.addEventListener('click', nextSlide);
+
+  // Close on backdrop click
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // Keyboard support
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') prevSlide();
+    if (e.key === 'ArrowRight') nextSlide();
+  });
+
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jhelum Cafe & Fine Dine | About Us | Srinagar</title>
+  <meta name="description" content="Discover the story of Jhelum Cafe & Fine Dine — Srinagar's beloved two-storey culinary wonder at Budshah Bridge, blending Kashmiri heritage with modern cafe culture.">
+  <meta property="og:title" content="Jhelum Cafe & Fine Dine | About Us | Srinagar">
+  <meta property="og:description" content="Discover the story of Jhelum Cafe & Fine Dine — Srinagar's beloved two-storey culinary wonder at Budshah Bridge, blending Kashmiri heritage with modern cafe culture.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+    /* ─── CSS Variables ─── */
+    :root {
+      --bg: #0F1419;
+      --surface: #1A2332;
+      --primary: #D4A853;
+      --secondary: #C0392B;
+      --text: #F0EDE6;
+      --muted: #6B7B8D;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow: 0 8px 32px rgba(0,0,0,0.35);
+      --shadow-lg: 0 16px 64px rgba(0,0,0,0.5);
+      --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      --max-width: 1200px;
+    }
+
+    /* ─── Reset ─── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--primary); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: #e6bc6a; }
+    img { max-width: 100%; display: block; }
+
+    /* ─── Utility ─── */
+    .container { width: 90%; max-width: var(--max-width); margin: 0 auto; }
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-label::before {
+      content: '';
+      width: 32px;
+      height: 2px;
+      background: var(--primary);
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+      color: var(--text);
+    }
+    .section-title em {
+      color: var(--primary);
+      font-style: italic;
+    }
+
+    /* ─── Scroll Animations ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ═══════════════════════════════════════════
+       NAVIGATION
+    ═══════════════════════════════════════════ */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 0 5%;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(15, 20, 25, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(212, 168, 83, 0.08);
+      transition: background var(--transition), box-shadow var(--transition);
+    }
+    .navbar.scrolled {
+      background: rgba(15, 20, 25, 0.96);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.4);
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+    .nav-logo span { color: var(--text); font-weight: 400; font-size: 0.85rem; display: block; letter-spacing: 2px; text-transform: uppercase; line-height: 1; margin-top: 2px; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; list-style: none; }
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.5px;
+      position: relative;
+      padding: 4px 0;
+      transition: color var(--transition);
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--primary);
+      transition: width var(--transition);
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active { color: var(--primary); }
+    .nav-links a.active::after { width: 100%; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 1100;
+      background: none;
+      border: none;
+      padding: 8px;
+    }
+    .hamburger span {
+      width: 26px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: var(--transition);
+      transform-origin: center;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* Mobile Overlay Menu */
+    .mobile-menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 20, 25, 0.98);
+      z-index: 1050;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    .mobile-menu-overlay.open { opacity: 1; visibility: visible; }
+    .mobile-menu-overlay nav { text-align: center; }
+    .mobile-menu-overlay nav a {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: var(--muted);
+      padding: 0.75rem 0;
+      transition: color var(--transition), transform var(--transition);
+    }
+    .mobile-menu-overlay nav a:hover,
+    .mobile-menu-overlay nav a.active { color: var(--primary); transform: translateX(8px); }
+
+    @media (max-width: 1024px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    /* ═══════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════ */
+    .hero {
+      position: relative;
+      height: 50vh;
+      min-height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 50%, rgba(212,168,83,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 20%, rgba(192,57,43,0.04) 0%, transparent 50%),
+        linear-gradient(180deg, var(--bg) 0%, #0d1117 40%, #111820 70%, var(--bg) 100%);
+      z-index: 1;
+    }
+    /* Animated grain */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      z-index: 2;
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 3;
+    }
+    .hero-breadcrumb {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.5px;
+    }
+    .hero-breadcrumb a { color: var(--muted); }
+    .hero-breadcrumb a:hover { color: var(--primary); }
+    .hero-breadcrumb .sep { margin: 0 0.5rem; color: rgba(107,123,141,0.5); }
+    .hero-breadcrumb .current { color: var(--primary); }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .hero h1 em {
+      color: var(--primary);
+      font-style: italic;
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+    /* Decorative gold line under hero heading */
+    .hero-line {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      margin: 1.25rem auto 1rem;
+      border-radius: 2px;
+    }
+
+    /* ═══════════════════════════════════════════
+       WAVE DIVIDER
+    ═══════════════════════════════════════════ */
+    .wave-divider { width: 100%; overflow: hidden; line-height: 0; margin: -1px 0; }
+    .wave-divider svg { width: 100%; height: 60px; display: block; }
+
+    /* ═══════════════════════════════════════════
+       OUR STORY
+    ═══════════════════════════════════════════ */
+    .story-section {
+      padding: 6rem 0;
+      background: var(--bg);
+    }
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .story-left { position: relative; }
+    .story-left .section-label { margin-bottom: 1rem; }
+    .story-left .section-title { margin-bottom: 0.5rem; }
+    .story-tagline {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--primary);
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    .story-paragraphs p {
+      color: rgba(240, 237, 230, 0.82);
+      font-size: 1rem;
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+    }
+    .story-paragraphs p:last-child { margin-bottom: 0; }
+    .story-right {
+      position: relative;
+    }
+    .story-visual {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      border: 1px solid rgba(212,168,83,0.12);
+      position: relative;
+      overflow: hidden;
+    }
+    .story-visual::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(212,168,83,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .story-visual-quote {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--text);
+      position: relative;
+      z-index: 1;
+      margin-bottom: 1rem;
+    }
+    .story-visual-quote::before {
+      content: '"';
+      font-family: var(--font-display);
+      font-size: 5rem;
+      color: var(--primary);
+      opacity: 0.3;
+      position: absolute;
+      top: -30px;
+      left: -10px;
+      line-height: 1;
+    }
+    .story-visual-attr {
+      font-size: 0.85rem;
+      color: var(--muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+    /* Floating decorative elements */
+    .story-deco {
+      width: 100%;
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .story-deco-card {
+      background: rgba(26,35,50,0.6);
+      border: 1px solid rgba(212,168,83,0.08);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem;
+      text-align: center;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .story-deco-card:hover {
+      border-color: rgba(212,168,83,0.25);
+      transform: translateY(-3px);
+    }
+    .story-deco-card .icon { font-size: 1.8rem; margin-bottom: 0.4rem; }
+    .story-deco-card .label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .story-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    /* ═══════════════════════════════════════════
+       STATS ROW
+    ═══════════════════════════════════════════ */
+    .stats-section {
+      padding: 4rem 0;
+      background: var(--surface);
+      border-top: 1px solid rgba(212,168,83,0.06);
+      border-bottom: 1px solid rgba(212,168,83,0.06);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+    .stat-card {
+      text-align: center;
+      padding: 2rem 1rem;
+      position: relative;
+    }
+    .stat-card:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 20%;
+      height: 60%;
+      width: 1px;
+      background: linear-gradient(180deg, transparent, rgba(212,168,83,0.2), transparent);
+    }
+    .stat-value {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      .stat-card:nth-child(2)::after { display: none; }
+      .stat-card:nth-child(even)::after { display: none; }
+    }
+    @media (max-width: 400px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ═══════════════════════════════════════════
+       SPECIALTIES
+    ═══════════════════════════════════════════ */
+    .specialties-section {
+      padding: 6rem 0;
+      background: var(--bg);
+    }
+    .specialties-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .specialties-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .specialty-card {
+      background: var(--surface);
+      border: 1px solid rgba(212,168,83,0.08);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    }
+    .specialty-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .specialty-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212,168,83,0.2);
+      box-shadow: var(--shadow);
+    }
+    .specialty-card:hover::before { opacity: 1; }
+    .specialty-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(212,168,83,0.15), rgba(212,168,83,0.05));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(212,168,83,0.15);
+    }
+    .specialty-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+    .specialty-card p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .specialties-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+
+    /* ═══════════════════════════════════════════
+       AMENITIES
+    ═══════════════════════════════════════════ */
+    .amenities-section {
+      padding: 6rem 0;
+      background: var(--surface);
+    }
+    .amenities-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .amenities-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+    .amenity-tile {
+      background: rgba(15, 20, 25, 0.6);
+      border: 1px solid rgba(212,168,83,0.08);
+      border-radius: var(--radius-sm);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      transition: transform var(--transition), border-color var(--transition), background var(--transition);
+      cursor: default;
+    }
+    .amenity-tile:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212,168,83,0.25);
+      background: rgba(15, 20, 25, 0.85);
+    }
+    .amenity-icon {
+      font-size: 2rem;
+      margin-bottom: 0.65rem;
+      display: block;
+      line-height: 1;
+    }
+    .amenity-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 768px) {
+      .amenities-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    }
+    @media (max-width: 480px) {
+      .amenities-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ═══════════════════════════════════════════
+       CTA BANNER
+    ═══════════════════════════════════════════ */
+    .cta-section {
+      padding: 5rem 0;
+      background: var(--bg);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(212,168,83,0.06), transparent 70%);
+      pointer-events: none;
+    }
+    .cta-content {
+      position: relative;
+      z-index: 1;
+    }
+    .cta-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .cta-content h2 em { color: var(--primary); font-style: italic; }
+    .cta-content p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto 2rem;
+    }
+    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 60px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      border: none;
+      transition: all var(--transition);
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #c49a3d);
+      color: var(--bg);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(212,168,83,0.35);
+      color: var(--bg);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 1.5px solid rgba(212,168,83,0.4);
+    }
+    .btn-outline:hover {
+      background: rgba(212,168,83,0.1);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* ═══════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════ */
+    .footer {
+      background: #0a0e12;
+      border-top: 1px solid rgba(212,168,83,0.08);
+      padding: 4rem 0 1.5rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.2fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .footer-brand .nav-logo { margin-bottom: 1rem; display: inline-block; }
+    .footer-brand p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 300px;
+      margin-bottom: 1.25rem;
+    }
+    .footer-socials { display: flex; gap: 0.75rem; }
+    .footer-socials a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(212,168,83,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 1.1rem;
+      transition: all var(--transition);
+    }
+    .footer-socials a:hover {
+      background: var(--primary);
+      color: var(--bg);
+      border-color: var(--primary);
+      transform: translateY(-3px);
+    }
+    .footer h4 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      color: var(--text);
+      letter-spacing: 0.5px;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 0.6rem; }
+    .footer-links a {
+      font-size: 0.85rem;
+      color: var(--muted);
+      transition: color var(--transition), transform var(--transition);
+      display: inline-block;
+    }
+    .footer-links a:hover { color: var(--primary); transform: translateX(4px); }
+    .footer-hours li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+      display: flex;
+      justify-content: space-between;
+    }
+    .footer-hours li span:last-child { color: var(--text); }
+    .footer-contact-info p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .footer-contact-info p svg { flex-shrink: 0; margin-top: 3px; }
+    .footer-bottom {
+      border-top: 1px solid rgba(212,168,83,0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-bottom p {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .footer-bottom p a { color: var(--primary); }
+
+    @media (max-width: 768px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ═══════════════════════════════════════════
+       FLOATING ELEMENTS
+    ═══════════════════════════════════════════ */
+    /* WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 900;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: transform var(--transition), box-shadow var(--transition);
+      animation: waPulse 2s infinite;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 30px rgba(37,211,102,0.5);
+    }
+    .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
+    @keyframes waPulse {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+      50% { box-shadow: 0 4px 20px rgba(37,211,102,0.4), 0 0 0 12px rgba(37,211,102,0.1); }
+    }
+
+    /* Back to Top */
+    .back-to-top {
+      position: fixed;
+      bottom: 28px;
+      left: 28px;
+      z-index: 900;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 4px 16px rgba(212,168,83,0.3);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: all var(--transition);
+    }
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .back-to-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 24px rgba(212,168,83,0.45);
+    }
+
+    /* ═══════════════════════════════════════════
+       MOBILE BOTTOM NAV
+    ═══════════════════════════════════════════ */
+    .mobile-bottom-nav {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 950;
+      background: rgba(10, 14, 18, 0.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-top: 1px solid rgba(212,168,83,0.1);
+      padding: 8px 0 calc(8px + env(safe-area-inset-bottom));
+    }
+    .mobile-bottom-nav ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      list-style: none;
+    }
+    .mobile-bottom-nav a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 4px 8px;
+      transition: color var(--transition);
+    }
+    .mobile-bottom-nav a svg { width: 22px; height: 22px; }
+    .mobile-bottom-nav a:hover,
+    .mobile-bottom-nav a.active { color: var(--primary); }
+
+    @media (max-width: 768px) {
+      .mobile-bottom-nav { display: block; }
+      .whatsapp-float { bottom: 85px; right: 20px; width: 50px; height: 50px; }
+      .back-to-top { bottom: 85px; left: 20px; width: 42px; height: 42px; }
+      body { padding-bottom: 70px; }
+      .footer { padding-bottom: 5rem; }
+    }
+
+    /* ═══════════════════════════════════════════
+       COUNTER ANIMATION
+    ═══════════════════════════════════════════ */
+    .stat-value[data-animated="true"] {
+      transition: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <header class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">
+      Jhelum Cafe
+      <span>& Fine Dine</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="signatures.html">Signatures</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="order.html">Order</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ═══ MOBILE OVERLAY MENU ═══ -->
+  <div class="mobile-menu-overlay" id="mobileMenu">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="signatures.html">Signatures</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="order.html">Order</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <div class="hero-content">
+      <nav class="hero-breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep">›</span>
+        <span class="current">About Us</span>
+      </nav>
+      <h1 class="reveal">About <em>Us</em></h1>
+      <div class="hero-line reveal reveal-delay-1"></div>
+      <p class="hero-sub reveal reveal-delay-2">Where Kashmir Meets Your Cup — Since Day One</p>
+    </div>
+  </section>
+
+  <!-- ═══ WAVE DIVIDER ═══ -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+      <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,15 1440,30 L1440,60 L0,60 Z" fill="var(--primary)" opacity="0.15"/>
+      <path d="M0,35 C360,5 720,55 1080,25 C1260,15 1380,45 1440,35" fill="none" stroke="var(--primary)" stroke-width="1.5" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <!-- ═══ OUR STORY ═══ -->
+  <section class="story-section">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-left">
+          <div class="section-label reveal">Our Story</div>
+          <h2 class="section-title reveal reveal-delay-1">A Culinary Journey on the <em>Banks of Jhelum</em></h2>
+          <p class="story-tagline reveal reveal-delay-2">Where tradition flows with the river, and every meal is a celebration.</p>
+          <div class="story-paragraphs">
+            <p class="reveal reveal-delay-2">Nestled on the banks of the historic Jhelum River, at the iconic Budshah Bridge in the heart of Lal Chowk, Jhelum Cafe & Fine Dine is Srinagar's beloved two-storey culinary wonder. Since opening our doors, we have become a cherished gathering place where the warmth of Kashmiri hospitality meets the creativity of modern cafe culture.</p>
+            <p class="reveal reveal-delay-3">Our ground floor cafe bursts with artistic energy — colorful walls, cozy corners, and the aroma of freshly brewed Kashmiri Kahwa. Upstairs, discover our vibrant cafe space where friends gather over signature burgers and fusion pizzas. Below, step into an elegant fine-dining basement where traditional Kashmiri masterpieces like Rogan Josh and Yakhni are served with the ceremony they deserve.</p>
+            <p class="reveal reveal-delay-4">Every dish at Jhelum Cafe tells a story — from our legendary Harissa Special Pizza that bridges Kashmir and Italy, to the beloved Czochwaur Burger that has become a Srinagar icon. We source fresh ingredients daily and blend time-honored Kashmiri recipes with global flavors, creating a menu that surprises and delights with every bite.</p>
+          </div>
+        </div>
+        <div class="story-right">
+          <div class="story-visual reveal">
+            <p class="story-visual-quote">A wonderful place to hangout with friends and to go out with family. Sweet blend of a serene ambience, an innovative menu and a delightfully welcoming staff.</p>
+            <p class="story-visual-attr">— Adil K., Google Review</p>
+          </div>
+          <div class="story-deco reveal reveal-delay-2">
+            <div class="story-deco-card">
+              <div class="icon">🏔️</div>
+              <div class="label">Kashmiri Heritage</div>
+            </div>
+            <div class="story-deco-card">
+              <div class="icon">🌊</div>
+              <div class="label">Riverside Location</div>
+            </div>
+            <div class="story-deco-card">
+              <div class="icon">👨‍🍳</div>
+              <div class="label">Fusion Cuisine</div>
+            </div>
+            <div class="story-deco-card">
+              <div class="icon">🍷</div>
+              <div class="label">Fine Dining</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WAVE DIVIDER ═══ -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+      <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,15 1440,30 L1440,60 L0,60 Z" fill="var(--primary)" opacity="0.15"/>
+      <path d="M0,35 C360,5 720,55 1080,25 C1260,15 1380,45 1440,35" fill="none" stroke="var(--primary)" stroke-width="1.5" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <!-- ═══ STATS ═══ -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-value" data-target="cuisine">Cafe, Kashmiri, Continental</div>
+          <div class="stat-label">Cuisine</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-1">
+          <div class="stat-value" data-target="600" data-prefix="₹" data-suffix=" for Two">₹600 for Two</div>
+          <div class="stat-label">Cost for Two</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-2">
+          <div class="stat-value" data-target="4.0" data-suffix="★">4.0★</div>
+          <div class="stat-label">Google Rating</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-3">
+          <div class="stat-value" data-target="location">Srinagar, J&K</div>
+          <div class="stat-label">City</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WAVE DIVIDER ═══ -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+      <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,15 1440,30 L1440,60 L0,60 Z" fill="var(--primary)" opacity="0.15"/>
+      <path d="M0,35 C360,5 720,55 1080,25 C1260,15 1380,45 1440,35" fill="none" stroke="var(--primary)" stroke-width="1.5" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <!-- ═══ SPECIALTIES ═══ -->
+  <section class="specialties-section">
+    <div class="container">
+      <div class="specialties-header">
+        <div class="section-label reveal" style="justify-content:center;">Our Specialties</div>
+        <h2 class="section-title reveal reveal-delay-1">What Makes Us <em>Extraordinary</em></h2>
+      </div>
+      <div class="specialties-grid">
+        <div class="specialty-card reveal">
+          <div class="specialty-icon">🍕</div>
+          <h3>Signature Kashmiri Fusion</h3>
+          <p>Our legendary Harissa Special Pizza bridges Kashmir and Italy, while the iconic Czochwaur Burger combines rich local flavors with global favorites — creating unforgettable taste experiences unique to Jhelum Cafe.</p>
+        </div>
+        <div class="specialty-card reveal reveal-delay-1">
+          <div class="specialty-icon">🏞️</div>
+          <h3>River View Dining</h3>
+          <p>Two-storey dining with Jhelum riverside ambiance — an artistic, colorful cafe above bursting with energy, and an elegant fine-dining basement below where Kashmiri masterpieces are served with the ceremony they deserve.</p>
+        </div>
+        <div class="specialty-card reveal reveal-delay-2">
+          <div class="specialty-icon">☕</div>
+          <h3>Traditional & Modern</h3>
+          <p>From aromatic Kashmiri Kahwa steeped in centuries of tradition to indulgent Oreo Shakes that delight the new generation — our menu bridges generations, honoring heritage while embracing the contemporary.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WAVE DIVIDER ═══ -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+      <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,15 1440,30 L1440,60 L0,60 Z" fill="var(--primary)" opacity="0.15"/>
+      <path d="M0,35 C360,5 720,55 1080,25 C1260,15 1380,45 1440,35" fill="none" stroke="var(--primary)" stroke-width="1.5" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <!-- ═══ AMENITIES ═══ -->
+  <section class="amenities-section">
+    <div class="container">
+      <div class="amenities-header">
+        <div class="section-label reveal" style="justify-content:center;">Experience</div>
+        <h2 class="section-title reveal reveal-delay-1">Amenities & <em>Facilities</em></h2>
+      </div>
+      <div class="amenities-grid">
+        <div class="amenity-tile reveal">
+          <span class="amenity-icon">🪑</span>
+          <span class="amenity-label">Indoor Seating</span>
+        </div>
+        <div class="amenity-tile reveal reveal-delay-1">
+          <span class="amenity-icon">❄️</span>
+          <span class="amenity-label">Air Conditioning</span>
+        </div>
+        <div class="amenity-tile reveal reveal-delay-2">
+          <span class="amenity-icon">📶</span>
+          <span class="amenity-label">Wi-Fi</span>
+        </div>
+        <div class="amenity-tile reveal reveal-delay-3">
+          <span class="amenity-icon">🍷</span>
+          <span class="amenity-label">Fine Dining</span>
+        </div>
+        <div class="amenity-tile reveal">
+          <span class="amenity-icon">👨‍👩‍👧‍👦</span>
+          <span class="amenity-label">Family Friendly</span>
+        </div>
+        <div class="amenity-tile reveal reveal-delay-1">
+          <span class="amenity-icon">📦</span>
+          <span class="amenity-label">Takeaway</span>
+        </div>
+        <div class="amenity-tile reveal reveal-delay-2">
+          <span class="amenity-icon">🛵</span>
+          <span class="amenity-label">Home Delivery</span>
+        </div>
+        <div class="amenity-tile reveal reveal-delay-3">
+          <span class="amenity-icon">👨‍🍳</span>
+          <span class="amenity-label">Live Kitchen</span>
+        </div>
+        <div class="amenity-tile reveal">
+          <span class="amenity-icon">🏞️</span>
+          <span class="amenity-label">River View</span>
+        </div>
+        <div class="amenity-tile reveal reveal-delay-1">
+          <span class="amenity-icon">💳</span>
+          <span class="amenity-label">Card Payment</span>
+        </div>
+        <div class="amenity-tile reveal reveal-delay-2">
+          <span class="amenity-icon">🅿️</span>
+          <span class="amenity-label">Street Parking</span>
+        </div>
+        <div class="amenity-tile reveal reveal-delay-3">
+          <span class="amenity-icon">🎉</span>
+          <span class="amenity-label">Celebrations</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WAVE DIVIDER ═══ -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+      <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,15 1440,30 L1440,60 L0,60 Z" fill="var(--primary)" opacity="0.15"/>
+      <path d="M0,35 C360,5 720,55 1080,25 C1260,15 1380,45 1440,35" fill="none" stroke="var(--primary)" stroke-width="1.5" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <!-- ═══ CTA BANNER ═══ -->
+  <section class="cta-section">
+    <div class="container cta-content">
+      <h2 class="reveal">Ready to <em>Experience</em> Jhelum?</h2>
+      <p class="reveal reveal-delay-1">Explore our full menu or visit us at Budshah Bridge, Lal Chowk — open 10 AM to 10 PM, all 7 days.</p>
+      <div class="cta-buttons reveal reveal-delay-2">
+        <a href="menu.html" class="btn btn-primary">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          View Full Menu
+        </a>
+        <a href="contact.html" class="btn btn-outline">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Find Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            Jhelum Cafe
+            <span>& Fine Dine</span>
+          </a>
+          <p>A two-storey culinary wonder on the banks of the Jhelum River in the heart of Srinagar, blending traditional Kashmiri heritage with modern cafe culture.</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/jhelumcafe/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/jhelumcafe" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.zomato.com/srinagar/jhelum-cafe-fine-dine-lal-chowk/order" target="_blank" rel="noopener" aria-label="Zomato">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-.5 18.5c-3.59 0-6.5-2.91-6.5-6.5s2.91-6.5 6.5-6.5c1.73 0 3.3.68 4.46 1.78l-1.81 1.74A3.983 3.983 0 0011.5 8C9.29 8 7.5 9.79 7.5 12s1.79 4 4 4c1.86 0 3.43-1.27 3.87-3H11.5v-2.5h6.42c.08.46.13.93.13 1.42 0 3.87-2.83 7.08-6.55 7.08z"/></svg>
+            </a>
+          </div>
+        </div>
+        <!-- Quick Links -->
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="menu.html">Full Menu</a></li>
+            <li><a href="signatures.html">Signatures</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="order.html">Order Online</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <!-- Hours -->
+        <div>
+          <h4>Opening Hours</h4>
+          <ul class="footer-hours footer-links">
+            <li><span>Mon – Sun</span><span>10 AM – 10 PM</span></li>
+            <li><span>All 7 Days</span><span>Open Daily</span></li>
+          </ul>
+        </div>
+        <!-- Contact -->
+        <div class="footer-contact-info">
+          <h4>Get in Touch</h4>
+          <p>
+            <svg width="16" height="16" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Budshah Bridge, Maisuma, Lal Chowk, Srinagar, J&K 190001
+          </p>
+          <p>
+            <svg width="16" height="16" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <a href="tel:+919484104295" style="color:var(--muted);">+91 94841 04295</a>
+          </p>
+          <p>
+            <svg width="16" height="16" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            <a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20👋" style="color:var(--muted);">WhatsApp: +91 77809 38743</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Jhelum Cafe & Fine Dine. All rights reserved.</p>
+        <p>Crafted with ❤️ in <a href="https://www.google.com/maps/place/Srinagar" target="_blank">Srinagar, Kashmir</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ FLOATING WHATSAPP ═══ -->
+  <a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20👋" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32"><path d="M16.004 0h-.008C7.174 0 0 7.176 0 16.004c0 3.5 1.132 6.738 3.052 9.372L1.054 31.1l5.918-1.956a15.926 15.926 0 008.032 2.164h.008C23.828 31.308 31 24.128 31 16.004S24.828 0 16.004 0zm9.294 22.606c-.39 1.1-1.932 2.014-3.164 2.28-.844.18-1.946.324-5.656-1.216-4.746-1.97-7.8-6.788-8.036-7.104-.228-.316-1.892-2.52-1.892-4.808s1.196-3.41 1.62-3.876c.424-.466.924-.582 1.232-.582.308 0 .616.004.884.016.284.012.664-.108 1.04.792.39.932 1.324 3.228 1.44 3.46.116.232.192.504.038.82-.154.316-.232.512-.46.788-.228.276-.48.616-.684.828-.228.232-.464.484-.2.948.264.466 1.176 1.94 2.524 3.144 1.736 1.548 3.2 2.028 3.652 2.252.452.224.716.188.98-.116.264-.304 1.132-1.316 1.432-1.768.3-.452.6-.376 1.012-.224.412.152 2.612 1.232 3.06 1.456.448.224.748.336.86.524.112.188.112 1.084-.278 2.186z"/></svg>
+  </a>
+
+  <!-- ═══ BACK TO TOP ═══ -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- ═══ MOBILE BOTTOM NAV ═══ -->
+  <nav class="mobile-bottom-nav">
+    <ul>
+      <li>
+        <a href="index.html">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="menu.html">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          Menu
+        </a>
+      </li>
+      <li>
+        <a href="contact.html">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Reserve
+        </a>
+      </li>
+      <li>
+        <a href="tel:+919484104295">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          Call
+        </a>
+      </li>
+      <li>
+        <a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20👋" target="_blank" rel="noopener" style="color:#25D366;">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 1C5.999 1 1.102 5.897 1.102 11.929a10.856 10.856 0 001.47 5.458L1 23l5.758-1.514a10.9 10.9 0 005.273 1.352h.005c6.03 0 10.929-4.897 10.929-10.929S18.064 1 12.031 1zm6.35 15.43c-.268.752-1.556 1.438-2.148 1.53-.56.088-1.27.124-2.05-.13a18.67 18.67 0 01-1.858-.687c-3.267-1.41-5.398-4.696-5.562-4.914-.164-.218-1.34-1.782-1.34-3.4s.848-2.412 1.15-2.742c.3-.33.656-.412.874-.412s.436.004.628.012c.202.008.472-.076.74.564.274.668.934 2.28 1.018 2.444.082.164.138.358.028.578-.11.218-.164.354-.33.546-.164.192-.346.428-.494.576-.164.164-.336.342-.144.672.192.33.856 1.412 1.838 2.288 1.262 1.126 2.326 1.474 2.656 1.64.33.164.522.136.714-.082.192-.218.826-.96 1.046-1.29.22-.33.44-.274.74-.164.302.11 1.908.9 2.236 1.062.328.164.548.246.628.382.082.136.082.79-.186 1.542z"/></svg>
+          WhatsApp
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ═══ JAVASCRIPT ═══ -->
+  <script>
+    // ─── Intersection Observer for scroll animations ───
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ─── Navbar scroll effect ───
+    const navbar = document.getElementById('navbar');
+    let lastScrollY = 0;
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      navbar.classList.toggle('scrolled', scrollY > 60);
+      lastScrollY = scrollY;
+    }, { passive: true });
+
+    // ─── Hamburger menu ───
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // ─── Back to top ───
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('show', window.scrollY > 400);
+    }, { passive: true });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ─── Animated counters for stat cards ───
+    function animateCounters() {
+      const statCards = document.querySelectorAll('.stat-value[data-target]');
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !entry.target.dataset.animated) {
+            entry.target.dataset.animated = 'true';
+            const target = entry.target.dataset.target;
+            const prefix = entry.target.dataset.prefix || '';
+            const suffix = entry.target.dataset.suffix || '';
+
+            // Only animate numeric values
+            if (!isNaN(parseFloat(target))) {
+              const end = parseFloat(target);
+              const isFloat = target.includes('.');
+              const duration = 1500;
+              const startTime = performance.now();
+
+              function updateCounter(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                // Ease out quad
+                const eased = 1 - (1 - progress) * (1 - progress);
+                const current = isFloat ? (eased * end).toFixed(1) : Math.floor(eased * end);
+                entry.target.textContent = prefix + current + suffix;
+                if (progress < 1) {
+                  requestAnimationFrame(updateCounter);
+                }
+              }
+              requestAnimationFrame(updateCounter);
+            }
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      statCards.forEach(card => counterObserver.observe(card));
+    }
+    animateCounters();
+  </script>
+</body>
+</html>

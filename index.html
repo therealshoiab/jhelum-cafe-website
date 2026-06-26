@@ -1,0 +1,2142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jhelum Cafe & Fine Dine | Riverside Cafe & Restaurant | Srinagar</title>
+  <meta name="description" content="Jhelum Cafe & Fine Dine — Srinagar's beloved riverside cafe at Lal Chowk. Kashmiri cuisine, continental fusion, fine dining. Rated 4.0★ on Google. Order online or reserve a table.">
+  <meta property="og:title" content="Jhelum Cafe & Fine Dine | Riverside Cafe & Restaurant | Srinagar">
+  <meta property="og:description" content="Srinagar's beloved riverside cafe at Lal Chowk. Kashmiri cuisine, continental fusion, fine dining. Rated 4.0★ on Google.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jhelumcafe.com/">
+  <meta name="theme-color" content="#0F1419">
+  <link rel="canonical" href="https://jhelumcafe.com/">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Jhelum Cafe & Fine Dine",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Budshah Bridge, Maisuma, Lal Chowk",
+      "addressLocality": "Srinagar",
+      "addressRegion": "Jammu & Kashmir",
+      "postalCode": "190001",
+      "addressCountry": "IN"
+    },
+    "telephone": "+919484104295",
+    "openingHours": ["Mo-Su 10:00-22:00"],
+    "servesCuisine": ["Cafe", "Kashmiri", "Continental"],
+    "priceRange": "₹₹",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.0",
+      "reviewCount": "524"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 34.0717826,
+      "longitude": 74.807295
+    },
+    "sameAs": [
+      "https://www.zomato.com/srinagar/jhelum-cafe-fine-dine-lal-chowk/order",
+      "https://www.instagram.com/jhelumcafe/",
+      "https://www.facebook.com/jhelumcafe"
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+    /* ============================================
+       CSS VARIABLES
+    ============================================ */
+    :root {
+      --bg: #0F1419;
+      --surface: #1A2332;
+      --primary: #D4A853;
+      --secondary: #C0392B;
+      --text: #F0EDE6;
+      --muted: #6B7B8D;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --radius: 12px;
+      --radius-lg: 20px;
+      --shadow: 0 8px 32px rgba(0,0,0,0.3);
+      --shadow-lg: 0 16px 64px rgba(0,0,0,0.4);
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ============================================
+       RESET & BASE
+    ============================================ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: #e6bc6a;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ============================================
+       SCROLL ANIMATIONS
+    ============================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ============================================
+       NAVIGATION
+    ============================================ */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 0 2rem;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: var(--transition);
+      background: transparent;
+    }
+
+    .navbar.scrolled {
+      background: rgba(15, 20, 25, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(212, 168, 83, 0.1);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    .nav-logo span {
+      color: var(--text);
+      font-weight: 400;
+      font-size: 0.85em;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 0.25rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.5rem 0.9rem;
+      border-radius: 8px;
+      transition: var(--transition);
+      position: relative;
+      letter-spacing: 0.3px;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+      background: rgba(212, 168, 83, 0.08);
+    }
+
+    .nav-links a.active {
+      color: var(--primary);
+    }
+
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    .nav-cta {
+      background: var(--primary) !important;
+      color: var(--bg) !important;
+      font-weight: 600 !important;
+      border-radius: 8px !important;
+      padding: 0.5rem 1.2rem !important;
+    }
+
+    .nav-cta:hover {
+      background: #e6bc6a !important;
+      transform: translateY(-1px);
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 1002;
+      padding: 8px;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Mobile Full-Screen Menu Overlay */
+    .mobile-menu-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 20, 25, 0.98);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      z-index: 1001;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .mobile-menu-overlay.open {
+      display: flex;
+      opacity: 1;
+    }
+
+    .mobile-menu-overlay a {
+      color: var(--text);
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      padding: 0.6rem 2rem;
+      border-radius: 8px;
+      transition: var(--transition);
+      letter-spacing: 0.5px;
+    }
+
+    .mobile-menu-overlay a:hover,
+    .mobile-menu-overlay a.active {
+      color: var(--primary);
+    }
+
+    .mobile-menu-overlay a.active {
+      border-bottom: 2px solid var(--primary);
+    }
+
+    /* ============================================
+       HERO SECTION
+    ============================================ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      background: linear-gradient(165deg, #0F1419 0%, #141c26 30%, #1A2332 60%, #0F1419 100%);
+    }
+
+    /* Ambient glow effects */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      left: -10%;
+      width: 60%;
+      height: 60%;
+      background: radial-gradient(ellipse, rgba(212, 168, 83, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+      animation: ambientFloat 12s ease-in-out infinite;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      right: -10%;
+      width: 50%;
+      height: 50%;
+      background: radial-gradient(ellipse, rgba(192, 57, 43, 0.04) 0%, transparent 70%);
+      pointer-events: none;
+      animation: ambientFloat 15s ease-in-out infinite reverse;
+    }
+
+    @keyframes ambientFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -20px) scale(1.05); }
+      66% { transform: translate(-20px, 15px) scale(0.95); }
+    }
+
+    /* River wave background animation */
+    .hero-river-waves {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .hero-river-waves svg {
+      position: absolute;
+      bottom: 0;
+      width: 200%;
+      height: 100%;
+    }
+
+    .hero-wave-1 {
+      animation: riverFlow1 8s linear infinite;
+    }
+
+    .hero-wave-2 {
+      animation: riverFlow2 12s linear infinite;
+    }
+
+    .hero-wave-3 {
+      animation: riverFlow3 16s linear infinite;
+    }
+
+    @keyframes riverFlow1 {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @keyframes riverFlow2 {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @keyframes riverFlow3 {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+      padding: 0 2rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212, 168, 83, 0.1);
+      border: 1px solid rgba(212, 168, 83, 0.25);
+      border-radius: 50px;
+      padding: 6px 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--primary);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      animation: fadeSlideUp 1s ease forwards;
+      animation-delay: 0.2s;
+      opacity: 0;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+      animation: fadeSlideUp 1s ease forwards;
+      animation-delay: 0.4s;
+      opacity: 0;
+    }
+
+    .hero-title .gold {
+      color: var(--primary);
+      display: block;
+      font-style: italic;
+    }
+
+    .hero-tagline {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      animation: fadeSlideUp 1s ease forwards;
+      animation-delay: 0.6s;
+      opacity: 0;
+    }
+
+    /* Rating Badges */
+    .hero-ratings {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+      animation: fadeSlideUp 1s ease forwards;
+      animation-delay: 0.8s;
+      opacity: 0;
+    }
+
+    .rating-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(26, 35, 50, 0.8);
+      border: 1px solid rgba(212, 168, 83, 0.15);
+      border-radius: 50px;
+      padding: 8px 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      backdrop-filter: blur(10px);
+    }
+
+    .rating-badge .stars {
+      color: #FFC107;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+    }
+
+    .rating-badge .platform {
+      color: var(--muted);
+      font-weight: 400;
+      font-size: 0.8rem;
+    }
+
+    .rating-badge .score {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    /* CTAs */
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeSlideUp 1s ease forwards;
+      animation-delay: 1s;
+      opacity: 0;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary);
+      color: var(--bg);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      letter-spacing: 0.3px;
+    }
+
+    .btn-primary:hover {
+      background: #e6bc6a;
+      color: var(--bg);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(212, 168, 83, 0.3);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: 50px;
+      border: 2px solid rgba(240, 237, 230, 0.25);
+      cursor: pointer;
+      transition: var(--transition);
+      letter-spacing: 0.3px;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(212, 168, 83, 0.15);
+    }
+
+    /* Scroll Indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      animation: fadeSlideUp 1s ease forwards;
+      animation-delay: 1.4s;
+      opacity: 0;
+    }
+
+    .scroll-indicator span {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--muted);
+    }
+
+    .scroll-arrow {
+      width: 24px;
+      height: 36px;
+      border: 2px solid rgba(212, 168, 83, 0.4);
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .scroll-arrow::before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 8px;
+      background: var(--primary);
+      border-radius: 3px;
+      animation: scrollBounce 1.8s ease-in-out infinite;
+    }
+
+    @keyframes scrollBounce {
+      0%, 100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+      50% { opacity: 0.3; transform: translateX(-50%) translateY(12px); }
+    }
+
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ============================================
+       WAVE DIVIDER
+    ============================================ */
+    .wave-divider {
+      width: 100%;
+      line-height: 0;
+      overflow: hidden;
+    }
+
+    .wave-divider svg {
+      width: 100%;
+      height: 60px;
+      display: block;
+    }
+
+    /* ============================================
+       QUICK INFO BAR
+    ============================================ */
+    .quick-info {
+      background: var(--primary);
+      padding: 1rem 2rem;
+      overflow: hidden;
+    }
+
+    .quick-info-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .quick-info-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--bg);
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .quick-info-item svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    .quick-info-item a {
+      color: var(--bg);
+      font-weight: 700;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 2px;
+    }
+
+    .quick-info-item a:hover {
+      color: var(--surface);
+    }
+
+    .quick-info-sep {
+      width: 4px;
+      height: 4px;
+      background: rgba(15, 20, 25, 0.3);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ============================================
+       SECTIONS COMMON
+    ============================================ */
+    .section {
+      padding: 6rem 2rem;
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    .section-subtitle.center {
+      margin: 0 auto;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    /* ============================================
+       WHY VISIT US
+    ============================================ */
+    .why-section {
+      background: var(--bg);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .why-card {
+      background: var(--surface);
+      border: 1px solid rgba(212, 168, 83, 0.08);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .why-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212, 168, 83, 0.2);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .why-card:hover::before {
+      opacity: 1;
+    }
+
+    .why-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1.5rem;
+      background: rgba(212, 168, 83, 0.1);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+    }
+
+    .why-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+
+    .why-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    /* ============================================
+       BESTSELLERS
+    ============================================ */
+    .bestsellers-section {
+      background: linear-gradient(180deg, var(--bg) 0%, rgba(26, 35, 50, 0.5) 50%, var(--bg) 100%);
+    }
+
+    .bestsellers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .dish-card {
+      background: var(--surface);
+      border: 1px solid rgba(212, 168, 83, 0.08);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .dish-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212, 168, 83, 0.2);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .dish-image-placeholder {
+      height: 200px;
+      background: linear-gradient(135deg, rgba(212, 168, 83, 0.15) 0%, rgba(192, 57, 43, 0.1) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      position: relative;
+    }
+
+    .dish-bestseller-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--secondary);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .dish-info {
+      padding: 1.5rem;
+    }
+
+    .dish-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .dish-name {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .veg-dot {
+      width: 16px;
+      height: 16px;
+      border: 2px solid #27ae60;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .veg-dot::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: #27ae60;
+      border-radius: 50%;
+    }
+
+    .nonveg-dot {
+      width: 16px;
+      height: 16px;
+      border: 2px solid var(--secondary);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .nonveg-dot::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 8px solid var(--secondary);
+    }
+
+    .dish-price {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    .dish-desc {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    .section-footer {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .link-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .link-arrow:hover {
+      gap: 14px;
+      color: #e6bc6a;
+    }
+
+    .link-arrow svg {
+      width: 20px;
+      height: 20px;
+      transition: var(--transition);
+    }
+
+    /* ============================================
+       GALLERY STRIP
+    ============================================ */
+    .gallery-section {
+      background: var(--bg);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .gallery-tile {
+      height: 260px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .gallery-tile:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .gallery-tile-1 {
+      background: linear-gradient(135deg, #D4A853 0%, #C0392B 100%);
+    }
+
+    .gallery-tile-2 {
+      background: linear-gradient(135deg, #1A2332 0%, #D4A853 100%);
+    }
+
+    .gallery-tile-3 {
+      background: linear-gradient(135deg, #C0392B 0%, #0F1419 100%);
+    }
+
+    .gallery-tile-4 {
+      background: linear-gradient(135deg, #D4A853 0%, #1A2332 80%);
+    }
+
+    .gallery-tile-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(15, 20, 25, 0.25);
+      transition: var(--transition);
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .gallery-tile:hover .gallery-tile-content {
+      background: rgba(15, 20, 25, 0.4);
+    }
+
+    .gallery-tile-content .tile-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .gallery-tile-content h4 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.3rem;
+    }
+
+    .gallery-tile-content p {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.8);
+      font-weight: 400;
+    }
+
+    /* ============================================
+       REVIEWS SECTION
+    ============================================ */
+    .reviews-section {
+      background: linear-gradient(180deg, var(--bg) 0%, rgba(26, 35, 50, 0.3) 50%, var(--bg) 100%);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .review-card {
+      background: var(--surface);
+      border: 1px solid rgba(212, 168, 83, 0.08);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .review-card:hover {
+      border-color: rgba(212, 168, 83, 0.2);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .review-quote {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      font-family: var(--font-display);
+      font-size: 4rem;
+      color: rgba(212, 168, 83, 0.1);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .review-stars {
+      color: #FFC107;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .review-text {
+      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      opacity: 0.9;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .review-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: white;
+    }
+
+    .review-author-info .author-name {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+
+    .review-author-info .author-source {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* ============================================
+       ORDER STRIP
+    ============================================ */
+    .order-strip {
+      padding: 4rem 2rem;
+      background: var(--surface);
+      text-align: center;
+    }
+
+    .order-strip-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .order-strip h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .order-strip p {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .order-buttons {
+      display: flex;
+      gap: 1.25rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-zomato {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #D94148;
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px 36px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      letter-spacing: 0.3px;
+    }
+
+    .btn-zomato:hover {
+      background: #c0363c;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(217, 65, 72, 0.3);
+    }
+
+    .btn-whatsapp-order {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px 36px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      letter-spacing: 0.3px;
+    }
+
+    .btn-whatsapp-order:hover {
+      background: #1fb855;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+    }
+
+    /* ============================================
+       FOOTER
+    ============================================ */
+    .footer {
+      background: #0a0e12;
+      border-top: 1px solid rgba(212, 168, 83, 0.08);
+      padding: 4rem 2rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .footer-brand h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      max-width: 320px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(212, 168, 83, 0.08);
+      border: 1px solid rgba(212, 168, 83, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      color: var(--muted);
+    }
+
+    .footer-social a:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: var(--bg);
+      transform: translateY(-2px);
+    }
+
+    .footer-social a svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-col ul li a {
+      color: var(--muted);
+      font-size: 0.88rem;
+      transition: var(--transition);
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--primary);
+      padding-left: 4px;
+    }
+
+    .footer-hours-item {
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-hours-item span:last-child {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 3rem auto 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(212, 168, 83, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-bottom p {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .footer-bottom a {
+      color: var(--primary);
+    }
+
+    /* ============================================
+       FLOATING WHATSAPP BUTTON
+    ============================================ */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 100px;
+      right: 24px;
+      z-index: 999;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      transition: var(--transition);
+      animation: waPulse 2s ease-in-out infinite;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+    }
+
+    .whatsapp-float svg {
+      width: 28px;
+      height: 28px;
+      fill: white;
+    }
+
+    @keyframes waPulse {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+      50% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4), 0 0 0 12px rgba(37, 211, 102, 0.1); }
+    }
+
+    /* ============================================
+       BACK TO TOP
+    ============================================ */
+    .back-to-top {
+      position: fixed;
+      bottom: 100px;
+      left: 24px;
+      z-index: 999;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(212, 168, 83, 0.3);
+      transition: var(--transition);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      cursor: pointer;
+      border: none;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      background: #e6bc6a;
+      transform: translateY(-2px);
+    }
+
+    .back-to-top svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--bg);
+    }
+
+    /* ============================================
+       MOBILE BOTTOM NAV
+    ============================================ */
+    .mobile-bottom-nav {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 998;
+      background: rgba(15, 20, 25, 0.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-top: 1px solid rgba(212, 168, 83, 0.1);
+      padding: 8px 0;
+      padding-bottom: calc(8px + env(safe-area-inset-bottom));
+    }
+
+    .mobile-bottom-nav-inner {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .mobile-nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      color: var(--muted);
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      padding: 4px 8px;
+    }
+
+    .mobile-nav-item:hover,
+    .mobile-nav-item.active {
+      color: var(--primary);
+    }
+
+    .mobile-nav-item svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .mobile-nav-item.wa-item {
+      color: #25D366;
+    }
+
+    .mobile-nav-item.call-item {
+      color: var(--primary);
+    }
+
+    /* ============================================
+       RESPONSIVE DESIGN
+    ============================================ */
+    @media (max-width: 1024px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .why-grid,
+      .bestsellers-grid,
+      .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section { padding: 4rem 1.25rem; }
+
+      .hero-content { padding: 0 1.25rem; }
+
+      .navbar { padding: 0 1.25rem; height: 64px; }
+
+      .nav-logo { font-size: 1.1rem; }
+
+      .quick-info-inner {
+        gap: 1rem;
+        justify-content: center;
+      }
+
+      .quick-info-sep {
+        display: none;
+      }
+
+      .quick-info-item {
+        font-size: 0.8rem;
+      }
+
+      .why-grid,
+      .bestsellers-grid,
+      .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .gallery-tile { height: 200px; }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .mobile-bottom-nav { display: block; }
+
+      .whatsapp-float { bottom: 85px; right: 16px; width: 50px; height: 50px; }
+
+      .back-to-top { bottom: 85px; left: 16px; width: 40px; height: 40px; }
+
+      .footer { padding-bottom: 5rem; }
+
+      .scroll-indicator { bottom: 30px; }
+    }
+
+    @media (max-width: 375px) {
+      .hero-title { font-size: 2.4rem; }
+
+      .hero-ctas {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 1rem;
+      }
+
+      .btn-primary, .btn-outline {
+        justify-content: center;
+        padding: 12px 24px;
+        font-size: 0.9rem;
+      }
+
+      .order-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 1rem;
+      }
+
+      .btn-zomato, .btn-whatsapp-order {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       NAVIGATION
+  ============================================ -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">Jhelum <span>Cafe & Fine Dine</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="signatures.html">Signatures</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="order.html">Order</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html" class="nav-cta">Reserve</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Full-Screen Menu Overlay -->
+  <div class="mobile-menu-overlay" id="mobileMenu">
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="menu.html">Menu</a>
+    <a href="signatures.html">Signatures</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="order.html">Order</a>
+    <a href="contact.html">Contact</a>
+    <a href="faq.html">FAQ</a>
+  </div>
+
+  <!-- ============================================
+       HERO SECTION
+  ============================================ -->
+  <section class="hero" id="hero">
+    <!-- Animated river waves in background -->
+    <div class="hero-river-waves">
+      <svg class="hero-wave-1" viewBox="0 0 2880 200" preserveAspectRatio="none">
+        <path d="M0,100 C240,150 480,50 720,100 C960,150 1200,50 1440,100 C1680,150 1920,50 2160,100 C2400,150 2640,50 2880,100 L2880,200 L0,200 Z" fill="var(--primary)" fill-opacity="0.06"/>
+      </svg>
+      <svg class="hero-wave-2" viewBox="0 0 2880 200" preserveAspectRatio="none">
+        <path d="M0,120 C360,80 720,160 1080,120 C1440,80 1800,160 2160,120 C2520,80 2700,140 2880,120 L2880,200 L0,200 Z" fill="var(--primary)" fill-opacity="0.04"/>
+      </svg>
+      <svg class="hero-wave-3" viewBox="0 0 2880 200" preserveAspectRatio="none">
+        <path d="M0,140 C480,100 960,180 1440,140 C1920,100 2400,170 2880,140 L2880,200 L0,200 Z" fill="var(--primary)" fill-opacity="0.03"/>
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Srinagar's Riverside Gem
+      </div>
+      <h1 class="hero-title">
+        Jhelum Cafe
+        <span class="gold">& Fine Dine</span>
+      </h1>
+      <p class="hero-tagline">Where Kashmir Meets Your Cup</p>
+
+      <div class="hero-ratings">
+        <div class="rating-badge">
+          <span class="stars">★★★★☆</span>
+          <span class="score">4.0</span>
+          <span class="platform">Google (524+)</span>
+        </div>
+        <div class="rating-badge">
+          <span class="stars">★★★★☆</span>
+          <span class="score">4.2</span>
+          <span class="platform">Zomato</span>
+        </div>
+      </div>
+
+      <div class="hero-ctas">
+        <a href="contact.html" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Reserve a Table
+        </a>
+        <a href="menu.html" class="btn-outline">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          View Menu
+        </a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       QUICK INFO BAR
+  ============================================ -->
+  <div class="quick-info">
+    <div class="quick-info-inner">
+      <div class="quick-info-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Open Today: 10 AM – 10 PM
+      </div>
+      <div class="quick-info-sep"></div>
+      <div class="quick-info-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Budshah Bridge, Lal Chowk
+      </div>
+      <div class="quick-info-sep"></div>
+      <div class="quick-info-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <a href="tel:+919484104295">Call Now</a>
+      </div>
+      <div class="quick-info-sep"></div>
+      <div class="quick-info-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        ₹600 for two
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       WHY VISIT US
+  ============================================ -->
+  <section class="section why-section">
+    <div class="section-inner text-center">
+      <span class="section-label reveal">Discover</span>
+      <h2 class="section-title reveal">Why Srinagar Loves Us</h2>
+      <p class="section-subtitle center reveal">A two-storey culinary wonder on the banks of the Jhelum River — where traditional Kashmiri heritage meets modern cafe culture.</p>
+
+      <div class="why-grid">
+        <div class="why-card reveal reveal-delay-1">
+          <div class="why-icon">🍕</div>
+          <h3>Signature Harissa Pizza</h3>
+          <p>Our legendary pizza topped with slow-cooked Kashmiri harissa, mozzarella, and a medley of valley spices. The dish that put us on the map — an unforgettable fusion of tradition and taste.</p>
+        </div>
+        <div class="why-card reveal reveal-delay-2">
+          <div class="why-icon">⭐</div>
+          <h3>4.0★ Google Rating</h3>
+          <p>Trusted by 524+ reviewers on Google. Srinagar's discerning diners rate us for exceptional food quality, welcoming service, and an ambiance that keeps them coming back.</p>
+        </div>
+        <div class="why-card reveal reveal-delay-3">
+          <div class="why-icon">🏞️</div>
+          <h3>River View Fine Dining</h3>
+          <p>An artistic, colorful cafe upstairs and an elegant fine-dining space in the basement — all perched on the banks of the Jhelum River at the heart of Lal Chowk.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave Divider -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+      <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,15 1440,30 L1440,60 L0,60 Z" fill="var(--primary)" opacity="0.15"/>
+      <path d="M0,35 C360,5 720,55 1080,25 C1260,15 1380,45 1440,35" fill="none" stroke="var(--primary)" stroke-width="1.5" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <!-- ============================================
+       BESTSELLERS
+  ============================================ -->
+  <section class="section bestsellers-section">
+    <div class="section-inner text-center">
+      <span class="section-label reveal">Our Best</span>
+      <h2 class="section-title reveal">Crowd Favourites</h2>
+      <p class="section-subtitle center reveal">The dishes our guests can't stop ordering — each one crafted with authentic Kashmiri ingredients and a bold creative twist.</p>
+
+      <div class="bestsellers-grid">
+        <!-- Harissa Special Pizza -->
+        <div class="dish-card reveal reveal-delay-1">
+          <div class="dish-image-placeholder">
+            🍕
+            <span class="dish-bestseller-tag">Bestseller</span>
+          </div>
+          <div class="dish-info">
+            <div class="dish-header">
+              <div class="dish-name">
+                <span class="nonveg-dot"></span>
+                Harissa Special Pizza
+              </div>
+              <span class="dish-price">₹350</span>
+            </div>
+            <p class="dish-desc">Our signature pizza topped with slow-cooked Kashmiri harissa, mozzarella, and a medley of spices that capture the essence of the valley.</p>
+          </div>
+        </div>
+
+        <!-- Czochwaur Burger -->
+        <div class="dish-card reveal reveal-delay-2">
+          <div class="dish-image-placeholder">
+            🍔
+            <span class="dish-bestseller-tag">Bestseller</span>
+          </div>
+          <div class="dish-info">
+            <div class="dish-header">
+              <div class="dish-name">
+                <span class="nonveg-dot"></span>
+                Czochwaur Burger
+              </div>
+              <span class="dish-price">₹280</span>
+            </div>
+            <p class="dish-desc">A hearty burger with spiced Kashmiri minced meat patty, caramelized onions, and our house-special czochwaur sauce.</p>
+          </div>
+        </div>
+
+        <!-- Butter Chicken -->
+        <div class="dish-card reveal reveal-delay-3">
+          <div class="dish-image-placeholder">
+            🍛
+            <span class="dish-bestseller-tag">Bestseller</span>
+          </div>
+          <div class="dish-info">
+            <div class="dish-header">
+              <div class="dish-name">
+                <span class="nonveg-dot"></span>
+                Butter Chicken
+              </div>
+              <span class="dish-price">₹320</span>
+            </div>
+            <p class="dish-desc">Tender chicken simmered in a rich, creamy tomato-butter gravy with aromatic spices, served with butter naan.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-footer reveal">
+        <a href="menu.html" class="link-arrow">
+          Explore Full Menu
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave Divider -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+      <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,15 1440,30 L1440,60 L0,60 Z" fill="var(--primary)" opacity="0.15"/>
+      <path d="M0,35 C360,5 720,55 1080,25 C1260,15 1380,45 1440,35" fill="none" stroke="var(--primary)" stroke-width="1.5" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <!-- ============================================
+       GALLERY STRIP
+  ============================================ -->
+  <section class="section gallery-section">
+    <div class="section-inner text-center">
+      <span class="section-label reveal">Ambiance</span>
+      <h2 class="section-title reveal">A Feast for the Eyes</h2>
+      <p class="section-subtitle center reveal">Two floors of stunning design — an artistic cafe upstairs, elegant fine dining below, and the Jhelum River flowing right outside.</p>
+
+      <div class="gallery-grid">
+        <a href="gallery.html" class="gallery-tile gallery-tile-1 reveal reveal-delay-1">
+          <div class="gallery-tile-content">
+            <div class="tile-icon">☕</div>
+            <h4>The Cafe Upstairs</h4>
+            <p>Artistic & Colorful</p>
+          </div>
+        </a>
+        <a href="gallery.html" class="gallery-tile gallery-tile-2 reveal reveal-delay-2">
+          <div class="gallery-tile-content">
+            <div class="tile-icon">🍷</div>
+            <h4>Fine Dining Basement</h4>
+            <p>Elegant & Intimate</p>
+          </div>
+        </a>
+        <a href="gallery.html" class="gallery-tile gallery-tile-3 reveal reveal-delay-3">
+          <div class="gallery-tile-content">
+            <div class="tile-icon">🏞️</div>
+            <h4>River View</h4>
+            <p>Banks of the Jhelum</p>
+          </div>
+        </a>
+        <a href="gallery.html" class="gallery-tile gallery-tile-4 reveal reveal-delay-4">
+          <div class="gallery-tile-content">
+            <div class="tile-icon">🍽️</div>
+            <h4>Food Gallery</h4>
+            <p>Visual Delights</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="section-footer reveal">
+        <a href="gallery.html" class="link-arrow">
+          View Full Gallery
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave Divider -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+      <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,15 1440,30 L1440,60 L0,60 Z" fill="var(--primary)" opacity="0.15"/>
+      <path d="M0,35 C360,5 720,55 1080,25 C1260,15 1380,45 1440,35" fill="none" stroke="var(--primary)" stroke-width="1.5" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <!-- ============================================
+       REVIEWS PREVIEW
+  ============================================ -->
+  <section class="section reviews-section">
+    <div class="section-inner text-center">
+      <span class="section-label reveal">Testimonials</span>
+      <h2 class="section-title reveal">What Our Guests Say</h2>
+      <p class="section-subtitle center reveal">Real words from real guests — the love that keeps us going every single day.</p>
+
+      <div class="reviews-grid">
+        <!-- Review 1 -->
+        <div class="review-card reveal reveal-delay-1">
+          <div class="review-quote">"</div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">A wonderful place to hangout with friends and to go out with family. Sweet blend of a serene ambience, an innovative menu and a delightfully welcoming staff.</p>
+          <div class="review-author">
+            <div class="review-avatar">AK</div>
+            <div class="review-author-info">
+              <div class="author-name">Adil K.</div>
+              <div class="author-source">Google Review · 2024</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card reveal reveal-delay-2">
+          <div class="review-quote">"</div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">The quality of the food they serve is right up there with the very best. Don't miss out on their trademark Harissa Pizza and Czochwaur Burger — absolutely unforgettable flavors!</p>
+          <div class="review-author">
+            <div class="review-avatar">SR</div>
+            <div class="review-author-info">
+              <div class="author-name">Sameer R.</div>
+              <div class="author-source">Google Review · 2024</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card reveal reveal-delay-3">
+          <div class="review-quote">"</div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">We celebrated our anniversary here and it was magical. The staff arranged everything beautifully. The food was exceptional — especially the Harissa Special Pizza. Highly recommend!</p>
+          <div class="review-author">
+            <div class="review-avatar">NQ</div>
+            <div class="review-author-info">
+              <div class="author-name">Nazia Q.</div>
+              <div class="author-source">Google Review · 2024</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-footer reveal">
+        <a href="reviews.html" class="link-arrow">
+          Read All Reviews
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave Divider -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+      <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,15 1440,30 L1440,60 L0,60 Z" fill="var(--primary)" opacity="0.15"/>
+      <path d="M0,35 C360,5 720,55 1080,25 C1260,15 1380,45 1440,35" fill="none" stroke="var(--primary)" stroke-width="1.5" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <!-- ============================================
+       ORDER STRIP
+  ============================================ -->
+  <section class="order-strip reveal">
+    <div class="order-strip-inner">
+      <h2>Craving Kashmiri Flavours?</h2>
+      <p>Order your favourites delivered to your doorstep — or drop us a WhatsApp message for a custom order.</p>
+      <div class="order-buttons">
+        <a href="https://www.zomato.com/srinagar/jhelum-cafe-fine-dine-lal-chowk/order" target="_blank" rel="noopener" class="btn-zomato">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9v-2h2v2zm0-4H9V7h2v5zm4 4h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg>
+          Order on Zomato
+        </a>
+        <a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20I'd%20like%20to%20place%20an%20order%20🍕" target="_blank" rel="noopener" class="btn-whatsapp-order">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Order via WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+  ============================================ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Jhelum Cafe & Fine Dine</h3>
+        <p>A two-storey culinary wonder on the banks of the Jhelum River. Blending traditional Kashmiri heritage with modern cafe culture in the heart of Srinagar.</p>
+        <div class="footer-social">
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/jhelumcafe/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/jhelumcafe" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <!-- Zomato -->
+          <a href="https://www.zomato.com/srinagar/jhelum-cafe-fine-dine-lal-chowk/order" target="_blank" rel="noopener" aria-label="Zomato">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.5 14.5h-2v-9h2v9zm5 0h-2v-9h2v9z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="menu.html">Full Menu</a></li>
+          <li><a href="signatures.html">Signatures</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Get In Touch</h4>
+        <ul>
+          <li><a href="contact.html">Reserve a Table</a></li>
+          <li><a href="order.html">Order Online</a></li>
+          <li><a href="tel:+919484104295">Call: 9484104295</a></li>
+          <li><a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20👋" target="_blank" rel="noopener">WhatsApp Us</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <div class="footer-hours-item">
+          <span>Mon – Sun</span>
+          <span>10 AM – 10 PM</span>
+        </div>
+        <div class="footer-hours-item" style="margin-top: 1rem;">
+          <span>Open all 7 days</span>
+        </div>
+        <div style="margin-top: 1.5rem;">
+          <a href="https://www.google.com/maps/place/Jhelum+Cafe+And+Fine+Dine/@34.0717683,74.8072875" target="_blank" rel="noopener" style="color: var(--primary); font-size: 0.85rem; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Get Directions
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Jhelum Cafe & Fine Dine. All rights reserved.</p>
+      <p>Budshah Bridge, Maisuma, Lal Chowk, Srinagar, J&K 190001</p>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       FLOATING WHATSAPP BUTTON
+  ============================================ -->
+  <a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20👋" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- ============================================
+       BACK TO TOP BUTTON
+  ============================================ -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <!-- ============================================
+       MOBILE BOTTOM NAV
+  ============================================ -->
+  <div class="mobile-bottom-nav">
+    <div class="mobile-bottom-nav-inner">
+      <a href="index.html" class="mobile-nav-item active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Home
+      </a>
+      <a href="menu.html" class="mobile-nav-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        Menu
+      </a>
+      <a href="contact.html" class="mobile-nav-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Reserve
+      </a>
+      <a href="tel:+919484104295" class="mobile-nav-item call-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call
+      </a>
+      <a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20👋" target="_blank" rel="noopener" class="mobile-nav-item wa-item">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- ============================================
+       JAVASCRIPT
+  ============================================ -->
+  <script>
+    // ---- Navbar scroll effect ----
+    const navbar = document.getElementById('navbar');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > 60) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+      lastScroll = currentScroll;
+    });
+
+    // ---- Hamburger menu ----
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+
+    // Close mobile menu when a link is clicked
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // ---- Back to top ----
+    const backToTop = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 400) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ---- Intersection Observer for scroll animations ----
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // ---- Smooth scroll for anchor links ----
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
