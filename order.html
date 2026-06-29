@@ -3,1528 +3,274 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jhelum Cafe & Fine Dine | Order Online | Srinagar</title>
-  <meta name="description" content="Order online from Jhelum Cafe & Fine Dine, Srinagar. Get Kashmiri cuisine and cafe favorites delivered via Zomato or WhatsApp. No platform fees on direct orders.">
-  <meta property="og:title" content="Order Online — Jhelum Cafe & Fine Dine, Srinagar">
-  <meta property="og:description" content="Get Kashmiri cuisine and cafe favorites delivered via Zomato or WhatsApp. No platform fees on direct orders.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://jhelumcafe.com/order.html">
-  <link rel="canonical" href="https://jhelumcafe.com/order.html">
-
-  <!-- Fonts -->
+  <title>Order Online | Jhelum Cafe & Fine Dine | Srinagar</title>
+  <meta name="description" content="Order wazwan and continental food online from Jhelum Cafe. Delivery via Zomato or direct WhatsApp.">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
   <style>
-    /* 50K Rupee Premium Theme Overrides */
-    body {
-      padding-top: 72px !important;
-      background-color: #0F1419 !important;
-    }
-    .clean-page-header {
-      padding: 6rem 0 4rem 0 !important;
-      text-align: center !important;
-      background: linear-gradient(180deg, rgba(15, 20, 25, 0.8) 0%, rgba(15, 20, 25, 0.3) 100%) !important;
-      border-bottom: 1px solid rgba(212, 168, 83, 0.05) !important;
-      position: relative !important;
-      z-index: 10 !important;
-    }
-    .clean-page-title {
-      font-family: var(--font-display) !important;
-      font-size: clamp(2.5rem, 5vw, 3.8rem) !important;
-      font-weight: 700 !important;
-      color: var(--primary) !important;
-      margin-bottom: 1rem !important;
-      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
-    }
-    .clean-page-title em {
-      font-style: italic !important;
-      color: #ffffff !important;
-    }
-    .clean-page-subtitle {
-      font-family: var(--font-body) !important;
-      font-size: clamp(0.95rem, 2vw, 1.15rem) !important;
-      color: var(--muted) !important;
-      max-width: 750px !important;
-      margin: 0 auto !important;
-      line-height: 1.6 !important;
-      opacity: 0.9 !important;
-    }
-    .glass-panel, .specialty-card, .stat-card, .contact-card, .rating-card, .sig-card, .accordion__item, .review-card, .amenity-card, .menu-card, .platform-card, .delivery-card {
-      background: rgba(26, 35, 50, 0.45) !important;
-      backdrop-filter: blur(16px) !important;
-      -webkit-backdrop-filter: blur(16px) !important;
-      border: 1px solid rgba(212, 168, 83, 0.08) !important;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
-      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
-    }
-    .specialty-card:hover, .stat-card:hover, .contact-card:hover, .rating-card:hover, .sig-card:hover, .review-card:hover, .amenity-card:hover, .menu-card:hover, .platform-card:hover, .delivery-card:hover {
-      transform: translateY(-6px) !important;
-      border-color: rgba(212, 168, 83, 0.25) !important;
-      box-shadow: 0 12px 40px rgba(212, 168, 83, 0.1) !important;
-    }
-    .accordion__item.active {
-      border-color: rgba(212, 168, 83, 0.45) !important;
-      box-shadow: 0 10px 30px rgba(212, 168, 83, 0.12) !important;
-    }
-    
-    /* WhatsApp Order Builder Styles */
-    .order-builder-section {
-      padding: 6rem 0 !important;
-      background: #0F1419 !important;
-    }
-    .builder-grid {
-      display: grid !important;
-      grid-template-columns: 1.2fr 0.8fr !important;
-      gap: 3rem !important;
-      align-items: start !important;
-    }
-    @media (max-width: 992px) {
-      .builder-grid {
-        grid-template-columns: 1fr !important;
-        gap: 2rem !important;
-      }
-    }
-    .builder-panel, .builder-summary {
-      padding: 2.5rem !important;
-      border-radius: var(--radius) !important;
-    }
-    .panel-title {
-      font-family: var(--font-display) !important;
-      font-size: 1.6rem !important;
-      color: #ffffff !important;
-      margin-bottom: 2rem !important;
-      border-bottom: 1px solid rgba(212, 168, 83, 0.1) !important;
-      padding-bottom: 0.75rem !important;
-    }
-    .builder-items-list {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 1.25rem !important;
-    }
-    .builder-item {
-      display: flex !important;
-      justify-content: space-between !important;
-      align-items: center !important;
-      padding: 1.25rem !important;
-      background: rgba(15, 20, 25, 0.4) !important;
-      border: 1px solid rgba(212, 168, 83, 0.05) !important;
-      border-radius: var(--radius-sm) !important;
-      transition: all 0.3s ease !important;
-    }
-    .builder-item:hover {
-      border-color: rgba(212, 168, 83, 0.2) !important;
-      background: rgba(15, 20, 25, 0.6) !important;
-    }
-    .item-info {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 0.35rem !important;
-      text-align: left !important;
-    }
-    .item-name {
-      font-weight: 600 !important;
-      color: var(--text) !important;
-      font-size: 1.05rem !important;
-    }
-    .item-price {
-      color: var(--primary) !important;
-      font-weight: 700 !important;
-      font-family: var(--font-body) !important;
-    }
-    .item-badge {
-      font-size: 0.65rem !important;
-      text-transform: uppercase !important;
-      letter-spacing: 1px !important;
-      font-weight: 700 !important;
-      color: var(--muted) !important;
-    }
-    .item-badge.bestseller {
-      color: var(--primary) !important;
-    }
-    .item-qty-controls {
-      display: flex !important;
-      align-items: center !important;
-      gap: 1rem !important;
-      background: rgba(15, 20, 25, 0.8) !important;
-      padding: 0.5rem 1rem !important;
-      border-radius: 30px !important;
-      border: 1px solid rgba(212, 168, 83, 0.1) !important;
-    }
-    .qty-btn {
-      background: none !important;
-      border: none !important;
-      color: var(--primary) !important;
-      font-size: 1.2rem !important;
-      font-weight: 700 !important;
-      cursor: pointer !important;
-      width: 24px !important;
-      height: 24px !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      transition: all 0.2s ease !important;
-    }
-    .qty-btn:hover {
-      color: #ffffff !important;
-      transform: scale(1.2) !important;
-    }
-    .qty-val {
-      color: #ffffff !important;
-      font-weight: 700 !important;
-      min-width: 16px !important;
-      text-align: center !important;
-    }
-    .summary-list {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 1rem !important;
-      margin-bottom: 2rem !important;
-      min-height: 80px !important;
-    }
-    .summary-item {
-      display: flex !important;
-      justify-content: space-between !important;
-      font-size: 0.95rem !important;
-      color: var(--text) !important;
-      border-bottom: 1px dashed rgba(212, 168, 83, 0.1) !important;
-      padding-bottom: 0.5rem !important;
-    }
-    .empty-msg {
-      color: var(--muted) !important;
-      text-align: center !important;
-      font-style: italic !important;
-      margin-top: 1.5rem !important;
-    }
-    .summary-total {
-      display: flex !important;
-      justify-content: space-between !important;
-      font-size: 1.25rem !important;
-      font-weight: 700 !important;
-      color: #ffffff !important;
-      border-top: 1.5px solid rgba(212, 168, 83, 0.2) !important;
-      padding-top: 1rem !important;
-      margin-bottom: 2rem !important;
-    }
-    .total-price {
-      color: var(--primary) !important;
-    }
-    .customer-info-inputs {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 1rem !important;
-      margin-bottom: 2rem !important;
-    }
-    .customer-info-inputs input {
-      width: 100% !important;
-      padding: 0.85rem 1.25rem !important;
-      border-radius: var(--radius-sm) !important;
-      background: rgba(15, 20, 25, 0.6) !important;
-      border: 1px solid rgba(212, 168, 83, 0.1) !important;
-      color: #ffffff !important;
-      font-size: 0.95rem !important;
-      outline: none !important;
-      transition: all 0.3s ease !important;
-    }
-    .customer-info-inputs input:focus {
-      border-color: var(--primary) !important;
-      box-shadow: 0 0 10px rgba(212, 168, 83, 0.15) !important;
-    }
-    .whatsapp-send-btn {
-      width: 100% !important;
-      padding: 1rem !important;
-      border-radius: 30px !important;
-      border: none !important;
-      background: #25D366 !important;
-      color: #ffffff !important;
-      font-size: 1.05rem !important;
-      font-weight: 700 !important;
-      cursor: pointer !important;
-      transition: all 0.3s ease !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      gap: 0.5rem !important;
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3) !important;
-    }
-    .whatsapp-send-btn:hover:not(:disabled) {
-      background: #128C7E !important;
-      transform: translateY(-2px) !important;
-      box-shadow: 0 6px 20px rgba(18, 140, 126, 0.4) !important;
-    }
-    .whatsapp-send-btn:disabled {
-      background: rgba(255, 255, 255, 0.05) !important;
-      color: var(--muted) !important;
-      cursor: not-allowed !important;
-      box-shadow: none !important;
-    }
-    
-    /* Reviews Summary Styles */
-    @media (max-width: 768px) {
-      .rating-summary-panel {
-        grid-template-columns: 1fr !important;
-        gap: 2rem !important;
-        padding: 2rem !important;
-      }
-      .summary-score-block {
-        border-right: none !important;
-        border-bottom: 1px solid rgba(212, 168, 83, 0.1) !important;
-        padding-right: 0 !important;
-        padding-bottom: 2rem !important;
-      }
+    /* Order Page Specific CSS */
+    .order-header {
+      padding-top: calc(var(--nav-height) + 3rem);
+      padding-bottom: 2rem;
+      text-align: center;
     }
 
-    /* Clean Page Header Styles (Habit Cafe Style) */
-    body {
-      padding-top: 72px !important;
-    }
-    .clean-page-header {
-      padding: 5rem 0 3rem 0 !important;
-      text-align: center !important;
-      background: var(--bg) !important;
-      border-bottom: 1px solid rgba(212, 168, 83, 0.05) !important;
-      position: relative !important;
-      z-index: 10 !important;
-    }
-    .clean-page-title {
-      font-family: var(--font-display) !important;
-      font-size: clamp(2.5rem, 5vw, 3.5rem) !important;
-      font-weight: 700 !important;
-      color: var(--primary) !important;
-      margin-bottom: 0.75rem !important;
-      text-transform: capitalize !important;
-    }
-    .clean-page-title em {
-      font-style: italic !important;
-      color: #ffffff !important;
-    }
-    .clean-page-subtitle {
-      font-family: var(--font-body) !important;
-      font-size: clamp(0.95rem, 2vw, 1.15rem) !important;
-      color: var(--muted) !important;
-      max-width: 750px !important;
-      margin: 0 auto !important;
-      line-height: 1.6 !important;
-    }
-/* Global Mobile Scroll & Number Font Patch */
-    html, body {
-      overflow-x: hidden !important;
-      max-width: 100% !important;
-      position: relative !important;
-    }
-    .num-font, .price, .stats-count, .stats-number, .dish-price, .rating-badge .score, .stars, .score {
-      font-family: var(--font-body) !important;
-      font-variant-numeric: tabular-nums;
-      font-weight: 700;
-    }
-    /* Brand Colored Social Icons (Image 3 Style) */
-    .footer-social, .footer-socials, .footer__social, .footer-socials-list {
-      display: flex !important;
-      gap: 14px !important;
-      align-items: center !important;
-      justify-content: flex-start !important;
-      margin-top: 1rem !important;
-    }
-    .footer-social a, .footer-socials a, .footer__social a, .footer-social-link, .footer-socials-list a {
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      width: 42px !important;
-      height: 42px !important;
-      border-radius: 12px !important;
-      color: #ffffff !important;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-      border: none !important;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
-      text-decoration: none !important;
-    }
-    /* Instagram Gradient Pink/Orange */
-    .footer-social a[aria-label="Instagram"], .footer-socials a[aria-label="Instagram"], .footer__social a[aria-label="Instagram"], .footer-social-link[aria-label="Instagram"], .footer-socials-list a[aria-label="Instagram"] {
-      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
-    }
-    /* Facebook Blue */
-    .footer-social a[aria-label="Facebook"], .footer-socials a[aria-label="Facebook"], .footer__social a[aria-label="Facebook"], .footer-social-link[aria-label="Facebook"], .footer-socials-list a[aria-label="Facebook"] {
-      background: #1877F2 !important;
-    }
-    /* Zomato Red with bold letter Z */
-    .footer-social a[aria-label="Zomato"], .footer-socials a[aria-label="Zomato"], .footer__social a[aria-label="Zomato"], .footer-social-link[aria-label="Zomato"], .footer-socials-list a[aria-label="Zomato"] {
-      background: #CB202D !important; /* Official Zomato Red */
-      font-family: 'Playfair Display', Georgia, serif !important;
-      font-weight: 900 !important;
-      font-size: 1.45rem !important;
-      line-height: 1 !important;
-      color: #ffffff !important;
-    }
-    .footer-social a:hover, .footer-socials a:hover, .footer__social a:hover, .footer-social-link:hover {
-      transform: translateY(-4px) scale(1.08) !important;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3) !important;
-      color: #ffffff !important;
-    }
-    .footer-social a svg, .footer-socials a svg, .footer__social a svg, .footer-social-link svg {
-      width: 20px !important;
-      height: 20px !important;
-      fill: currentColor !important;
-      stroke: none !important;
-    }
-    /* Rating Badges in Hero single-line (Image 2 Style) */
-    .hero-ratings {
-      display: flex !important;
-      flex-direction: row !important;
-      flex-wrap: nowrap !important;
-      gap: 12px !important;
-      justify-content: center !important;
-      align-items: center !important;
-      width: 100% !important;
-      max-width: 600px !important;
-      margin: 0 auto 2.5rem !important;
-    }
-    .rating-badge {
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 8px !important;
-      background: rgba(26, 35, 50, 0.85) !important;
-      backdrop-filter: blur(10px) !important;
-      -webkit-backdrop-filter: blur(10px) !important;
-      border: 1px solid rgba(214, 168, 83, 0.2) !important;
-      padding: 8px 18px !important;
-      border-radius: 50px !important;
-      font-size: 0.9rem !important;
-      color: var(--text) !important;
-      white-space: nowrap !important;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
-    }
-    @media (max-width: 480px) {
-      .hero-ratings {
-        gap: 6px !important;
-        padding: 0 10px !important;
-      }
-      .rating-badge {
-        padding: 6px 12px !important;
-        font-size: 0.72rem !important;
-        gap: 4px !important;
-      }
+    .platform-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      padding: 3rem 0;
     }
 
-    /* Global Hero Slideshow Styles */
-    .hero, .hero-menu, .page-hero {
-      position: relative !important;
-      overflow: hidden !important;
-      background: #0F1419 !important;
-    }
-    .hero-slideshow {
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
-      z-index: 1 !important;
-      pointer-events: none !important;
-    }
-    .hero-slideshow .hero-slide {
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
-      background-size: cover !important;
-      background-position: center !important;
-      opacity: 0;
-      transition: opacity 1.5s ease-in-out !important;
-    }
-    .hero-slideshow .hero-slide.active {
-      opacity: 1 !important;
-    }
-    .hero-overlay {
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
-      background: linear-gradient(180deg, rgba(15, 20, 25, 0.5) 0%, rgba(15, 20, 25, 0.85) 100%) !important;
-      z-index: 2 !important;
-      pointer-events: none !important;
-    }
-    .hero-content, .hero__content {
-      position: relative !important;
-      z-index: 3 !important;
-    }
-
-    /* Remove decorative lines from headings globally */
-    .section-label::before,
-    .section-label::after,
-    .faq-section__label::before,
-    .faq-section__label::after,
-    .section-title::before,
-    .section-title::after {
-      display: none !important;
-      content: none !important;
-      width: 0 !important;
-      height: 0 !important;
-    }
-    .section-label, .faq-section__label {
-      gap: 0 !important;
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-    }
-
-    /* Uniform Glassmorphic Stat Cards (About Us Image 3) */
-    .stats-section .stat-card {
-      background: rgba(26, 35, 50, 0.45) !important;
-      backdrop-filter: blur(10px) !important;
-      -webkit-backdrop-filter: blur(10px) !important;
-      border: 1px solid rgba(212, 168, 83, 0.15) !important;
-      border-radius: 16px !important;
-      padding: 2rem 1.5rem !important;
-      text-align: center !important;
-      display: flex !important;
-      flex-direction: column !important;
-      justify-content: center !important;
-      align-items: center !important;
-      min-height: 170px !important; /* Enforces identical height */
-      height: 100% !important;
-      box-shadow: var(--shadow) !important;
-      box-sizing: border-box !important;
-    }
-    .stats-section .stat-card::after {
-      display: none !important;
-      content: none !important;
-    }
-    .stats-section .stat-value {
-      font-size: clamp(1.1rem, 2vw, 1.45rem) !important; /* Safe size preventing overflow */
-      font-weight: 700 !important;
-      color: var(--primary) !important;
-      margin-bottom: 0.75rem !important;
-      line-height: 1.25 !important;
-      font-family: var(--font-body) !important;
-    }
-    .stats-section .stat-label {
-      font-size: 0.75rem !important;
-      color: var(--muted) !important;
-      text-transform: uppercase !important;
-      letter-spacing: 2px !important;
-      font-weight: 600 !important;
-      margin-top: auto !important;
-    }
-
-    /* Uniform Story Deco Cards (About Us Image 4) */
-    .story-deco-card {
-      background: rgba(26, 35, 50, 0.55) !important;
-      backdrop-filter: blur(8px) !important;
-      -webkit-backdrop-filter: blur(8px) !important;
-      border: 1px solid rgba(212, 168, 83, 0.12) !important;
-      border-radius: var(--radius-sm) !important;
-      padding: 1.5rem 1rem !important;
-      text-align: center !important;
-      display: flex !important;
-      flex-direction: column !important;
-      justify-content: center !important;
-      align-items: center !important;
-      min-height: 110px !important; /* Force same height */
-      height: 100% !important;
-      box-sizing: border-box !important;
-      transition: all 0.3s ease !important;
-    }
-    .story-deco-card:hover {
-      border-color: rgba(212, 168, 83, 0.3) !important;
-      transform: translateY(-3px) !important;
-    }
-
-
-    
-    html, body {
-      overflow-x: hidden !important;
-      max-width: 100% !important;
-      position: relative !important;
-    }
-    .num-font, .price, .stats-count, .stats-number, .dish-price, .rating-badge .score, .stars, .score {
-      font-family: var(--font-body) !important;
-      font-variant-numeric: tabular-nums;
-      font-weight: 700;
-    }
-    /* Brand Colored Social Icons (Image 3 Style) */
-    .footer-social, .footer-socials, .footer__social, .footer-socials-list {
-      display: flex !important;
-      gap: 14px !important;
-      align-items: center !important;
-      justify-content: flex-start !important;
-      margin-top: 1rem !important;
-    }
-    .footer-social a, .footer-socials a, .footer__social a, .footer-social-link, .footer-socials-list a {
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      width: 42px !important;
-      height: 42px !important;
-      border-radius: 12px !important;
-      color: #ffffff !important;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-      border: none !important;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
-      text-decoration: none !important;
-    }
-    /* Instagram Gradient Pink/Orange */
-    .footer-social a[aria-label="Instagram"], .footer-socials a[aria-label="Instagram"], .footer__social a[aria-label="Instagram"], .footer-social-link[aria-label="Instagram"], .footer-socials-list a[aria-label="Instagram"] {
-      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
-    }
-    /* Facebook Blue */
-    .footer-social a[aria-label="Facebook"], .footer-socials a[aria-label="Facebook"], .footer__social a[aria-label="Facebook"], .footer-social-link[aria-label="Facebook"], .footer-socials-list a[aria-label="Facebook"] {
-      background: #1877F2 !important;
-    }
-    /* Zomato Red */
-    .footer-social a[aria-label="Zomato"], .footer-socials a[aria-label="Zomato"], .footer__social a[aria-label="Zomato"], .footer-social-link[aria-label="Zomato"], .footer-socials-list a[aria-label="Zomato"] {
-      background: #CB202D !important; /* Official Zomato Red */
-    }
-    .footer-social a:hover, .footer-socials a:hover, .footer__social a:hover, .footer-social-link:hover {
-      transform: translateY(-4px) scale(1.08) !important;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3) !important;
-      color: #ffffff !important;
-    }
-    .footer-social a svg, .footer-socials a svg, .footer__social a svg, .footer-social-link svg {
-      width: 20px !important;
-      height: 20px !important;
-      fill: currentColor !important;
-      stroke: none !important;
-    }
-    /* Rating Badges in Hero single-line (Image 2 Style) */
-    .hero-ratings {
-      display: flex !important;
-      flex-direction: row !important;
-      flex-wrap: nowrap !important;
-      gap: 12px !important;
-      justify-content: center !important;
-      align-items: center !important;
-      width: 100% !important;
-      max-width: 600px !important;
-      margin: 0 auto 2.5rem !important;
-    }
-    .rating-badge {
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 8px !important;
-      background: rgba(26, 35, 50, 0.85) !important;
-      backdrop-filter: blur(10px) !important;
-      -webkit-backdrop-filter: blur(10px) !important;
-      border: 1px solid rgba(214, 168, 83, 0.2) !important;
-      padding: 8px 18px !important;
-      border-radius: 50px !important;
-      font-size: 0.9rem !important;
-      color: var(--text) !important;
-      white-space: nowrap !important;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
-    }
-    @media (max-width: 480px) {
-      .hero-ratings {
-        gap: 6px !important;
-        padding: 0 10px !important;
-      }
-      .rating-badge {
-        padding: 6px 12px !important;
-        font-size: 0.72rem !important;
-        gap: 4px !important;
-      }
-    }
-
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-    /* ========================================
-       CSS VARIABLES
-    ======================================== */
-    :root {
-      --bg: #0F1419;
-      --surface: #1A2332;
-      --primary: #D4A853;
-      --secondary: #C0392B;
-      --text: #F0EDE6;
-      --muted: #6B7B8D;
-      --font-display: 'Playfair Display', Georgia, serif;
-      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      --radius: 12px;
-      --radius-lg: 20px;
-      --shadow: 0 8px 32px rgba(0,0,0,0.3);
-      --shadow-lg: 0 16px 48px rgba(0,0,0,0.4);
-      --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-      --max-width: 1200px;
-    }
-
-    /* ========================================
-       RESET & BASE
-    ======================================== */
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    body {
-      font-family: var(--font-body);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    a { color: var(--primary); text-decoration: none; transition: color var(--transition); }
-    a:hover { color: var(--text); }
-    img { max-width: 100%; display: block; }
-
-    .container {
-      width: 90%;
-      max-width: var(--max-width);
-      margin: 0 auto;
-    }
-
-    /* ========================================
-       SCROLL ANIMATIONS
-    ======================================== */
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-
-    /* ========================================
-       SECTION HEADING
-    ======================================== */
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--font-body);
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--primary);
-      margin-bottom: 16px;
-    }
-    .section-label::before,
-    .section-label::after {
-      content: '';
-      width: 30px;
-      height: 1px;
-      background: var(--primary);
-      opacity: 0.5;
-    }
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.2;
-      margin-bottom: 16px;
-    }
-    .section-subtitle {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 600px;
-      margin: 0 auto 48px;
-    }
-
-    /* ========================================
-       NAVIGATION
-    ======================================== */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(15, 20, 25, 0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(212, 168, 83, 0.08);
-      transition: background var(--transition), box-shadow var(--transition);
-    }
-    .nav.scrolled {
-      background: rgba(15, 20, 25, 0.97);
-      box-shadow: 0 4px 30px rgba(0,0,0,0.3);
-    }
-    .nav-inner {
+    .platform-card {
+      padding: 3.5rem 2rem;
+      border-radius: var(--radius-lg);
+      text-align: center;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 5%;
-      height: 72px;
-    }
-    .nav-logo {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--primary);
-      letter-spacing: 0.5px;
-      white-space: nowrap;
-    }
-    .nav-logo span {
-      color: var(--text);
-      font-weight: 400;
-      font-size: 0.85em;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--muted);
-      padding: 8px 14px;
-      border-radius: 8px;
-      transition: color var(--transition), background var(--transition);
-      position: relative;
-    }
-    .nav-links a:hover {
-      color: var(--text);
-      background: rgba(212, 168, 83, 0.08);
-    }
-    .nav-links a.active {
-      color: var(--primary);
-    }
-    .nav-links a.active::after {
-      content: '';
-      position: absolute;
-      bottom: 2px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 24px;
-      height: 2px;
-      background: var(--primary);
-      border-radius: 1px;
-    }
-    .nav-cta {
-      background: var(--primary) !important;
-      color: var(--bg) !important;
-      font-weight: 600 !important;
-      padding: 10px 22px !important;
-      border-radius: 50px !important;
-    }
-    .nav-cta:hover {
-      background: #e0b55e !important;
-      color: var(--bg) !important;
-    }
-
-    /* Hamburger */
-    .hamburger {
-      display: none;
       flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 8px;
-      z-index: 1002;
-      background: none;
-      border: none;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.05);
     }
-    .hamburger span {
-      width: 26px;
-      height: 2px;
-      background: var(--text);
-      border-radius: 2px;
+
+    .platform-card.zomato {
+      background: linear-gradient(135deg, rgba(203, 32, 45, 0.15) 0%, rgba(10, 14, 18, 0.95) 100%);
+      border-color: rgba(203, 32, 45, 0.3);
+    }
+    
+    .platform-card.zomato:hover {
+      border-color: #CB202D;
+      box-shadow: 0 10px 40px rgba(203, 32, 45, 0.25);
+    }
+
+    .platform-card.whatsapp {
+      background: linear-gradient(135deg, rgba(37, 211, 102, 0.15) 0%, rgba(10, 14, 18, 0.95) 100%);
+      border-color: rgba(37, 211, 102, 0.3);
+    }
+
+    .platform-card.whatsapp:hover {
+      border-color: #25D366;
+      box-shadow: 0 10px 40px rgba(37, 211, 102, 0.25);
+    }
+
+    .platform-icon {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .platform-card h2 {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+    }
+
+    .platform-card p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      max-width: 320px;
+    }
+
+    .order-btn {
+      width: 100%;
+      max-width: 250px;
+      padding: 0.85rem 0;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      display: inline-block;
       transition: var(--transition);
     }
-    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-    /* Mobile overlay */
-    .mobile-menu-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(15, 20, 25, 0.98);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      z-index: 1001;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.4s ease, visibility 0.4s ease;
-    }
-    .mobile-menu-overlay.open {
-      opacity: 1;
-      visibility: visible;
-    }
-    .mobile-menu-overlay a {
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      color: var(--muted);
-      padding: 12px 24px;
-      transition: color var(--transition);
-    }
-    .mobile-menu-overlay a:hover,
-    .mobile-menu-overlay a.active {
-      color: var(--primary);
+    .platform-card.zomato .order-btn {
+      background: #CB202D;
+      color: white;
     }
 
-    @media (max-width: 1024px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
+    .platform-card.zomato .order-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(203, 32, 45, 0.3);
     }
 
-    /* ========================================
-       HERO SECTION
-    ======================================== */
-    .hero {
-      position: relative;
-      height: 40vh;
-      min-height: 320px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-      background: linear-gradient(
-        180deg,
-        rgba(15, 20, 25, 0.3) 0%,
-        rgba(15, 20, 25, 0.7) 50%,
-        var(--bg) 100%
-      ),
-      linear-gradient(135deg, var(--surface) 0%, var(--bg) 50%, rgba(26, 35, 50, 0.6) 100%);
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 60% 50% at 20% 40%, rgba(212, 168, 83, 0.06) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 60% at 80% 60%, rgba(192, 57, 43, 0.04) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    /* Animated golden particles */
-    .hero::after {
-      content: '';
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(212, 168, 83, 0.08) 0%, transparent 70%);
-      top: 10%;
-      right: 10%;
-      animation: float 8s ease-in-out infinite;
-      pointer-events: none;
-    }
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(-30px, 20px) scale(1.1); }
+    .platform-card.whatsapp .order-btn {
+      background: #25D366;
+      color: white;
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      padding: 0 20px;
-    }
-    .hero-content .breadcrumb {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-    .breadcrumb a { color: var(--muted); }
-    .breadcrumb a:hover { color: var(--primary); }
-    .breadcrumb .sep { color: rgba(107, 123, 141, 0.4); }
-    .breadcrumb .current { color: var(--primary); font-weight: 500; }
-
-    .hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.4rem, 6vw, 4rem);
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.15;
-      margin-bottom: 12px;
-    }
-    .hero h1 em {
-      color: var(--primary);
-    }
-    .hero-subtitle {
-      font-size: clamp(1rem, 2vw, 1.15rem);
-      color: var(--muted);
-      max-width: 520px;
-      margin: 0 auto;
-      line-height: 1.6;
+    .platform-card.whatsapp .order-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
     }
 
-    /* ========================================
-       WAVE DIVIDER
-    ======================================== */
-    
-
-    /* ========================================
-       HOW IT WORKS SECTION
-    ======================================== */
-    .how-it-works {
-      padding: 100px 0 80px;
-      text-align: center;
+    /* How to Order Steps */
+    .steps-section {
+      padding: 6rem 0;
+      border-top: 1px solid rgba(212, 168, 83, 0.08);
     }
+
     .steps-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin-top: 20px;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-top: 3.5rem;
     }
-    .step-card {
-      position: relative;
-      background: var(--surface);
-      border: 1px solid rgba(212, 168, 83, 0.08);
-      border-radius: var(--radius-lg);
-      padding: 48px 32px 40px;
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+
+    .steps-col h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: #ffffff;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
-    .step-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-      border-color: rgba(212, 168, 83, 0.2);
+
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
     }
+
+    .step-node {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+
     .step-number {
-      position: absolute;
-      top: -24px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 48px;
-      height: 48px;
-      background: linear-gradient(135deg, var(--primary), #c49a42);
-      color: var(--bg);
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      font-weight: 700;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 16px rgba(212, 168, 83, 0.35);
-    }
-    .step-icon {
-      font-size: 2.4rem;
-      margin-bottom: 20px;
-      display: block;
-    }
-    .step-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 10px;
-    }
-    .step-card p {
-      font-size: 0.95rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-    /* Connector lines between steps */
-    .step-card:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: -18px;
       width: 36px;
-      height: 2px;
-      background: linear-gradient(90deg, var(--primary), transparent);
-      opacity: 0.3;
-    }
-
-    @media (max-width: 768px) {
-      .steps-grid { grid-template-columns: 1fr; max-width: 400px; margin: 20px auto 0; }
-      .step-card:not(:last-child)::after { display: none; }
-    }
-
-    /* ========================================
-       PLATFORM CARDS SECTION
-    ======================================== */
-    .platforms {
-      padding: 40px 0 100px;
-      text-align: center;
-    }
-    .platforms-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .platform-card {
-      position: relative;
-      border-radius: var(--radius-lg);
-      padding: 48px 36px;
-      text-align: center;
-      overflow: hidden;
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-    .platform-card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
-    }
-    /* Subtle pattern overlay */
-    .platform-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.08) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .platform-card .card-inner {
-      position: relative;
-      z-index: 2;
-    }
-
-    /* Zomato */
-    .platform-zomato {
-      background: linear-gradient(145deg, #D94148, #b8353b);
-    }
-    /* WhatsApp */
-    .platform-whatsapp {
-      background: linear-gradient(145deg, #25D366, #1da851);
-    }
-
-    .platform-logo {
-      font-family: var(--font-display);
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 8px;
-      letter-spacing: 1px;
-    }
-    .platform-icon {
-      font-size: 3rem;
-      margin-bottom: 12px;
-      display: block;
-    }
-    .platform-rating {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255,255,255,0.2);
-      padding: 6px 16px;
-      border-radius: 50px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 20px;
-      backdrop-filter: blur(4px);
-    }
-    .platform-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255,255,255,0.18);
-      padding: 6px 16px;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 8px;
-      backdrop-filter: blur(4px);
-    }
-    .platform-tagline {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.85);
-      margin-bottom: 24px;
-      font-weight: 500;
-    }
-
-    .platform-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 16px 36px;
-      background: #fff;
-      color: var(--bg);
-      font-family: var(--font-body);
-      font-size: 1rem;
-      font-weight: 700;
-      border-radius: 50px;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      transition: transform var(--transition), box-shadow var(--transition);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    }
-    .platform-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-      color: var(--bg);
-    }
-    .platform-zomato .platform-btn { color: #D94148; }
-    .platform-whatsapp .platform-btn { color: #1da851; }
-
-    @media (max-width: 640px) {
-      .platforms-grid { grid-template-columns: 1fr; max-width: 420px; }
-    }
-
-    /* ========================================
-       DELIVERY INFO
-    ======================================== */
-    .delivery-info {
-      padding: 80px 0 60px;
-      text-align: center;
-    }
-    .delivery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-      max-width: 960px;
-      margin: 0 auto;
-    }
-    .delivery-card {
-      background: var(--surface);
-      border: 1px solid rgba(212, 168, 83, 0.08);
-      border-radius: var(--radius-lg);
-      padding: 36px 28px;
-      transition: border-color var(--transition), box-shadow var(--transition);
-    }
-    .delivery-card:hover {
-      border-color: rgba(212, 168, 83, 0.2);
-      box-shadow: var(--shadow);
-    }
-    .delivery-card-icon {
-      font-size: 2.2rem;
-      margin-bottom: 16px;
-      display: block;
-    }
-    .delivery-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 8px;
-    }
-    .delivery-card p {
-      font-size: 0.95rem;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-    .delivery-card .highlight {
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(212, 168, 83, 0.12);
+      border: 1.5px solid var(--primary);
       color: var(--primary);
-      font-weight: 600;
-    }
-
-    @media (max-width: 768px) {
-      .delivery-grid { grid-template-columns: 1fr; max-width: 420px; }
-    }
-
-    /* ========================================
-       DINE-IN CTA
-    ======================================== */
-    .dinein-cta {
-      padding: 60px 0 100px;
-      text-align: center;
-    }
-    .dinein-cta-box {
-      position: relative;
-      background: var(--surface);
-      border: 1px solid rgba(212, 168, 83, 0.12);
-      border-radius: var(--radius-lg);
-      padding: 56px 40px;
-      max-width: 700px;
-      margin: 0 auto;
-      overflow: hidden;
-    }
-    .dinein-cta-box::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(212, 168, 83, 0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .dinein-cta-box .inner {
-      position: relative;
-      z-index: 2;
-    }
-    .dinein-cta-icon {
-      font-size: 2.6rem;
-      margin-bottom: 20px;
-      display: block;
-    }
-    .dinein-cta-box h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 12px;
-    }
-    .dinein-cta-box p {
-      font-size: 1.05rem;
-      color: var(--muted);
-      margin-bottom: 28px;
-      line-height: 1.6;
-    }
-    .btn-primary {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 16px 36px;
-      background: linear-gradient(135deg, var(--primary), #c49a42);
-      color: var(--bg);
-      font-family: var(--font-body);
-      font-size: 1rem;
+      justify-content: center;
       font-weight: 700;
-      border-radius: 50px;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      transition: transform var(--transition), box-shadow var(--transition);
-      box-shadow: 0 4px 20px rgba(212, 168, 83, 0.25);
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(212, 168, 83, 0.4);
-      color: var(--bg);
+      font-size: 0.95rem;
+      flex-shrink: 0;
     }
 
-    /* ========================================
-       FOOTER
-    ======================================== */
-    .footer {
-      background: var(--surface);
+    .step-text h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .step-text p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* FAQ accordion styles */
+    .faq-accordion-section {
+      padding: 6rem 0;
+      background: rgba(26, 35, 50, 0.2);
       border-top: 1px solid rgba(212, 168, 83, 0.08);
-      padding: 64px 0 0;
     }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr 1fr;
-      gap: 40px;
-      margin-bottom: 48px;
-    }
-    .footer-brand h3 {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      color: var(--primary);
-      margin-bottom: 12px;
-    }
-    .footer-brand p {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.7;
-      max-width: 280px;
-    }
-    .footer h4 {
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      color: var(--text);
-      margin-bottom: 16px;
-      font-weight: 600;
-    }
-    .footer-links {
-      list-style: none;
+
+    .accordion-container {
+      max-width: 750px;
+      margin: 3.5rem auto 0;
       display: flex;
       flex-direction: column;
-      gap: 10px;
-    }
-    .footer-links a {
-      font-size: 0.88rem;
-      color: var(--muted);
-      transition: color var(--transition), padding-left var(--transition);
-    }
-    .footer-links a:hover {
-      color: var(--primary);
-      padding-left: 4px;
-    }
-    .footer-hours li {
-      list-style: none;
-      font-size: 0.88rem;
-      color: var(--muted);
-      padding: 4px 0;
-    }
-    .footer-hours .highlight {
-      color: var(--primary);
-      font-weight: 600;
-    }
-    .footer-social {
-      display: flex;
-      gap: 12px;
-      margin-top: 8px;
-    }
-    .footer-social a {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: rgba(212, 168, 83, 0.08);
-      border: 1px solid rgba(212, 168, 83, 0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background var(--transition), transform var(--transition);
-    }
-    .footer-social a:hover {
-      background: var(--primary);
-      transform: translateY(-2px);
-    }
-    .footer-social a:hover svg { fill: var(--bg); }
-    .footer-social svg {
-      width: 18px;
-      height: 18px;
-      fill: var(--primary);
-      transition: fill var(--transition);
+      gap: 1rem;
     }
 
-    .footer-bottom {
-      border-top: 1px solid rgba(212, 168, 83, 0.08);
-      padding: 20px 0;
-      text-align: center;
-    }
-    .footer-bottom p {
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-    .footer-bottom a {
-      color: var(--primary);
+    .accordion-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: rgba(26, 35, 50, 0.4);
+      border: 1px solid rgba(212, 168, 83, 0.05);
+      transition: var(--transition);
     }
 
-    @media (max-width: 768px) {
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-    }
-    @media (max-width: 480px) {
-      .footer-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ========================================
-       FLOATING WHATSAPP BUTTON
-    ======================================== */
-    .float-whatsapp {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      width: 58px;
-      height: 58px;
-      background: #25D366;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-      z-index: 900;
-      transition: transform var(--transition), box-shadow var(--transition);
-      animation: wa-pulse 2.5s ease-in-out infinite;
-    }
-    .float-whatsapp:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 28px rgba(37, 211, 102, 0.5);
-    }
-    .float-whatsapp svg { width: 28px; height: 28px; fill: #fff; }
-
-    @keyframes wa-pulse {
-      0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
-      50% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4), 0 0 0 12px rgba(37, 211, 102, 0.1); }
-    }
-
-    /* ========================================
-       BACK TO TOP BUTTON
-    ======================================== */
-    .back-to-top {
-      position: fixed;
-      bottom: 28px;
-      left: 28px;
-      width: 48px;
-      height: 48px;
-      background: var(--primary);
-      color: var(--bg);
-      border: none;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 900;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(20px);
-      transition: opacity var(--transition), visibility var(--transition), transform var(--transition), background var(--transition);
-      box-shadow: 0 4px 16px rgba(212, 168, 83, 0.3);
-    }
-    .back-to-top.visible {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-    .back-to-top:hover {
-      background: #e0b55e;
-      transform: translateY(-2px);
-    }
-    .back-to-top svg { width: 20px; height: 20px; fill: var(--bg); }
-
-    /* ========================================
-       MOBILE BOTTOM NAV
-    ======================================== */
-    .mobile-bottom-nav {
-      display: none;
-      position: fixed;
-      bottom: 0;
-      left: 0;
+    .accordion-header {
       width: 100%;
-      background: rgba(15, 20, 25, 0.97);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-top: 1px solid rgba(212, 168, 83, 0.1);
-      z-index: 950;
-      padding: 8px 0 max(8px, env(safe-area-inset-bottom));
-    }
-    .mobile-bottom-nav-inner {
+      padding: 1.25rem 1.5rem;
+      background: none;
+      border: none;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1.05rem;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
-    }
-    .mobile-bottom-nav a {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 3px;
-      font-size: 0.65rem;
-      color: var(--muted);
-      padding: 6px 12px;
-      transition: color var(--transition);
-      text-decoration: none;
-    }
-    .mobile-bottom-nav a:hover,
-    .mobile-bottom-nav a.active { color: var(--primary); }
-    .mobile-bottom-nav svg {
-      width: 22px;
-      height: 22px;
-      fill: currentColor;
+      cursor: pointer;
+      text-align: left;
     }
 
-    @media (max-width: 768px) {
-      .mobile-bottom-nav { display: block; }
-      .float-whatsapp { bottom: 90px; right: 20px; width: 52px; height: 52px; }
-      .back-to-top { bottom: 90px; left: 20px; width: 44px; height: 44px; }
-      .footer { padding-bottom: 80px; }
+    .accordion-header svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: var(--primary);
+      stroke-width: 2.5;
+      transition: var(--transition);
+    }
+
+    .accordion-item.active {
+      border-color: rgba(212, 168, 83, 0.25);
+    }
+
+    .accordion-item.active .accordion-header svg {
+      transform: rotate(180deg);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      padding: 0 1.5rem;
+    }
+
+    .accordion-content p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+      padding-bottom: 1.25rem;
+    }
+
+    @media (max-width: 800px) {
+      .platform-row, .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <!-- ============================
-       NAVIGATION
+       NAVIGATION BAR
   ============================ -->
-  <nav class="nav" id="navbar">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Jhelum <span>Cafe & Fine Dine</span></a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="signatures.html">Signatures</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="reviews.html">Reviews</a></li>
-        <li><a href="order.html" class="active">Order</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">Jhelum <span>Cafe & Fine Dine</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="signatures.html">Signatures</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="order.html" class="active">Order</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
   <!-- Mobile Overlay Menu -->
@@ -1537,572 +283,237 @@
     <a href="reviews.html">Reviews</a>
     <a href="order.html" class="active">Order</a>
     <a href="contact.html">Contact</a>
-    <a href="faq.html">FAQ</a>
   </div>
 
-  <!-- ============================
-       HERO
-  ============================ -->
-  <header class="clean-page-header">
-    <div class="container">
-      <h1 class="clean-page-title">Order <em>Online</em></h1>
-      <p class="clean-page-subtitle">Get your favourite Kashmiri dishes and cafe classics delivered fresh to your doorstep — via Zomato or directly on WhatsApp.</p>
-    </div>
+  <!-- Header -->
+  <header class="order-header container">
+    <span class="section-label">Order Online</span>
+    <h1 class="section-title">Craving <em>Kashmiri?</em></h1>
+    <p class="section-subtitle" style="margin: 0 auto;">Select your preferred ordering method below. We deliver wazwan and cafe classics hot to your doorstep.</p>
   </header>
 
-  
-
-  <!-- ============================
-       HOW IT WORKS
-  ============================ -->
-  <section class="how-it-works">
-    <div class="container">
-      <div class="reveal">
-        <span class="section-label">Simple & Fast</span>
-        <h2 class="section-title">How It Works</h2>
-        <p class="section-subtitle">Three simple steps to enjoy Jhelum Cafe at home.</p>
+  <!-- Platform options side-by-side -->
+  <main class="container">
+    <div class="platform-row">
+      <!-- Zomato Card -->
+      <div class="platform-card zomato reveal">
+        <div class="platform-icon">🛵</div>
+        <h2>Zomato Delivery</h2>
+        <p>Tracked, swift courier delivery. Order from our official menu on Zomato.</p>
+        <a href="https://www.zomato.com/srinagar/jhelum-cafe-fine-dine-lal-chowk/order" target="_blank" class="order-btn">Order on Zomato</a>
       </div>
 
-      <div class="steps-grid">
-        <!-- Step 1 -->
-        <div class="step-card reveal reveal-delay-1">
-          <span class="step-number">1</span>
-          <span class="step-icon">📱</span>
-          <h3>Choose Your Platform</h3>
-          <p>Order via Zomato for tracked delivery, or message us on WhatsApp for direct ordering with zero platform fees.</p>
-        </div>
-        <!-- Step 2 -->
-        <div class="step-card reveal reveal-delay-2">
-          <span class="step-number">2</span>
-          <span class="step-icon">🍽️</span>
-          <h3>Pick Your Dishes</h3>
-          <p>Browse our full menu and select your favourites — from our signature Harissa Pizza to classic Kashmiri Rogan Josh.</p>
-        </div>
-        <!-- Step 3 -->
-        <div class="step-card reveal reveal-delay-3">
-          <span class="step-number">3</span>
-          <span class="step-icon">🎉</span>
-          <h3>Enjoy!</h3>
-          <p>We prepare everything fresh in our kitchen and deliver straight to your doorstep. Sit back and savour the flavours of Kashmir.</p>
-        </div>
+      <!-- WhatsApp Card -->
+      <div class="platform-card whatsapp reveal">
+        <div class="platform-icon">💬</div>
+        <h2>Direct WhatsApp</h2>
+        <p>No platform fees. Message us directly to place takeaway or home delivery orders.</p>
+        <a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20I'd%20like%20to%20order" target="_blank" class="order-btn">Order on WhatsApp</a>
       </div>
     </div>
-  </section>
+  </main>
 
-  
-
-  <!-- ============================
-       ORDER PLATFORMS
-  ============================ -->
-  <section class="platforms">
-    <div class="container">
-      <div class="reveal">
-        <span class="section-label">Order Now</span>
-        <h2 class="section-title">Choose Your Way to Order</h2>
-        <p class="section-subtitle">Two easy ways to get Jhelum Cafe delivered. Pick the one that works best for you.</p>
-      </div>
-
-      <div class="platforms-grid">
-        <!-- Zomato Card -->
-        <a href="https://www.zomato.com/srinagar/jhelum-cafe-fine-dine-lal-chowk/order" target="_blank" rel="noopener noreferrer" class="platform-card platform-zomato reveal reveal-delay-1" style="text-decoration:none;">
-          <div class="card-inner">
-            <span class="platform-logo">zomato</span>
-            <div class="platform-rating">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="#fff"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1.01z"/></svg>
-              4.2 Rating
-            </div>
-            <p class="platform-tagline">Tracked delivery with live updates</p>
-            <span class="platform-btn">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M16 11V3H8v6H2v12h20V11h-6zM10 5h4v14h-4V5zM4 11h4v8H4v-8zm16 8h-4v-6h4v6z"/></svg>
-              Order on Zomato
-            </span>
-          </div>
-        </a>
-
-        <!-- WhatsApp Card -->
-        <a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20I'd%20like%20to%20order" target="_blank" rel="noopener noreferrer" class="platform-card platform-whatsapp reveal reveal-delay-2" style="text-decoration:none;">
-          <div class="card-inner">
-            <span class="platform-icon">
-              <svg viewBox="0 0 24 24" width="48" height="48" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            </span>
-            <div class="platform-badge">No platform fees 🙏</div>
-            <p class="platform-tagline">Direct to us!</p>
-            <span class="platform-btn">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              Order on WhatsApp
-            </span>
-          </div>
-        </a>
-      </div>
+  <!-- How to order steps -->
+  <section class="steps-section container">
+    <div class="text-center reveal">
+      <span class="section-label">Guide</span>
+      <h2 class="section-title">How It <em>Works</em></h2>
     </div>
-  </section>
-
-  
-
-  
-  <!-- ============================
-       WHATSAPP ORDER BUILDER
-  ============================ -->
-  <section class="order-builder-section">
-    <div class="container">
-      <div class="reveal" style="text-align: center; margin-bottom: 3.5rem;">
-        <span class="section-label">Interactive Direct Ordering</span>
-        <h2 class="section-title">WhatsApp <em>Order Builder</em></h2>
-        <p class="section-subtitle" style="margin:0 auto; max-width:700px;">Select your favorite items, adjust quantities, and click to send your order straight to our WhatsApp chat with no platform fees.</p>
-      </div>
-
-      <div class="builder-grid reveal">
-        <!-- Item Selection Panel -->
-        <div class="builder-panel glass-panel">
-          <h3 class="panel-title">Choose Dishes</h3>
-          <div class="builder-items-list">
-            <div class="builder-item" data-id="harissa_pizza" data-name="Harissa Special Pizza" data-price="350">
-              <div class="item-info">
-                <span class="item-badge bestseller">Bestseller</span>
-                <span class="item-name">Harissa Special Pizza</span>
-                <span class="item-price">₹350</span>
-              </div>
-              <div class="item-qty-controls">
-                <button class="qty-btn minus">-</button>
-                <span class="qty-val">0</span>
-                <button class="qty-btn plus">+</button>
-              </div>
+    
+    <div class="steps-grid reveal">
+      <!-- Zomato Col -->
+      <div class="steps-col">
+        <h3>🛵 Ordering via Zomato</h3>
+        <div class="steps-list">
+          <div class="step-node">
+            <div class="step-number">1</div>
+            <div class="step-text">
+              <h4>Click Zomato Link</h4>
+              <p>Hit the red button above to jump to our official Jhelum Cafe ordering dashboard on Zomato.</p>
             </div>
-            <div class="builder-item" data-id="czochwaur_burger" data-name="Czochwaur Burger" data-price="280">
-              <div class="item-info">
-                <span class="item-badge bestseller">Bestseller</span>
-                <span class="item-name">Czochwaur Burger</span>
-                <span class="item-price">₹280</span>
-              </div>
-              <div class="item-qty-controls">
-                <button class="qty-btn minus">-</button>
-                <span class="qty-val">0</span>
-                <button class="qty-btn plus">+</button>
-              </div>
+          </div>
+          <div class="step-node">
+            <div class="step-number">2</div>
+            <div class="step-text">
+              <h4>Choose Your Meals</h4>
+              <p>Browse our digital catalog. Add burgers, harissa pizza, main courses, and drinks to your cart.</p>
             </div>
-            <div class="builder-item" data-id="butter_chicken" data-name="Butter Chicken" data-price="320">
-              <div class="item-info">
-                <span class="item-badge">Main</span>
-                <span class="item-name">Butter Chicken</span>
-                <span class="item-price">₹320</span>
-              </div>
-              <div class="item-qty-controls">
-                <button class="qty-btn minus">-</button>
-                <span class="qty-val">0</span>
-                <button class="qty-btn plus">+</button>
-              </div>
-            </div>
-            <div class="builder-item" data-id="kahwa" data-name="Traditional Kashmiri Kahwa" data-price="90">
-              <div class="item-info">
-                <span class="item-badge">Kahwa</span>
-                <span class="item-name">Traditional Kashmiri Kahwa</span>
-                <span class="item-price">₹90</span>
-              </div>
-              <div class="item-qty-controls">
-                <button class="qty-btn minus">-</button>
-                <span class="qty-val">0</span>
-                <button class="qty-btn plus">+</button>
-              </div>
-            </div>
-            <div class="builder-item" data-id="rogan_josh" data-name="Kashmiri Rogan Josh" data-price="450">
-              <div class="item-info">
-                <span class="item-badge bestseller">Mutton</span>
-                <span class="item-name">Kashmiri Rogan Josh</span>
-                <span class="item-price">₹450</span>
-              </div>
-              <div class="item-qty-controls">
-                <button class="qty-btn minus">-</button>
-                <span class="qty-val">0</span>
-                <button class="qty-btn plus">+</button>
-              </div>
+          </div>
+          <div class="step-node">
+            <div class="step-number">3</div>
+            <div class="step-text">
+              <h4>Rider Dispatches</h4>
+              <p>Complete payment. A Zomato delivery rider will transport your meal fresh to your door.</p>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Summary Panel -->
-        <div class="builder-summary glass-panel">
-          <h3 class="panel-title">Order Summary</h3>
-          <div class="summary-details">
-            <div class="summary-list" id="summaryList">
-              <p class="empty-msg">No items selected yet.</p>
+      <!-- WhatsApp Col -->
+      <div class="steps-col">
+        <h3>💬 Direct WhatsApp Booking</h3>
+        <div class="steps-list">
+          <div class="step-node">
+            <div class="step-number">1</div>
+            <div class="step-text">
+              <h4>Open WhatsApp Chat</h4>
+              <p>Hit the green button above to initiate a direct chat with our reception team.</p>
             </div>
-            <div class="summary-total">
-              <span>Total Amount:</span>
-              <span class="total-price" id="totalPrice">₹0</span>
+          </div>
+          <div class="step-node">
+            <div class="step-number">2</div>
+            <div class="step-text">
+              <h4>Send Order List</h4>
+              <p>Type out the dishes you wish to buy or copy-paste your cart list. Specify delivery address.</p>
             </div>
-            <div class="customer-info-inputs">
-              <input type="text" id="custName" placeholder="Your Name" required>
-              <input type="text" id="custAddress" placeholder="Delivery Address in Srinagar" required>
+          </div>
+          <div class="step-node">
+            <div class="step-number">3</div>
+            <div class="step-text">
+              <h4>Pay & Receive</h4>
+              <p>Confirm the final invoice sent by our team, pay securely via UPI, and receive home delivery.</p>
             </div>
-            <button class="whatsapp-send-btn" id="sendOrderBtn" disabled>
-              💬 Send Order via WhatsApp
-            </button>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- === DELIVERY INFO === -->
-  <section class="delivery-info">
+  <!-- Ordering FAQs -->
+  <section class="faq-accordion-section">
     <div class="container">
-      <div class="reveal">
-        <span class="section-label">Delivery Details</span>
-        <h2 class="section-title">Everything You Need to Know</h2>
-        <p class="section-subtitle">Quick details about our delivery service in Srinagar.</p>
+      <div class="text-center reveal">
+        <span class="section-label">Questions</span>
+        <h2 class="section-title">Ordering <em>FAQs</em></h2>
       </div>
 
-      <div class="delivery-grid">
-        <!-- Hours -->
-        <div class="delivery-card reveal reveal-delay-1">
-          <span class="delivery-card-icon">🕐</span>
-          <h3>Delivery Hours</h3>
-          <p><span class="highlight">10:00 AM – 10:00 PM</span><br>All 7 days a week, including holidays</p>
+      <div class="accordion-container reveal">
+        <!-- Item 1 -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            What is your delivery radius in Srinagar?
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-content">
+            <p>Our direct WhatsApp delivery service covers all major spots in central Srinagar within an 8km radius of Lal Chowk, including Rajbagh, Jawahar Nagar, Maisuma, and surrounding areas. For further distances, please contact us first or check Zomato availability.</p>
+          </div>
         </div>
-        <!-- Delivery Time -->
-        <div class="delivery-card reveal reveal-delay-2">
-          <span class="delivery-card-icon">🚀</span>
-          <h3>Estimated Delivery</h3>
-          <p><span class="highlight">30 – 45 minutes</span><br>Freshly prepared and delivered swiftly to your door</p>
+        <!-- Item 2 -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Are there any platform/packaging fees on WhatsApp orders?
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-content">
+            <p>No! Ordering directly on WhatsApp bypasses all aggregator platform commissions, meaning you get zero platform fees and restaurant-direct menu prices. Flat local delivery fee applies depending on distance.</p>
+          </div>
         </div>
-        <!-- Areas -->
-        <div class="delivery-card reveal reveal-delay-3">
-          <span class="delivery-card-icon">📍</span>
-          <h3>Areas We Serve</h3>
-          <p><span class="highlight">Lal Chowk, Maisuma, Rajbagh, Jawahar Nagar</span> and surrounding areas in Srinagar</p>
+        <!-- Item 3 -->
+        <div class="accordion-item">
+          <button class="accordion-header">
+            How long does home delivery take?
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-content">
+            <p>Under ordinary circumstances, our kitchen prepares and dispatches meals within 20-30 minutes, bringing average total transit times to 35-50 minutes depending on traffic and rider availability.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  
+  <!-- WhatsApp Floating Icon -->
+  <a href="https://wa.me/917780938743" class="whatsapp-float" target="_blank" aria-label="WhatsApp Support">
+    <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.53 0 8.21 3.69 8.21 8.21 0 2.2-.86 4.26-2.41 5.8-1.54 1.54-3.6 2.41-5.8 2.41-1.4 0-2.76-.36-3.97-1.03l-.28-.17-3.11.82.83-3.04-.18-.29A8.14 8.14 0 0 1 3.82 12c0-4.52 3.69-8.21 8.21-8.21z"/></svg>
+  </a>
 
-  <!-- ============================
-       DINE-IN CTA
-  ============================ -->
-  <section class="dinein-cta">
-    <div class="container">
-      <div class="dinein-cta-box reveal">
-        <div class="inner">
-          <span class="dinein-cta-icon">🪑</span>
-          <h2>Prefer Dining In?</h2>
-          <p>Nothing beats the experience of dining at our riverside restaurant — the ambiance, the live kitchen, and the Jhelum flowing beside you. Reserve your table today.</p>
-          <a href="contact.html#reserve" class="btn-primary">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 4h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
-            Reserve a Table
-          </a>
-        </div>
-      </div>
+  <!-- Mobile Bottom Bar -->
+  <div class="mobile-bottom-nav">
+    <div class="mobile-bottom-nav-inner">
+      <a href="index.html" class="mobile-bottom-nav-item">
+        <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        <span>Home</span>
+      </a>
+      <a href="menu.html" class="mobile-bottom-nav-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.53c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.4z"/></svg>
+        <span>Menu</span>
+      </a>
+      <a href="contact.html#reserve" class="mobile-bottom-nav-item">
+        <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+        <span>Reserve</span>
+      </a>
+      <a href="tel:+919484104295" class="mobile-bottom-nav-item">
+        <svg viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1A11.36 11.36 0 0 1 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/></svg>
+        <span>Call</span>
+      </a>
+      <a href="https://wa.me/917780938743" class="mobile-bottom-nav-item">
+        <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.53 0 8.21 3.69 8.21 8.21 0 2.2-.86 4.26-2.41 5.8-1.54 1.54-3.6 2.41-5.8 2.41-1.4 0-2.76-.36-3.97-1.03l-.28-.17-3.11.82.83-3.04-.18-.29A8.14 8.14 0 0 1 3.82 12c0-4.52 3.69-8.21 8.21-8.21z"/></svg>
+        <span>WhatsApp</span>
+      </a>
     </div>
-  </section>
+  </div>
 
   <!-- ============================
        FOOTER
   ============================ -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <!-- Brand -->
-        <div class="footer-brand">
-          <h3>Jhelum Cafe & Fine Dine</h3>
-          <p>Where Kashmir Meets Your Cup. A two-storey culinary wonder on the banks of the Jhelum River in the heart of Srinagar.</p>
-          <div class="footer-social" style="margin-top:20px;">
-            <a href="https://www.instagram.com/jhelumcafe/" target="_blank" rel="noopener" aria-label="Instagram">
-              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            </a>
-            <a href="https://www.facebook.com/jhelumcafe" target="_blank" rel="noopener" aria-label="Facebook">
-              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            </a>
-            <a href="https://www.zomato.com/srinagar/jhelum-cafe-fine-dine-lal-chowk/order" target="_blank" rel="noopener" aria-label="Zomato"><span class="zomato-logo-letter">Z</span></a>
-          </div>
-        </div>
-
-        <!-- Quick Links -->
-        <div>
-          <h4>Quick Links</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="menu.html">Our Menu</a></li>
-            <li><a href="signatures.html">Signatures</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="reviews.html">Reviews</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-
-        <!-- Hours -->
-        <div>
-          <h4>Opening Hours</h4>
-          <ul class="footer-hours">
-            <li><span class="highlight">Mon – Sun</span></li>
-            <li>10:00 AM – 10:00 PM</li>
-            <li style="margin-top:8px; font-size:0.82rem; color:var(--muted);">Open all 7 days</li>
-          </ul>
-        </div>
-
-        <!-- Contact -->
-        <div>
-          <h4>Get In Touch</h4>
-          <ul class="footer-links">
-            <li><a href="tel:+919484104295">📞 +91 94841 04295</a></li>
-            <li><a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20👋" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a></li>
-            <li><a href="https://www.instagram.com/jhelumcafe/" target="_blank" rel="noopener noreferrer">📸 @jhelumcafe</a></li>
-            <li style="color:var(--muted); font-size:0.88rem; margin-top:8px;">📍 Budshah Bridge, Maisuma,<br>Lal Chowk, Srinagar 190001</li>
-          </ul>
+    <div class="footer-inner container">
+      <div class="footer-brand">
+        <h3>Jhelum <span>Cafe & Fine Dine</span></h3>
+        <p>Srinagar's beloved riverside culinary wonder. Where traditional Kashmiri hospitality meets modern cafe culture.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/jhelumcafe/" target="_blank" aria-label="Instagram">📸</a>
+          <a href="https://www.facebook.com/jhelumcafe/" target="_blank" aria-label="Facebook">👤</a>
+          <a href="https://www.zomato.com/srinagar/jhelum-cafe-fine-dine-lal-chowk/order" target="_blank" aria-label="Zomato">Z</a>
         </div>
       </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2025 Jhelum Cafe & Fine Dine. All rights reserved. Crafted with ❤️ in Srinagar.</p>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="menu.html">Our Menu</a></li>
+          <li><a href="signatures.html">Signatures</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="reviews.html">Guest Reviews</a></li>
+          <li><a href="order.html">Order Online</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
       </div>
+      <div class="footer-col">
+        <h4>Hours & Location</h4>
+        <div class="footer-hours-list">
+          <div class="hours-row"><span>Monday - Sunday:</span> <span>10:00 AM - 10:00 PM</span></div>
+        </div>
+        <p style="margin-top: 1rem; color: var(--muted); font-size: 0.9rem; line-height: 1.5;">Budshah Bridge, Maisuma, Lal Chowk, Srinagar, J&K 190001</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Jhelum Cafe & Fine Dine. All Rights Reserved.</p>
     </div>
   </footer>
 
-  <!-- ============================
-       FLOATING WHATSAPP BUTTON
-  ============================ -->
-  <a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20👋" target="_blank" rel="noopener noreferrer" class="float-whatsapp" aria-label="Chat on WhatsApp">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </a>
-
-  <!-- ============================
-       BACK TO TOP
-  ============================ -->
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">
-    <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
-  </button>
-
-  <!-- ============================
-       MOBILE BOTTOM NAV
-  ============================ -->
-  <div class="mobile-bottom-nav">
-    <div class="mobile-bottom-nav-inner">
-      <a href="index.html">
-        <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-        Home
-      </a>
-      <a href="menu.html">
-        <svg viewBox="0 0 24 24"><path d="M8.1 13.34l2.83-2.83L3.91 3.5a4.008 4.008 0 000 5.66l4.19 4.18zm6.78-1.81c1.53.71 3.68.21 5.27-1.38 1.91-1.91 2.28-4.65.81-6.12-1.46-1.46-4.2-1.1-6.12.81-1.59 1.59-2.09 3.74-1.38 5.27L3.7 19.87l1.41 1.41L12 14.41l6.88 6.88 1.41-1.41L13.41 13l1.47-1.47z"/></svg>
-        Menu
-      </a>
-      <a href="contact.html#reserve">
-        <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 002 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
-        Reserve
-      </a>
-      <a href="tel:+919484104295">
-        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-        Call
-      </a>
-      <a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20👋" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        WhatsApp
-      </a>
-    </div>
-  </div>
-
-  <!-- ============================
-       JAVASCRIPT
-  ============================ -->
+  <script src="script.js"></script>
   <script>
-    // ---- Navbar scroll effect ----
-    const navbar = document.getElementById('navbar');
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
-      if (currentScroll > 60) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-      lastScroll = currentScroll;
-    }, { passive: true });
-
-    // ---- Hamburger menu ----
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
-      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-    });
-    // Close menu on link click
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
-
-    // ---- Back to top ----
-    const backToTop = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 400) {
-        backToTop.classList.add('visible');
-      } else {
-        backToTop.classList.remove('visible');
-      }
-    }, { passive: true });
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // ---- Intersection Observer — scroll reveal ----
-    const revealElements = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.12,
-      rootMargin: '0px 0px -50px 0px'
-    });
-    revealElements.forEach(el => revealObserver.observe(el));
-  </script>
-
-
-  <!-- Hero Background Slideshow Script -->
-  <script>
-    (function() {
-      const slides = document.querySelectorAll('.hero-slideshow .hero-slide');
-      let currentSlide = 0;
-      function nextSlide() {
-        if (slides.length === 0) return;
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
-      }
-      if (slides.length > 0) {
-        setInterval(nextSlide, 5000);
-      }
-    })();
-  </script>
-
-  <!-- WhatsApp Order Builder Logic -->
-  <script>
-    (function() {
-      const builderItems = document.querySelectorAll('.builder-item');
-      const summaryList = document.getElementById('summaryList');
-      const totalPriceEl = document.getElementById('totalPrice');
-      const sendOrderBtn = document.getElementById('sendOrderBtn');
-      const custNameInput = document.getElementById('custName');
-      const custAddressInput = document.getElementById('custAddress');
-
-      let orderCart = {};
-
-      builderItems.forEach(item => {
-        const id = item.dataset.id;
-        const name = item.dataset.name;
-        const price = parseInt(item.dataset.price);
-        const minusBtn = item.querySelector('.qty-btn.minus');
-        const plusBtn = item.querySelector('.qty-btn.plus');
-        const qtyVal = item.querySelector('.qty-val');
-
-        plusBtn.addEventListener('click', () => {
-          if (!orderCart[id]) {
-            orderCart[id] = { name, price, qty: 0 };
-          }
-          orderCart[id].qty++;
-          qtyVal.textContent = orderCart[id].qty;
-          updateOrderSummary();
+    // Accordion script
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', function() {
+        const item = this.parentElement;
+        const isActive = item.classList.contains('active');
+        
+        // Close all items
+        document.querySelectorAll('.accordion-item').forEach(i => {
+          i.classList.remove('active');
+          i.querySelector('.accordion-content').style.maxHeight = '0px';
         });
 
-        minusBtn.addEventListener('click', () => {
-          if (orderCart[id] && orderCart[id].qty > 0) {
-            orderCart[id].qty--;
-            qtyVal.textContent = orderCart[id].qty;
-            if (orderCart[id].qty === 0) {
-              delete orderCart[id];
-            }
-            updateOrderSummary();
-          }
-        });
+        if (!isActive) {
+          item.classList.add('active');
+          const content = item.querySelector('.accordion-content');
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }
       });
-
-      function updateOrderSummary() {
-        summaryList.innerHTML = '';
-        let total = 0;
-        let itemsCount = 0;
-
-        for (const id in orderCart) {
-          const item = orderCart[id];
-          const itemTotal = item.price * item.qty;
-          total += itemTotal;
-          itemsCount += item.qty;
-
-          const summaryItem = document.createElement('div');
-          summaryItem.className = 'summary-item';
-          summaryItem.innerHTML = `
-            <span>${item.name} x ${item.qty}</span>
-            <span>₹${itemTotal}</span>
-          `;
-          summaryList.appendChild(summaryItem);
-        }
-
-        if (itemsCount === 0) {
-          summaryList.innerHTML = '<p class="empty-msg">No items selected yet.</p>';
-          sendOrderBtn.disabled = true;
-        } else {
-          sendOrderBtn.disabled = false;
-        }
-
-        totalPriceEl.textContent = '₹' + total;
-        validateForm();
-      }
-
-      function validateForm() {
-        const hasItems = Object.keys(orderCart).length > 0;
-        const hasName = custNameInput.value.trim() !== '';
-        const hasAddress = custAddressInput.value.trim() !== '';
-        sendOrderBtn.disabled = !(hasItems && hasName && hasAddress);
-      }
-
-      custNameInput.addEventListener('input', validateForm);
-      custAddressInput.addEventListener('input', validateForm);
-
-      sendOrderBtn.addEventListener('click', () => {
-        let message = `*New Order - Jhelum Cafe* 🍽️
-
-`;
-        message += `*Customer Details:*
-`;
-        message += `• *Name:* ${custNameInput.value.trim()}
-`;
-        message += `• *Address:* ${custAddressInput.value.trim()}
-
-`;
-        message += `*Items Ordered:*
-`;
-
-        let total = 0;
-        for (const id in orderCart) {
-          const item = orderCart[id];
-          const itemTotal = item.price * item.qty;
-          total += itemTotal;
-          message += `• ${item.name} x ${item.qty} - ₹${itemTotal}
-`;
-        }
-        message += `
-*Total Amount:* ₹${total}
-`;
-        message += `*Delivery Fee:* Free
-`;
-        message += `*Grand Total:* ₹${total}
-
-`;
-        message += `Please confirm my order and share payment link. Thank you!`;
-
-        const encoded = encodeURIComponent(message);
-        window.open(`https://wa.me/917780938743?text=${encoded}`, '_blank');
-      });
-    })();
+    });
   </script>
-
 </body>
-
 </html>

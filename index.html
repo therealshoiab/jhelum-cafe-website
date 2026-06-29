@@ -49,7 +49,86 @@
   </script>
 
   <!-- Google Fonts -->
-  <style>/* Global Mobile Scroll & Number Font Patch */
+  <style>
+    /* Particle / Shimmer Hero Overlay */
+    .shimmer-overlay {
+      position: absolute;
+      inset: 0;
+      opacity: 0.05;
+      background: radial-gradient(circle at 50% 50%, rgba(212, 168, 83, 0.05) 0%, transparent 80%),
+                  linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                  linear-gradient(0deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 40px 40px, 40px 40px;
+      z-index: 2;
+      pointer-events: none;
+      animation: shimmerAnimation 15s infinite linear;
+    }
+    @keyframes shimmerAnimation {
+      0% { background-position: 0% 0%, 0px 0px, 0px 0px; }
+      100% { background-position: 0% 0%, 40px 40px, 40px 40px; }
+    }
+
+    /* Scroll Down Indicator Arrow */
+    .hero-scroll-indicator {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5;
+      animation: indicatorBounce 2s infinite;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      color: var(--primary);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+    .hero-scroll-indicator svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--primary);
+      fill: none;
+      stroke-width: 2.5;
+    }
+    @keyframes indicatorBounce {
+      0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+      40% { transform: translate(-50%, -10px); }
+      60% { transform: translate(-50%, -5px); }
+    }
+
+    /* Crowd Favourite Glow Hover Effect */
+    .bestsellers-grid .dish-card {
+      transition: var(--transition) !important;
+    }
+    .bestsellers-grid .dish-card:hover {
+      transform: translateY(-8px) !important;
+      box-shadow: 0 8px 32px rgba(201, 168, 76, 0.22) !important;
+      border-color: rgba(201, 168, 76, 0.35) !important;
+    }
+
+    /* Testimonials Snap Carousel for Mobile */
+    @media (max-width: 768px) {
+      .reviews-grid {
+        display: flex !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 1.5rem !important;
+        padding: 1.5rem 0.5rem 3rem !important;
+        scrollbar-width: none;
+      }
+      .reviews-grid::-webkit-scrollbar {
+        display: none;
+      }
+      .reviews-grid .review-card {
+        flex: 0 0 85% !important;
+        scroll-snap-align: center !important;
+        margin: 0 !important;
+      }
+    }
+/* Global Mobile Scroll & Number Font Patch */
     html, body {
       overflow-x: hidden !important;
       max-width: 100% !important;
@@ -1936,6 +2015,7 @@
       display: none;
     }
 </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -1989,6 +2069,7 @@
       <div class="hero-slide" style="background-image: url('images/jhelum_5.jpg');"></div>
     </div>
     <div class="hero-overlay"></div>
+    <div class="shimmer-overlay"></div>
 
     <div class="hero-content">
       <div class="hero-badge">
@@ -2075,8 +2156,8 @@
         </div>
         <div class="why-card why-card-rating reveal reveal-delay-2">
           <div class="why-icon">⭐</div>
-          <h3><span class="num-font">4.0★</span> Google Rating</h3>
-          <p>Trusted by 524+ reviewers on Google. Srinagar's discerning diners rate us for exceptional food quality, welcoming service, and an ambiance that keeps them coming back.</p>
+          <h3><span class="countup-number num-font" data-target="4" data-suffix=".0★">0</span> Google Rating</h3>
+          <p>Trusted by <span class="countup-number num-font" data-target="524" data-suffix="+">0</span> reviewers on Google. Srinagar's discerning diners rate us for exceptional food quality, welcoming service, and an ambiance that keeps them coming back.</p>
         </div>
         <div class="why-card why-card-dining reveal reveal-delay-3">
           <div class="why-icon">🏞️</div>
@@ -2294,6 +2375,62 @@
   <!-- ============================================
        FOOTER
   ============================================ -->
+  
+  <!-- ============================================
+       RESERVATION STRIP
+  ============================================ -->
+  <section class="section reservation-strip reveal" id="idxReserve" style="background: rgba(26, 35, 50, 0.2); border-top: 1px solid rgba(212, 168, 83, 0.08); padding: 6rem 0;">
+    <div class="container text-center">
+      <span class="section-label">Table Booking</span>
+      <h2 class="section-title">Reserve a <em>Table</em></h2>
+      <p class="section-subtitle center" style="margin: 0 auto 3rem;">Secure your table directly via our WhatsApp reservations desk.</p>
+      
+      <form id="reserveFormIndex" class="glass-panel" style="max-width: 600px; margin: 0 auto; padding: 2.5rem; display: flex; flex-direction: column; gap: 1.25rem;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; text-align: left;">
+          <div class="form-group" style="margin: 0; display:flex; flex-direction:column; gap:6px;">
+            <label style="color: var(--primary); font-size: 0.8rem; font-weight: 600; text-transform: uppercase;">Date</label>
+            <input type="date" id="idxDate" required style="padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(212,168,83,0.15); background: rgba(15,20,25,0.6); color: white; outline: none; width: 100%;">
+          </div>
+          <div class="form-group" style="margin: 0; display:flex; flex-direction:column; gap:6px;">
+            <label style="color: var(--primary); font-size: 0.8rem; font-weight: 600; text-transform: uppercase;">Time Slot</label>
+            <select id="idxTime" required style="padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(212,168,83,0.15); background: rgba(15,20,25,0.6); color: white; outline: none; width: 100%;">
+              <option value="" disabled selected>Time</option>
+              <option value="12:00 PM">12:00 PM</option>
+              <option value="1:00 PM">1:00 PM</option>
+              <option value="2:00 PM">2:00 PM</option>
+              <option value="3:00 PM">3:00 PM</option>
+              <option value="4:00 PM">4:00 PM</option>
+              <option value="5:00 PM">5:00 PM</option>
+              <option value="6:00 PM">6:00 PM</option>
+              <option value="7:00 PM">7:00 PM</option>
+              <option value="8:00 PM">8:00 PM</option>
+              <option value="9:00 PM">9:00 PM</option>
+            </select>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; text-align: left;">
+          <div class="form-group" style="margin: 0; display:flex; flex-direction:column; gap:6px;">
+            <label style="color: var(--primary); font-size: 0.8rem; font-weight: 600; text-transform: uppercase;">Guests</label>
+            <select id="idxGuests" required style="padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(212,168,83,0.15); background: rgba(15,20,25,0.6); color: white; outline: none; width: 100%;">
+              <option value="" disabled selected>Guests</option>
+              <option value="1 Person">1 Person</option>
+              <option value="2 People">2 People</option>
+              <option value="3 People">3 People</option>
+              <option value="4 People">4 People</option>
+              <option value="5-8 People">5-8 People</option>
+              <option value="9-20 People">9-20 People</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin: 0; display:flex; flex-direction:column; gap:6px;">
+            <label style="color: var(--primary); font-size: 0.8rem; font-weight: 600; text-transform: uppercase;">Name</label>
+            <input type="text" id="idxName" required placeholder="Booking Name" style="padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid rgba(212,168,83,0.15); background: rgba(15,20,25,0.6); color: white; outline: none; width: 100%;">
+          </div>
+        </div>
+        <button type="submit" style="padding: 0.85rem; border-radius: 30px; background: var(--primary); border: none; color: #0c0f12; font-weight: 700; cursor: pointer; transition: 0.3s; margin-top: 1rem; width: 100%;">Reserve via WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
@@ -2402,85 +2539,11 @@
   <!-- ============================================
        JAVASCRIPT
   ============================================ -->
+  <script src="script.js"></script>
   <script>
-    // ---- Navbar scroll effect ----
-    const navbar = document.getElementById('navbar');
-    let lastScroll = 0;
-
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
-      if (currentScroll > 60) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-      lastScroll = currentScroll;
-    });
-
-    // ---- Hamburger menu ----
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      mobileMenu.classList.toggle('open');
-      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-    });
-
-    // Close mobile menu when a link is clicked
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
-
-    // ---- Back to top ----
-    const backToTop = document.getElementById('backToTop');
-
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 400) {
-        backToTop.classList.add('visible');
-      } else {
-        backToTop.classList.remove('visible');
-      }
-    });
-
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // ---- Intersection Observer for scroll animations ----
-    const revealElements = document.querySelectorAll('.reveal');
-
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    });
-
-    revealElements.forEach(el => revealObserver.observe(el));
-
-    // ---- Smooth scroll for anchor links ----
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-
-    // ---- Hero slideshow rotation ----
+    // Homepage Specific Javascript
     document.addEventListener('DOMContentLoaded', () => {
+      // Hero slideshow rotation
       const slides = document.querySelectorAll('.hero-slide');
       if (slides.length > 0) {
         let currentSlide = 0;
@@ -2489,6 +2552,28 @@
           currentSlide = (currentSlide + 1) % slides.length;
           slides[currentSlide].classList.add('active');
         }, 5000);
+      }
+
+      // WhatsApp Reservation Form
+      const idxForm = document.getElementById('reserveFormIndex');
+      if (idxForm) {
+        idxForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const date = document.getElementById('idxDate').value;
+          const time = document.getElementById('idxTime').value;
+          const guests = document.getElementById('idxGuests').value;
+          const name = document.getElementById('idxName').value.trim();
+
+          let msg = `*🍽️ Table Reservation - Jhelum Cafe*\n\n`;
+          msg += `• *Name:* ${name}\n`;
+          msg += `• *Date:* ${date}\n`;
+          msg += `• *Time Slot:* ${time}\n`;
+          msg += `• *Guests:* ${guests}\n\n`;
+          msg += `Please confirm booking. Thanks!`;
+
+          const encoded = encodeURIComponent(msg);
+          window.open(`https://wa.me/917780938743?text=${encoded}`, '_blank');
+        });
       }
     });
   </script>

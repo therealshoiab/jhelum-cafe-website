@@ -3,1454 +3,161 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jhelum Cafe & Fine Dine | Signature Dishes | Srinagar</title>
-  <meta name="description" content="Discover the signature dishes of Jhelum Cafe & Fine Dine — Harissa Pizza, Czochwaur Burger, Rogan Josh & more. Kashmiri flavors in Srinagar.">
-  <meta property="og:title" content="Jhelum Cafe & Fine Dine | Signature Dishes | Srinagar">
-  <meta property="og:description" content="Explore our 8 legendary signature dishes — from Harissa Pizza to Kashmiri Kahwa. Every dish tells a story at Jhelum Cafe, Srinagar.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://jhelumcafe.com/signatures.html">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Signature Dishes | Jhelum Cafe & Fine Dine | Srinagar</title>
+  <meta name="description" content="Discover the culinary wazwan masterpieces of Jhelum Cafe. Alternating magazine stories of our flagship dishes.">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
   <style>
-    /* 50K Rupee Premium Theme Overrides */
-    body {
-      padding-top: 72px !important;
-      background-color: #0F1419 !important;
-    }
-    .clean-page-header {
-      padding: 6rem 0 4rem 0 !important;
-      text-align: center !important;
-      background: linear-gradient(180deg, rgba(15, 20, 25, 0.8) 0%, rgba(15, 20, 25, 0.3) 100%) !important;
-      border-bottom: 1px solid rgba(212, 168, 83, 0.05) !important;
-      position: relative !important;
-      z-index: 10 !important;
-    }
-    .clean-page-title {
-      font-family: var(--font-display) !important;
-      font-size: clamp(2.5rem, 5vw, 3.8rem) !important;
-      font-weight: 700 !important;
-      color: var(--primary) !important;
-      margin-bottom: 1rem !important;
-      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
-    }
-    .clean-page-title em {
-      font-style: italic !important;
-      color: #ffffff !important;
-    }
-    .clean-page-subtitle {
-      font-family: var(--font-body) !important;
-      font-size: clamp(0.95rem, 2vw, 1.15rem) !important;
-      color: var(--muted) !important;
-      max-width: 750px !important;
-      margin: 0 auto !important;
-      line-height: 1.6 !important;
-      opacity: 0.9 !important;
-    }
-    .glass-panel, .specialty-card, .stat-card, .contact-card, .rating-card, .sig-card, .accordion__item, .review-card, .amenity-card, .menu-card, .platform-card, .delivery-card {
-      background: rgba(26, 35, 50, 0.45) !important;
-      backdrop-filter: blur(16px) !important;
-      -webkit-backdrop-filter: blur(16px) !important;
-      border: 1px solid rgba(212, 168, 83, 0.08) !important;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
-      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
-    }
-    .specialty-card:hover, .stat-card:hover, .contact-card:hover, .rating-card:hover, .sig-card:hover, .review-card:hover, .amenity-card:hover, .menu-card:hover, .platform-card:hover, .delivery-card:hover {
-      transform: translateY(-6px) !important;
-      border-color: rgba(212, 168, 83, 0.25) !important;
-      box-shadow: 0 12px 40px rgba(212, 168, 83, 0.1) !important;
-    }
-    .accordion__item.active {
-      border-color: rgba(212, 168, 83, 0.45) !important;
-      box-shadow: 0 10px 30px rgba(212, 168, 83, 0.12) !important;
-    }
-    
-    /* WhatsApp Order Builder Styles */
-    .order-builder-section {
-      padding: 6rem 0 !important;
-      background: #0F1419 !important;
-    }
-    .builder-grid {
-      display: grid !important;
-      grid-template-columns: 1.2fr 0.8fr !important;
-      gap: 3rem !important;
-      align-items: start !important;
-    }
-    @media (max-width: 992px) {
-      .builder-grid {
-        grid-template-columns: 1fr !important;
-        gap: 2rem !important;
-      }
-    }
-    .builder-panel, .builder-summary {
-      padding: 2.5rem !important;
-      border-radius: var(--radius) !important;
-    }
-    .panel-title {
-      font-family: var(--font-display) !important;
-      font-size: 1.6rem !important;
-      color: #ffffff !important;
-      margin-bottom: 2rem !important;
-      border-bottom: 1px solid rgba(212, 168, 83, 0.1) !important;
-      padding-bottom: 0.75rem !important;
-    }
-    .builder-items-list {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 1.25rem !important;
-    }
-    .builder-item {
-      display: flex !important;
-      justify-content: space-between !important;
-      align-items: center !important;
-      padding: 1.25rem !important;
-      background: rgba(15, 20, 25, 0.4) !important;
-      border: 1px solid rgba(212, 168, 83, 0.05) !important;
-      border-radius: var(--radius-sm) !important;
-      transition: all 0.3s ease !important;
-    }
-    .builder-item:hover {
-      border-color: rgba(212, 168, 83, 0.2) !important;
-      background: rgba(15, 20, 25, 0.6) !important;
-    }
-    .item-info {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 0.35rem !important;
-      text-align: left !important;
-    }
-    .item-name {
-      font-weight: 600 !important;
-      color: var(--text) !important;
-      font-size: 1.05rem !important;
-    }
-    .item-price {
-      color: var(--primary) !important;
-      font-weight: 700 !important;
-      font-family: var(--font-body) !important;
-    }
-    .item-badge {
-      font-size: 0.65rem !important;
-      text-transform: uppercase !important;
-      letter-spacing: 1px !important;
-      font-weight: 700 !important;
-      color: var(--muted) !important;
-    }
-    .item-badge.bestseller {
-      color: var(--primary) !important;
-    }
-    .item-qty-controls {
-      display: flex !important;
-      align-items: center !important;
-      gap: 1rem !important;
-      background: rgba(15, 20, 25, 0.8) !important;
-      padding: 0.5rem 1rem !important;
-      border-radius: 30px !important;
-      border: 1px solid rgba(212, 168, 83, 0.1) !important;
-    }
-    .qty-btn {
-      background: none !important;
-      border: none !important;
-      color: var(--primary) !important;
-      font-size: 1.2rem !important;
-      font-weight: 700 !important;
-      cursor: pointer !important;
-      width: 24px !important;
-      height: 24px !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      transition: all 0.2s ease !important;
-    }
-    .qty-btn:hover {
-      color: #ffffff !important;
-      transform: scale(1.2) !important;
-    }
-    .qty-val {
-      color: #ffffff !important;
-      font-weight: 700 !important;
-      min-width: 16px !important;
-      text-align: center !important;
-    }
-    .summary-list {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 1rem !important;
-      margin-bottom: 2rem !important;
-      min-height: 80px !important;
-    }
-    .summary-item {
-      display: flex !important;
-      justify-content: space-between !important;
-      font-size: 0.95rem !important;
-      color: var(--text) !important;
-      border-bottom: 1px dashed rgba(212, 168, 83, 0.1) !important;
-      padding-bottom: 0.5rem !important;
-    }
-    .empty-msg {
-      color: var(--muted) !important;
-      text-align: center !important;
-      font-style: italic !important;
-      margin-top: 1.5rem !important;
-    }
-    .summary-total {
-      display: flex !important;
-      justify-content: space-between !important;
-      font-size: 1.25rem !important;
-      font-weight: 700 !important;
-      color: #ffffff !important;
-      border-top: 1.5px solid rgba(212, 168, 83, 0.2) !important;
-      padding-top: 1rem !important;
-      margin-bottom: 2rem !important;
-    }
-    .total-price {
-      color: var(--primary) !important;
-    }
-    .customer-info-inputs {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 1rem !important;
-      margin-bottom: 2rem !important;
-    }
-    .customer-info-inputs input {
-      width: 100% !important;
-      padding: 0.85rem 1.25rem !important;
-      border-radius: var(--radius-sm) !important;
-      background: rgba(15, 20, 25, 0.6) !important;
-      border: 1px solid rgba(212, 168, 83, 0.1) !important;
-      color: #ffffff !important;
-      font-size: 0.95rem !important;
-      outline: none !important;
-      transition: all 0.3s ease !important;
-    }
-    .customer-info-inputs input:focus {
-      border-color: var(--primary) !important;
-      box-shadow: 0 0 10px rgba(212, 168, 83, 0.15) !important;
-    }
-    .whatsapp-send-btn {
-      width: 100% !important;
-      padding: 1rem !important;
-      border-radius: 30px !important;
-      border: none !important;
-      background: #25D366 !important;
-      color: #ffffff !important;
-      font-size: 1.05rem !important;
-      font-weight: 700 !important;
-      cursor: pointer !important;
-      transition: all 0.3s ease !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      gap: 0.5rem !important;
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3) !important;
-    }
-    .whatsapp-send-btn:hover:not(:disabled) {
-      background: #128C7E !important;
-      transform: translateY(-2px) !important;
-      box-shadow: 0 6px 20px rgba(18, 140, 126, 0.4) !important;
-    }
-    .whatsapp-send-btn:disabled {
-      background: rgba(255, 255, 255, 0.05) !important;
-      color: var(--muted) !important;
-      cursor: not-allowed !important;
-      box-shadow: none !important;
-    }
-    
-    /* Reviews Summary Styles */
-    @media (max-width: 768px) {
-      .rating-summary-panel {
-        grid-template-columns: 1fr !important;
-        gap: 2rem !important;
-        padding: 2rem !important;
-      }
-      .summary-score-block {
-        border-right: none !important;
-        border-bottom: 1px solid rgba(212, 168, 83, 0.1) !important;
-        padding-right: 0 !important;
-        padding-bottom: 2rem !important;
-      }
-    }
-
-    /* Clean Page Header Styles (Habit Cafe Style) */
-    body {
-      padding-top: 72px !important;
-    }
-    .clean-page-header {
-      padding: 5rem 0 3rem 0 !important;
-      text-align: center !important;
-      background: var(--bg) !important;
-      border-bottom: 1px solid rgba(212, 168, 83, 0.05) !important;
-      position: relative !important;
-      z-index: 10 !important;
-    }
-    .clean-page-title {
-      font-family: var(--font-display) !important;
-      font-size: clamp(2.5rem, 5vw, 3.5rem) !important;
-      font-weight: 700 !important;
-      color: var(--primary) !important;
-      margin-bottom: 0.75rem !important;
-      text-transform: capitalize !important;
-    }
-    .clean-page-title em {
-      font-style: italic !important;
-      color: #ffffff !important;
-    }
-    .clean-page-subtitle {
-      font-family: var(--font-body) !important;
-      font-size: clamp(0.95rem, 2vw, 1.15rem) !important;
-      color: var(--muted) !important;
-      max-width: 750px !important;
-      margin: 0 auto !important;
-      line-height: 1.6 !important;
-    }
-/* Global Mobile Scroll & Number Font Patch */
-    html, body {
-      overflow-x: hidden !important;
-      max-width: 100% !important;
-      position: relative !important;
-    }
-    .num-font, .price, .stats-count, .stats-number, .dish-price, .rating-badge .score, .stars, .score {
-      font-family: var(--font-body) !important;
-      font-variant-numeric: tabular-nums;
-      font-weight: 700;
-    }
-    /* Brand Colored Social Icons (Image 3 Style) */
-    .footer-social, .footer-socials, .footer__social, .footer-socials-list {
-      display: flex !important;
-      gap: 14px !important;
-      align-items: center !important;
-      justify-content: flex-start !important;
-      margin-top: 1rem !important;
-    }
-    .footer-social a, .footer-socials a, .footer__social a, .footer-social-link, .footer-socials-list a {
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      width: 42px !important;
-      height: 42px !important;
-      border-radius: 12px !important;
-      color: #ffffff !important;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-      border: none !important;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
-      text-decoration: none !important;
-    }
-    /* Instagram Gradient Pink/Orange */
-    .footer-social a[aria-label="Instagram"], .footer-socials a[aria-label="Instagram"], .footer__social a[aria-label="Instagram"], .footer-social-link[aria-label="Instagram"], .footer-socials-list a[aria-label="Instagram"] {
-      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
-    }
-    /* Facebook Blue */
-    .footer-social a[aria-label="Facebook"], .footer-socials a[aria-label="Facebook"], .footer__social a[aria-label="Facebook"], .footer-social-link[aria-label="Facebook"], .footer-socials-list a[aria-label="Facebook"] {
-      background: #1877F2 !important;
-    }
-    /* Zomato Red with bold letter Z */
-    .footer-social a[aria-label="Zomato"], .footer-socials a[aria-label="Zomato"], .footer__social a[aria-label="Zomato"], .footer-social-link[aria-label="Zomato"], .footer-socials-list a[aria-label="Zomato"] {
-      background: #CB202D !important; /* Official Zomato Red */
-      font-family: 'Playfair Display', Georgia, serif !important;
-      font-weight: 900 !important;
-      font-size: 1.45rem !important;
-      line-height: 1 !important;
-      color: #ffffff !important;
-    }
-    .footer-social a:hover, .footer-socials a:hover, .footer__social a:hover, .footer-social-link:hover {
-      transform: translateY(-4px) scale(1.08) !important;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3) !important;
-      color: #ffffff !important;
-    }
-    .footer-social a svg, .footer-socials a svg, .footer__social a svg, .footer-social-link svg {
-      width: 20px !important;
-      height: 20px !important;
-      fill: currentColor !important;
-      stroke: none !important;
-    }
-    /* Rating Badges in Hero single-line (Image 2 Style) */
-    .hero-ratings {
-      display: flex !important;
-      flex-direction: row !important;
-      flex-wrap: nowrap !important;
-      gap: 12px !important;
-      justify-content: center !important;
-      align-items: center !important;
-      width: 100% !important;
-      max-width: 600px !important;
-      margin: 0 auto 2.5rem !important;
-    }
-    .rating-badge {
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 8px !important;
-      background: rgba(26, 35, 50, 0.85) !important;
-      backdrop-filter: blur(10px) !important;
-      -webkit-backdrop-filter: blur(10px) !important;
-      border: 1px solid rgba(214, 168, 83, 0.2) !important;
-      padding: 8px 18px !important;
-      border-radius: 50px !important;
-      font-size: 0.9rem !important;
-      color: var(--text) !important;
-      white-space: nowrap !important;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
-    }
-    @media (max-width: 480px) {
-      .hero-ratings {
-        gap: 6px !important;
-        padding: 0 10px !important;
-      }
-      .rating-badge {
-        padding: 6px 12px !important;
-        font-size: 0.72rem !important;
-        gap: 4px !important;
-      }
-    }
-
-    /* Global Hero Slideshow Styles */
-    .hero, .hero-menu, .page-hero {
-      position: relative !important;
-      overflow: hidden !important;
-      background: #0F1419 !important;
-    }
-    .hero-slideshow {
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
-      z-index: 1 !important;
-      pointer-events: none !important;
-    }
-    .hero-slideshow .hero-slide {
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
-      background-size: cover !important;
-      background-position: center !important;
-      opacity: 0;
-      transition: opacity 1.5s ease-in-out !important;
-    }
-    .hero-slideshow .hero-slide.active {
-      opacity: 1 !important;
-    }
-    .hero-overlay {
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
-      background: linear-gradient(180deg, rgba(15, 20, 25, 0.5) 0%, rgba(15, 20, 25, 0.85) 100%) !important;
-      z-index: 2 !important;
-      pointer-events: none !important;
-    }
-    .hero-content, .hero__content {
-      position: relative !important;
-      z-index: 3 !important;
-    }
-
-    /* Remove decorative lines from headings globally */
-    .section-label::before,
-    .section-label::after,
-    .faq-section__label::before,
-    .faq-section__label::after,
-    .section-title::before,
-    .section-title::after {
-      display: none !important;
-      content: none !important;
-      width: 0 !important;
-      height: 0 !important;
-    }
-    .section-label, .faq-section__label {
-      gap: 0 !important;
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-    }
-
-    /* Uniform Glassmorphic Stat Cards (About Us Image 3) */
-    .stats-section .stat-card {
-      background: rgba(26, 35, 50, 0.45) !important;
-      backdrop-filter: blur(10px) !important;
-      -webkit-backdrop-filter: blur(10px) !important;
-      border: 1px solid rgba(212, 168, 83, 0.15) !important;
-      border-radius: 16px !important;
-      padding: 2rem 1.5rem !important;
-      text-align: center !important;
-      display: flex !important;
-      flex-direction: column !important;
-      justify-content: center !important;
-      align-items: center !important;
-      min-height: 170px !important; /* Enforces identical height */
-      height: 100% !important;
-      box-shadow: var(--shadow) !important;
-      box-sizing: border-box !important;
-    }
-    .stats-section .stat-card::after {
-      display: none !important;
-      content: none !important;
-    }
-    .stats-section .stat-value {
-      font-size: clamp(1.1rem, 2vw, 1.45rem) !important; /* Safe size preventing overflow */
-      font-weight: 700 !important;
-      color: var(--primary) !important;
-      margin-bottom: 0.75rem !important;
-      line-height: 1.25 !important;
-      font-family: var(--font-body) !important;
-    }
-    .stats-section .stat-label {
-      font-size: 0.75rem !important;
-      color: var(--muted) !important;
-      text-transform: uppercase !important;
-      letter-spacing: 2px !important;
-      font-weight: 600 !important;
-      margin-top: auto !important;
-    }
-
-    /* Uniform Story Deco Cards (About Us Image 4) */
-    .story-deco-card {
-      background: rgba(26, 35, 50, 0.55) !important;
-      backdrop-filter: blur(8px) !important;
-      -webkit-backdrop-filter: blur(8px) !important;
-      border: 1px solid rgba(212, 168, 83, 0.12) !important;
-      border-radius: var(--radius-sm) !important;
-      padding: 1.5rem 1rem !important;
-      text-align: center !important;
-      display: flex !important;
-      flex-direction: column !important;
-      justify-content: center !important;
-      align-items: center !important;
-      min-height: 110px !important; /* Force same height */
-      height: 100% !important;
-      box-sizing: border-box !important;
-      transition: all 0.3s ease !important;
-    }
-    .story-deco-card:hover {
-      border-color: rgba(212, 168, 83, 0.3) !important;
-      transform: translateY(-3px) !important;
-    }
-
-
-    
-    html, body {
-      overflow-x: hidden !important;
-      max-width: 100% !important;
-      position: relative !important;
-    }
-    .num-font, .price, .stats-count, .stats-number, .dish-price, .rating-badge .score, .stars, .score {
-      font-family: var(--font-body) !important;
-      font-variant-numeric: tabular-nums;
-      font-weight: 700;
-    }
-    /* Brand Colored Social Icons (Image 3 Style) */
-    .footer-social, .footer-socials, .footer__social, .footer-socials-list {
-      display: flex !important;
-      gap: 14px !important;
-      align-items: center !important;
-      justify-content: flex-start !important;
-      margin-top: 1rem !important;
-    }
-    .footer-social a, .footer-socials a, .footer__social a, .footer-social-link, .footer-socials-list a {
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      width: 42px !important;
-      height: 42px !important;
-      border-radius: 12px !important;
-      color: #ffffff !important;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-      border: none !important;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
-      text-decoration: none !important;
-    }
-    /* Instagram Gradient Pink/Orange */
-    .footer-social a[aria-label="Instagram"], .footer-socials a[aria-label="Instagram"], .footer__social a[aria-label="Instagram"], .footer-social-link[aria-label="Instagram"], .footer-socials-list a[aria-label="Instagram"] {
-      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
-    }
-    /* Facebook Blue */
-    .footer-social a[aria-label="Facebook"], .footer-socials a[aria-label="Facebook"], .footer__social a[aria-label="Facebook"], .footer-social-link[aria-label="Facebook"], .footer-socials-list a[aria-label="Facebook"] {
-      background: #1877F2 !important;
-    }
-    /* Zomato Red */
-    .footer-social a[aria-label="Zomato"], .footer-socials a[aria-label="Zomato"], .footer__social a[aria-label="Zomato"], .footer-social-link[aria-label="Zomato"], .footer-socials-list a[aria-label="Zomato"] {
-      background: #CB202D !important; /* Official Zomato Red */
-    }
-    .footer-social a:hover, .footer-socials a:hover, .footer__social a:hover, .footer-social-link:hover {
-      transform: translateY(-4px) scale(1.08) !important;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3) !important;
-      color: #ffffff !important;
-    }
-    .footer-social a svg, .footer-socials a svg, .footer__social a svg, .footer-social-link svg {
-      width: 20px !important;
-      height: 20px !important;
-      fill: currentColor !important;
-      stroke: none !important;
-    }
-    /* Rating Badges in Hero single-line (Image 2 Style) */
-    .hero-ratings {
-      display: flex !important;
-      flex-direction: row !important;
-      flex-wrap: nowrap !important;
-      gap: 12px !important;
-      justify-content: center !important;
-      align-items: center !important;
-      width: 100% !important;
-      max-width: 600px !important;
-      margin: 0 auto 2.5rem !important;
-    }
-    .rating-badge {
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 8px !important;
-      background: rgba(26, 35, 50, 0.85) !important;
-      backdrop-filter: blur(10px) !important;
-      -webkit-backdrop-filter: blur(10px) !important;
-      border: 1px solid rgba(214, 168, 83, 0.2) !important;
-      padding: 8px 18px !important;
-      border-radius: 50px !important;
-      font-size: 0.9rem !important;
-      color: var(--text) !important;
-      white-space: nowrap !important;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
-    }
-    @media (max-width: 480px) {
-      .hero-ratings {
-        gap: 6px !important;
-        padding: 0 10px !important;
-      }
-      .rating-badge {
-        padding: 6px 12px !important;
-        font-size: 0.72rem !important;
-        gap: 4px !important;
-      }
-    }
-
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
-
-    /* ───────── CSS VARIABLES ───────── */
-    :root {
-      --bg: #0F1419;
-      --surface: #1A2332;
-      --primary: #D4A853;
-      --secondary: #C0392B;
-      --text: #F0EDE6;
-      --muted: #6B7B8D;
-      --font-display: 'Playfair Display', Georgia, serif;
-      --font-body: 'Inter', -apple-system, sans-serif;
-      --radius: 16px;
-      --radius-sm: 8px;
-      --shadow: 0 8px 32px rgba(0,0,0,0.4);
-      --shadow-lg: 0 16px 64px rgba(0,0,0,0.5);
-      --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      --max-width: 1280px;
-    }
-
-    /* ───────── RESET ───────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-    body {
-      font-family: var(--font-body);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    button { cursor: pointer; border: none; background: none; font-family: inherit; }
-    ul, ol { list-style: none; }
-
-    /* ───────── UTILITY ───────── */
-    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
-    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
-
-    /* ───────── SCROLL ANIMATIONS ───────── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s var(--transition), transform 0.8s var(--transition);
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ───────── NAVIGATION ───────── */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      padding: 0 24px;
-      transition: background var(--transition), box-shadow var(--transition);
-    }
-    .nav.scrolled {
-      background: rgba(15,20,25,0.95);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      box-shadow: 0 2px 24px rgba(0,0,0,0.4);
-    }
-    .nav-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-    }
-    .nav-logo {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary);
-      letter-spacing: 0.5px;
-    }
-    .nav-logo span { color: var(--text); font-weight: 400; font-size: 0.85rem; display: block; letter-spacing: 2px; text-transform: uppercase; margin-top: -4px; }
-    .nav-links { display: flex; gap: 32px; align-items: center; }
-    .nav-links a {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--muted);
-      transition: color var(--transition);
-      position: relative;
-      letter-spacing: 0.3px;
-    }
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--primary);
-    }
-    .nav-links a.active::after {
-      content: '';
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: var(--primary);
-      border-radius: 2px;
-    }
-    .nav-cta {
-      background: var(--primary) !important;
-      color: var(--bg) !important;
-      padding: 10px 24px;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-    .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(212,168,83,0.4); }
-
-    /* Hamburger */
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 1100; padding: 8px; }
-    .hamburger span { width: 24px; height: 2px; background: var(--text); transition: var(--transition); border-radius: 2px; }
-    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-
-    /* Mobile Menu Overlay */
-    .mobile-menu {
-      position: fixed;
-      inset: 0;
-      background: rgba(15,20,25,0.98);
-      backdrop-filter: blur(30px);
-      z-index: 1050;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 28px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.5s ease;
-    }
-    .mobile-menu.open { opacity: 1; pointer-events: all; }
-    .mobile-menu a {
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      color: var(--muted);
-      transition: color var(--transition);
-    }
-    .mobile-menu a:hover,
-    .mobile-menu a.active { color: var(--primary); }
-
-    /* ───────── HERO ───────── */
-    .hero {
-      min-height: 50vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    /* Signatures Page Specific CSS */
+    .sig-header {
+      padding-top: calc(var(--nav-height) + 3rem);
+      padding-bottom: 0;
       text-align: center;
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(160deg, var(--bg) 0%, #0d1117 30%, #121a24 60%, var(--surface) 100%);
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 600px 400px at 20% 50%, rgba(212,168,83,0.06) 0%, transparent 70%),
-        radial-gradient(ellipse 500px 500px at 80% 30%, rgba(192,57,43,0.04) 0%, transparent 70%);
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 120px;
-      background: linear-gradient(to top, var(--bg), transparent);
-    }
-    .hero-content { position: relative; z-index: 2; padding: 120px 24px 60px; }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(212,168,83,0.1);
-      border: 1px solid rgba(212,168,83,0.2);
-      padding: 8px 20px;
-      border-radius: 50px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--primary);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-    .hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.8rem, 6vw, 5rem);
-      font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: 16px;
-      background: linear-gradient(135deg, var(--text) 0%, var(--primary) 50%, var(--text) 100%);
-      background-size: 200% auto;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: shimmer 4s ease-in-out infinite;
-    }
-    @keyframes shimmer {
-      0%, 100% { background-position: 0% center; }
-      50% { background-position: 200% center; }
-    }
-    .hero-subtitle {
-      font-size: 1.1rem;
-      color: var(--muted);
-      max-width: 540px;
-      margin: 0 auto;
-      line-height: 1.8;
-    }
-    .breadcrumb {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 28px;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-    .breadcrumb a { color: var(--primary); transition: opacity var(--transition); }
-    .breadcrumb a:hover { opacity: 0.8; }
-    .breadcrumb svg { width: 14px; height: 14px; opacity: 0.5; }
-
-    /* ───────── WAVE DIVIDER ───────── */
-    
-
-    /* ───────── SECTION ───────── */
-    .section { padding: 80px 0; }
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--primary);
-      margin-bottom: 12px;
-    }
-    .section-label::before {
-      content: '';
-      width: 32px;
-      height: 2px;
-      background: var(--primary);
-      border-radius: 2px;
-    }
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-    .section-subtitle {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 600px;
-      line-height: 1.8;
     }
 
-    /* ───────── SIGNATURE DISH CARDS ───────── */
-    .signatures-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 60px;
-      margin-top: 60px;
+    .magazine-container {
+      padding-bottom: 6rem;
     }
-    .sig-card {
+
+    .magazine-row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 5rem;
       align-items: center;
-      background: var(--surface);
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid rgba(212,168,83,0.08);
-      transition: border-color var(--transition), box-shadow var(--transition);
-      position: relative;
+      padding: 7rem 0;
+      border-bottom: 1px solid rgba(212, 168, 83, 0.08);
     }
-    .sig-card:hover {
-      border-color: rgba(212,168,83,0.2);
-      box-shadow: var(--shadow-lg);
+    
+    .magazine-row:last-child {
+      border-bottom: none;
     }
-    .sig-card:nth-child(even) { direction: rtl; }
-    .sig-card:nth-child(even) > * { direction: ltr; }
+    
+    .magazine-row:nth-child(even) {
+      grid-template-columns: 0.9fr 1.1fr;
+    }
 
-    /* CSS gradient art */
-    .sig-visual {
-      aspect-ratio: 1;
+    .magazine-media {
+      position: relative;
+      height: 460px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(26, 35, 50, 0.7) 0%, rgba(15, 20, 25, 0.95) 100%);
+      border: 1px solid rgba(212, 168, 83, 0.1);
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
-      overflow: hidden;
-      min-height: 380px;
+      font-size: 8.5rem;
+      box-shadow: var(--shadow);
     }
-    .sig-visual-bg {
+    
+    .magazine-media::before {
+      content: '';
       position: absolute;
       inset: 0;
+      background: radial-gradient(circle at center, rgba(212, 168, 83, 0.06) 0%, transparent 70%);
     }
 
-    /* 8 unique gradient art backgrounds */
-    .sig-card:nth-child(1) .sig-visual-bg {
-      background:
-        radial-gradient(circle at 30% 40%, rgba(192,57,43,0.5) 0%, transparent 50%),
-        radial-gradient(circle at 70% 60%, rgba(212,168,83,0.4) 0%, transparent 50%),
-        linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    }
-    .sig-card:nth-child(2) .sig-visual-bg {
-      background:
-        radial-gradient(circle at 60% 30%, rgba(212,168,83,0.45) 0%, transparent 45%),
-        radial-gradient(circle at 30% 70%, rgba(107,123,141,0.3) 0%, transparent 50%),
-        linear-gradient(160deg, #0d1117 0%, #1A2332 100%);
-    }
-    .sig-card:nth-child(3) .sig-visual-bg {
-      background:
-        radial-gradient(circle at 50% 50%, rgba(192,57,43,0.35) 0%, transparent 40%),
-        radial-gradient(circle at 80% 20%, rgba(212,168,83,0.3) 0%, transparent 45%),
-        linear-gradient(180deg, #1a1a2e 0%, #0F1419 100%);
-    }
-    .sig-card:nth-child(4) .sig-visual-bg {
-      background:
-        radial-gradient(circle at 40% 60%, rgba(212,168,83,0.5) 0%, transparent 45%),
-        radial-gradient(circle at 70% 30%, rgba(192,57,43,0.25) 0%, transparent 50%),
-        linear-gradient(145deg, #16213e 0%, #1A2332 100%);
-    }
-    .sig-card:nth-child(5) .sig-visual-bg {
-      background:
-        radial-gradient(circle at 35% 35%, rgba(192,57,43,0.55) 0%, transparent 40%),
-        radial-gradient(circle at 65% 65%, rgba(212,168,83,0.25) 0%, transparent 50%),
-        linear-gradient(200deg, #1a1a2e 0%, #0d1117 100%);
-    }
-    .sig-card:nth-child(6) .sig-visual-bg {
-      background:
-        radial-gradient(circle at 50% 40%, rgba(212,168,83,0.45) 0%, transparent 45%),
-        radial-gradient(circle at 25% 75%, rgba(34,139,34,0.15) 0%, transparent 50%),
-        linear-gradient(170deg, #0F1419 0%, #1A2332 100%);
-    }
-    .sig-card:nth-child(7) .sig-visual-bg {
-      background:
-        radial-gradient(circle at 55% 45%, rgba(101,67,33,0.5) 0%, transparent 40%),
-        radial-gradient(circle at 30% 60%, rgba(212,168,83,0.3) 0%, transparent 50%),
-        linear-gradient(150deg, #1a0a00 0%, #1A2332 100%);
-    }
-    .sig-card:nth-child(8) .sig-visual-bg {
-      background:
-        radial-gradient(circle at 45% 50%, rgba(212,168,83,0.4) 0%, transparent 45%),
-        radial-gradient(circle at 70% 30%, rgba(192,57,43,0.2) 0%, transparent 50%),
-        linear-gradient(135deg, #0d1117 0%, #16213e 100%);
-    }
-
-    /* Geometric shapes */
-    .sig-shape {
-      position: relative;
-      z-index: 2;
-    }
-    .sig-shape-diamond {
-      width: 140px;
-      height: 140px;
-      transform: rotate(45deg);
-      border: 2px solid rgba(212,168,83,0.3);
-      border-radius: 12px;
-      position: relative;
-    }
-    .sig-shape-diamond::before {
-      content: '';
-      position: absolute;
-      inset: 16px;
-      border: 1px solid rgba(212,168,83,0.2);
-      border-radius: 8px;
-      background: rgba(212,168,83,0.05);
-    }
-    .sig-shape-circle {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      border: 2px solid rgba(212,168,83,0.3);
-      position: relative;
-    }
-    .sig-shape-circle::before {
-      content: '';
-      position: absolute;
-      inset: 18px;
-      border-radius: 50%;
-      border: 1px solid rgba(212,168,83,0.2);
-      background: rgba(212,168,83,0.05);
-    }
-    .sig-shape-hex {
-      width: 150px;
-      height: 150px;
-      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-      border: none;
-      background: linear-gradient(135deg, rgba(212,168,83,0.15) 0%, rgba(192,57,43,0.1) 100%);
-      position: relative;
+    .magazine-content {
       display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .sig-shape-hex::before {
-      content: '';
-      width: 120px;
-      height: 120px;
-      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-      background: rgba(26,35,50,0.8);
+      flex-direction: column;
+      align-items: flex-start;
     }
 
-    /* Dish number overlay */
-    .sig-number {
-      position: absolute;
+    .magazine-row:nth-child(even) .magazine-content {
+      order: -1;
+    }
+
+    .magazine-heading {
       font-family: var(--font-display);
-      font-size: 10rem;
-      font-weight: 900;
-      color: rgba(212,168,83,0.04);
-      z-index: 1;
-      line-height: 1;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-    }
-
-    /* Floating particles */
-    .sig-particle {
-      position: absolute;
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--primary);
-      opacity: 0.15;
-      animation: float-particle 6s ease-in-out infinite;
-    }
-    .sig-particle:nth-child(2) { top: 20%; left: 15%; animation-delay: -1s; width: 3px; height: 3px; }
-    .sig-particle:nth-child(3) { top: 70%; left: 80%; animation-delay: -2s; width: 5px; height: 5px; }
-    .sig-particle:nth-child(4) { top: 40%; left: 70%; animation-delay: -3s; }
-    .sig-particle:nth-child(5) { top: 80%; left: 25%; animation-delay: -4s; width: 3px; height: 3px; }
-
-    @keyframes float-particle {
-      0%, 100% { transform: translateY(0) translateX(0); opacity: 0.15; }
-      50% { transform: translateY(-20px) translateX(10px); opacity: 0.3; }
-    }
-
-    /* Card content */
-    .sig-content {
-      padding: 48px 48px 48px 0;
-    }
-    .sig-card:nth-child(even) .sig-content { padding: 48px 0 48px 48px; }
-
-    .sig-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 5px 14px;
-      border-radius: 50px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-    .sig-badge.nv {
-      background: rgba(192,57,43,0.12);
-      color: #e74c3c;
-      border: 1px solid rgba(192,57,43,0.2);
-    }
-    .sig-badge.veg {
-      background: rgba(39,174,96,0.12);
-      color: #27ae60;
-      border: 1px solid rgba(39,174,96,0.2);
-    }
-
-    .sig-name {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 3vw, 2.75rem);
+      font-size: clamp(3rem, 6.5vw, 5.2rem); /* Giant Playfair heading */
       font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 8px;
+      color: #ffffff;
+      line-height: 1.05;
+      margin-bottom: 1rem;
+      letter-spacing: -1px;
+      text-align: left;
     }
-    .sig-price {
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      color: var(--primary);
-      font-weight: 600;
-      margin-bottom: 20px;
-    }
-    .sig-desc {
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.85;
-      margin-bottom: 28px;
-      max-width: 480px;
-    }
-    .sig-order-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-      color: #fff;
-      padding: 14px 28px;
-      border-radius: 50px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      transition: transform var(--transition), box-shadow var(--transition);
-      letter-spacing: 0.3px;
-    }
-    .sig-order-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(37,211,102,0.3);
-    }
-    .sig-order-btn svg { width: 20px; height: 20px; }
 
-    /* ───────── CHEF'S NOTE ───────── */
-    .chef-note {
-      padding: 100px 0;
-      position: relative;
-    }
-    .chef-note-inner {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-      position: relative;
-    }
-    .chef-quote-mark {
-      font-family: var(--font-display);
-      font-size: 8rem;
+    .magazine-heading em {
       color: var(--primary);
-      opacity: 0.12;
-      line-height: 0.5;
-      display: block;
-      margin-bottom: -20px;
+      font-style: italic;
     }
-    .chef-note-text {
+
+    .magazine-price {
+      display: inline-block;
       font-size: 1.15rem;
-      line-height: 2;
-      color: rgba(240,237,230,0.85);
-      padding: 0 24px;
-    }
-    .chef-note-author {
-      margin-top: 32px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-    }
-    .chef-note-line {
-      width: 48px;
-      height: 2px;
-      background: var(--primary);
-      border-radius: 2px;
-      margin-bottom: 12px;
-    }
-    .chef-note-name {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--primary);
-    }
-    .chef-note-role { font-size: 0.85rem; color: var(--muted); }
-
-    /* ───────── CTA SECTION ───────── */
-    .cta-section {
-      padding: 80px 0 120px;
-      text-align: center;
-    }
-    .cta-section .section-title { margin-bottom: 40px; }
-    .cta-buttons {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--primary);
-      color: var(--bg);
-      padding: 16px 36px;
-      border-radius: 50px;
-      font-size: 1rem;
-      font-weight: 600;
-      transition: transform var(--transition), box-shadow var(--transition);
-      letter-spacing: 0.3px;
-    }
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(212,168,83,0.35);
-    }
-    .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: transparent;
-      color: var(--primary);
-      padding: 16px 36px;
-      border-radius: 50px;
-      font-size: 1rem;
-      font-weight: 600;
-      border: 2px solid var(--primary);
-      transition: transform var(--transition), background var(--transition), color var(--transition);
-      letter-spacing: 0.3px;
-    }
-    .btn-outline:hover {
-      background: var(--primary);
-      color: var(--bg);
-      transform: translateY(-3px);
-    }
-
-    /* ───────── FOOTER ───────── */
-    .footer {
-      background: var(--surface);
-      border-top: 1px solid rgba(212,168,83,0.08);
-      padding: 64px 0 24px;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 48px;
-    }
-    .footer-brand-name {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
       font-weight: 700;
       color: var(--primary);
-      margin-bottom: 12px;
+      margin-bottom: 1.5rem;
+      background: rgba(212, 168, 83, 0.1);
+      padding: 4px 14px;
+      border-radius: 6px;
+      border: 1px solid rgba(212, 168, 83, 0.2);
     }
-    .footer-brand-desc { color: var(--muted); font-size: 0.9rem; line-height: 1.7; max-width: 300px; }
-    .footer-heading {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 600;
+
+    .magazine-desc {
+      font-size: 1.02rem;
       color: var(--text);
-      margin-bottom: 20px;
-    }
-    .footer-links li { margin-bottom: 10px; }
-    .footer-links a {
-      color: var(--muted);
-      font-size: 0.9rem;
-      transition: color var(--transition);
-    }
-    .footer-links a:hover { color: var(--primary); }
-    .footer-hours li {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 6px;
-    }
-    .footer-hours li span { color: var(--text); }
-    .footer-socials {
-      display: flex;
-      gap: 12px;
-      margin-top: 16px;
-    }
-    .footer-social-link {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: rgba(212,168,83,0.08);
-      border: 1px solid rgba(212,168,83,0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background var(--transition), transform var(--transition);
-    }
-    .footer-social-link:hover {
-      background: var(--primary);
-      transform: translateY(-3px);
-    }
-    .footer-social-link:hover svg { fill: var(--bg); }
-    .footer-social-link svg { width: 18px; height: 18px; fill: var(--primary); }
-    .footer-bottom {
-      border-top: 1px solid rgba(107,123,141,0.15);
-      padding-top: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+      text-align: left;
     }
 
-    /* ───────── FLOATING BUTTONS ───────── */
-    /* WhatsApp */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 100px;
-      right: 24px;
-      z-index: 900;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: #25D366;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-      transition: transform var(--transition);
-      animation: pulse-wa 2s ease-in-out infinite;
-    }
-    .whatsapp-float:hover { transform: scale(1.1); }
-    .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
-    @keyframes pulse-wa {
-      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
-      50% { box-shadow: 0 4px 40px rgba(37,211,102,0.6), 0 0 0 12px rgba(37,211,102,0.1); }
+    .sig-quote {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--primary);
+      border-left: 2px solid var(--primary);
+      padding-left: 1.25rem;
+      margin-bottom: 2rem;
+      line-height: 1.5;
+      text-align: left;
     }
 
-    /* Back to top */
-    .back-to-top {
-      position: fixed;
-      bottom: 100px;
-      left: 24px;
-      z-index: 900;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity var(--transition), transform var(--transition);
-      box-shadow: 0 4px 16px rgba(212,168,83,0.3);
-    }
-    .back-to-top.visible { opacity: 1; pointer-events: all; }
-    .back-to-top:hover { transform: translateY(-3px); }
-    .back-to-top svg { width: 20px; height: 20px; fill: var(--bg); }
-
-    /* ───────── MOBILE BOTTOM NAV ───────── */
-    .mobile-bottom-nav {
-      display: none;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(15,20,25,0.97);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-top: 1px solid rgba(212,168,83,0.1);
-      z-index: 950;
-      padding: 8px 0 max(8px, env(safe-area-inset-bottom));
-    }
-    .mobile-bottom-nav-inner {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-    }
-    .mobile-nav-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 3px;
-      color: var(--muted);
-      font-size: 0.65rem;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      padding: 6px 12px;
-      transition: color var(--transition);
-      text-decoration: none;
-    }
-    .mobile-nav-item.active,
-    .mobile-nav-item:hover { color: var(--primary); }
-    .mobile-nav-item svg { width: 22px; height: 22px; }
-
-    /* ───────── RESPONSIVE ───────── */
-    @media (max-width: 1024px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .sig-card { grid-template-columns: 1fr; }
-      .sig-card:nth-child(even) { direction: ltr; }
-      .sig-content { padding: 32px 36px 40px !important; }
-      .sig-visual { min-height: 300px; }
-    }
-    @media (max-width: 768px) {
-      .mobile-bottom-nav { display: block; }
-      .whatsapp-float { bottom: 90px; right: 16px; width: 50px; height: 50px; }
-      .back-to-top { bottom: 90px; left: 16px; width: 42px; height: 42px; }
-      .footer { padding-bottom: 80px; }
-      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
-      .hero { min-height: 45vh; }
-      .section { padding: 60px 0; }
-      .signatures-grid { gap: 40px; margin-top: 40px; }
-      .sig-visual { min-height: 260px; }
-      .sig-content { padding: 28px 24px 36px !important; }
-      .sig-number { font-size: 6rem; }
-      .chef-note { padding: 60px 0; }
-      .cta-section { padding: 60px 0 100px; }
-    }
-    @media (max-width: 480px) {
-      .sig-name { font-size: 1.6rem; }
-      .sig-price { font-size: 1.3rem; }
-      .sig-desc { font-size: 0.92rem; }
-      .sig-order-btn { padding: 12px 22px; font-size: 0.82rem; }
-      .cta-buttons { flex-direction: column; align-items: center; }
-      .btn-primary, .btn-outline { width: 100%; max-width: 300px; justify-content: center; }
+    @media (max-width: 992px) {
+      .magazine-row, .magazine-row:nth-child(even) {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 5rem 0;
+      }
+      .magazine-media {
+        height: 350px;
+        font-size: 6rem;
+      }
+      .magazine-row:nth-child(even) .magazine-content {
+        order: 0;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- ═══════════ NAVIGATION ═══════════ -->
-  <nav class="nav" id="mainNav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Jhelum<span>Cafe & Fine Dine</span></a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="menu.html">Menu</a>
-        <a href="signatures.html" class="active">Signatures</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="reviews.html">Reviews</a>
-        <a href="order.html">Order</a>
-        <a href="contact.html">Contact</a>
-        <a href="faq.html">FAQ</a>
-        <a href="order.html" class="nav-cta">Order Now</a>
-      </div>
-      <div class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
+  <!-- ============================
+       NAVIGATION BAR
+  ============================ -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">Jhelum <span>Cafe & Fine Dine</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="signatures.html" class="active">Signatures</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="order.html">Order</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
-  <!-- Mobile Menu Overlay -->
-  <div class="mobile-menu" id="mobileMenu">
+  <!-- Mobile Overlay Menu -->
+  <div class="mobile-menu-overlay" id="mobileMenu">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="menu.html">Menu</a>
@@ -1459,458 +166,137 @@
     <a href="reviews.html">Reviews</a>
     <a href="order.html">Order</a>
     <a href="contact.html">Contact</a>
-    <a href="faq.html">FAQ</a>
   </div>
 
-  <!-- ═══════════ HERO ═══════════ -->
-  <header class="clean-page-header">
-    <div class="container">
-      <h1 class="clean-page-title">Our <em>Signatures</em></h1>
-      <p class="clean-page-subtitle">Eight iconic dishes that define the Jhelum Cafe experience — where Kashmiri heritage meets bold, global flavors.</p>
-    </div>
+  <!-- Header -->
+  <header class="sig-header container">
+    <span class="section-label">Masterpieces</span>
+    <h1 class="section-title">Our <em>Signatures</em></h1>
+    <p class="section-subtitle" style="margin: 0 auto;">Gastronomy elevated. Discover the culinary heritage and stories behind our most famous dishes.</p>
   </header>
 
-  <!-- ═══════════ WAVE DIVIDER ═══════════ -->
-  
-
-  <!-- ═══════════ SIGNATURE DISHES ═══════════ -->
-  <section class="section" id="signatures">
-    <div class="container">
-      <div class="reveal" style="text-align:center;">
-        <span class="section-label">Crafted with Pride</span>
-        <h2 class="section-title">The Dishes That Define Us</h2>
-        <p class="section-subtitle" style="margin:0 auto;">Every dish on this page has earned its place through the love of our guests — ordered, remembered, and talked about across Srinagar.</p>
+  <!-- Magazine Layout Sections -->
+  <main class="magazine-container container">
+    <!-- Dish 1: Harissa Pizza -->
+    <article class="magazine-row reveal">
+      <div class="magazine-media">
+        🍕
       </div>
-
-      <div class="signatures-grid">
-
-        <!-- ─── 1. Harissa Special Pizza ─── -->
-        <div class="sig-card reveal">
-          <div class="sig-visual">
-            <div class="sig-visual-bg"></div>
-            <span class="sig-number">01</span>
-            <div class="sig-shape">
-              <div class="sig-shape-diamond"></div>
-            </div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-          </div>
-          <div class="sig-content">
-            <span class="sig-badge nv">🔴 Non-Veg</span>
-            <h3 class="sig-name">Harissa Special Pizza</h3>
-            <div class="sig-price">₹350</div>
-            <p class="sig-desc">Our crowning creation that bridges Kashmir and Italy. Slow-cooked Kashmiri harissa — a beloved winter delicacy of the valley — layered over hand-stretched dough with imported mozzarella and a medley of Kashmiri spices. Each bite tells the story of two culinary traditions meeting in perfect harmony.</p>
-            <a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20👋%20I'd%20like%20to%20order%20Harissa%20Special%20Pizza%20(₹350)" class="sig-order-btn" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.609l4.51-1.468A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.234 0-4.308-.724-5.993-1.95l-.42-.307-2.676.87.894-2.637-.334-.443A9.958 9.958 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-              Add to WhatsApp Order
-            </a>
-          </div>
+      <div class="magazine-content">
+        <h2 class="magazine-heading">Harissa <em>Pizza</em></h2>
+        <span class="magazine-price">₹350</span>
+        <p class="magazine-desc">Our crowning culinary achievement that bridges borders. Slow-cooked Kashmiri mutton harissa — a beloved winter wazwan delicacy — layered over hand-stretched sourdough with fresh mozzarella, red onions, and local saffron spices. Each slice is an elegant tribute to local heritage and global craft.</p>
+        <div class="sig-quote">
+          "The Story Behind the Dish: Created during a freezing Srinagar winter, when we sought to bring the deep warmth of traditional clay-pot wazwan harissa to the shared comfort of a hot wood-fired pizza."
         </div>
-
-        <!-- ─── 2. Czochwaur Burger ─── -->
-        <div class="sig-card reveal">
-          <div class="sig-visual">
-            <div class="sig-visual-bg"></div>
-            <span class="sig-number">02</span>
-            <div class="sig-shape">
-              <div class="sig-shape-circle"></div>
-            </div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-          </div>
-          <div class="sig-content">
-            <span class="sig-badge nv">🔴 Non-Veg</span>
-            <h3 class="sig-name">Czochwaur Burger</h3>
-            <div class="sig-price">₹280</div>
-            <p class="sig-desc">Named after the traditional Kashmiri spice blend, this burger features a handcrafted minced meat patty seasoned with valley spices, topped with caramelized onions, crisp lettuce, and our secret czochwaur sauce. A Srinagar street food legend, elevated.</p>
-            <a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20👋%20I'd%20like%20to%20order%20Czochwaur%20Burger%20(₹280)" class="sig-order-btn" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.609l4.51-1.468A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.234 0-4.308-.724-5.993-1.95l-.42-.307-2.676.87.894-2.637-.334-.443A9.958 9.958 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-              Add to WhatsApp Order
-            </a>
-          </div>
-        </div>
-
-        <!-- ─── 3. Lambert Burger ─── -->
-        <div class="sig-card reveal">
-          <div class="sig-visual">
-            <div class="sig-visual-bg"></div>
-            <span class="sig-number">03</span>
-            <div class="sig-shape">
-              <div class="sig-shape-hex"></div>
-            </div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-          </div>
-          <div class="sig-content">
-            <span class="sig-badge nv">🔴 Non-Veg</span>
-            <h3 class="sig-name">Lambert Burger</h3>
-            <div class="sig-price">₹300</div>
-            <p class="sig-desc">The burger that put Jhelum Cafe on the map. Double-stacked patties with melted cheese, crispy onion rings, pickled jalapeños, and our signature Lambert sauce. Generous, indulgent, and impossibly satisfying.</p>
-            <a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20👋%20I'd%20like%20to%20order%20Lambert%20Burger%20(₹300)" class="sig-order-btn" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.609l4.51-1.468A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.234 0-4.308-.724-5.993-1.95l-.42-.307-2.676.87.894-2.637-.334-.443A9.958 9.958 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-              Add to WhatsApp Order
-            </a>
-          </div>
-        </div>
-
-        <!-- ─── 4. Butter Chicken ─── -->
-        <div class="sig-card reveal">
-          <div class="sig-visual">
-            <div class="sig-visual-bg"></div>
-            <span class="sig-number">04</span>
-            <div class="sig-shape">
-              <div class="sig-shape-diamond"></div>
-            </div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-          </div>
-          <div class="sig-content">
-            <span class="sig-badge nv">🔴 Non-Veg</span>
-            <h3 class="sig-name">Butter Chicken</h3>
-            <div class="sig-price">₹320</div>
-            <p class="sig-desc">Our butter chicken is a love letter to North Indian comfort food. Tender tandoori chicken pieces swim in a silky, tomato-butter gravy enriched with cream and kasuri methi. Paired with our freshly baked butter naan, it is pure bliss.</p>
-            <a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20👋%20I'd%20like%20to%20order%20Butter%20Chicken%20(₹320)" class="sig-order-btn" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.609l4.51-1.468A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.234 0-4.308-.724-5.993-1.95l-.42-.307-2.676.87.894-2.637-.334-.443A9.958 9.958 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-              Add to WhatsApp Order
-            </a>
-          </div>
-        </div>
-
-        <!-- ─── 5. Rogan Josh ─── -->
-        <div class="sig-card reveal">
-          <div class="sig-visual">
-            <div class="sig-visual-bg"></div>
-            <span class="sig-number">05</span>
-            <div class="sig-shape">
-              <div class="sig-shape-circle"></div>
-            </div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-          </div>
-          <div class="sig-content">
-            <span class="sig-badge nv">🔴 Non-Veg</span>
-            <h3 class="sig-name">Rogan Josh</h3>
-            <div class="sig-price">₹350</div>
-            <p class="sig-desc">An authentic Kashmiri masterpiece slow-cooked for hours. Tender lamb pieces in a rich, aromatic red gravy infused with fennel, dried ginger, and the finest Kashmiri red chili. The kind of dish that defines a cuisine.</p>
-            <a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20👋%20I'd%20like%20to%20order%20Rogan%20Josh%20(₹350)" class="sig-order-btn" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.609l4.51-1.468A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.234 0-4.308-.724-5.993-1.95l-.42-.307-2.676.87.894-2.637-.334-.443A9.958 9.958 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-              Add to WhatsApp Order
-            </a>
-          </div>
-        </div>
-
-        <!-- ─── 6. Kashmiri Kahwa ─── -->
-        <div class="sig-card reveal">
-          <div class="sig-visual">
-            <div class="sig-visual-bg"></div>
-            <span class="sig-number">06</span>
-            <div class="sig-shape">
-              <div class="sig-shape-hex"></div>
-            </div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-          </div>
-          <div class="sig-content">
-            <span class="sig-badge veg">🟢 Veg</span>
-            <h3 class="sig-name">Kashmiri Kahwa</h3>
-            <div class="sig-price">₹120</div>
-            <p class="sig-desc">More than a drink — it is a Kashmiri ritual. Handpicked green tea leaves steeped with saffron strands, cinnamon bark, cardamom pods, and crushed almonds. Sip it slowly and feel the warmth of the valley embrace you.</p>
-            <a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20👋%20I'd%20like%20to%20order%20Kashmiri%20Kahwa%20(₹120)" class="sig-order-btn" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.609l4.51-1.468A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.234 0-4.308-.724-5.993-1.95l-.42-.307-2.676.87.894-2.637-.334-.443A9.958 9.958 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-              Add to WhatsApp Order
-            </a>
-          </div>
-        </div>
-
-        <!-- ─── 7. Chocolate Lava Cake ─── -->
-        <div class="sig-card reveal">
-          <div class="sig-visual">
-            <div class="sig-visual-bg"></div>
-            <span class="sig-number">07</span>
-            <div class="sig-shape">
-              <div class="sig-shape-diamond"></div>
-            </div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-          </div>
-          <div class="sig-content">
-            <span class="sig-badge veg">🟢 Veg</span>
-            <h3 class="sig-name">Chocolate Lava Cake</h3>
-            <div class="sig-price">₹220</div>
-            <p class="sig-desc">Dark chocolate perfection with a molten, gooey center that flows like the Jhelum itself. Served warm with a scoop of premium vanilla ice cream and a drizzle of Belgian chocolate sauce. A grand finale to any meal.</p>
-            <a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20👋%20I'd%20like%20to%20order%20Chocolate%20Lava%20Cake%20(₹220)" class="sig-order-btn" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.609l4.51-1.468A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.234 0-4.308-.724-5.993-1.95l-.42-.307-2.676.87.894-2.637-.334-.443A9.958 9.958 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-              Add to WhatsApp Order
-            </a>
-          </div>
-        </div>
-
-        <!-- ─── 8. English Breakfast ─── -->
-        <div class="sig-card reveal">
-          <div class="sig-visual">
-            <div class="sig-visual-bg"></div>
-            <span class="sig-number">08</span>
-            <div class="sig-shape">
-              <div class="sig-shape-circle"></div>
-            </div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-            <div class="sig-particle"></div>
-          </div>
-          <div class="sig-content">
-            <span class="sig-badge nv">🔴 Non-Veg</span>
-            <h3 class="sig-name">English Breakfast</h3>
-            <div class="sig-price">₹350</div>
-            <p class="sig-desc">Start your Kashmir morning the continental way. Farm-fresh eggs cooked to order, golden toast, savory sausages, slow-baked beans, grilled vine tomatoes, and crispy hash browns. A complete, hearty start to the day.</p>
-            <a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20👋%20I'd%20like%20to%20order%20English%20Breakfast%20(₹350)" class="sig-order-btn" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.609l4.51-1.468A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.234 0-4.308-.724-5.993-1.95l-.42-.307-2.676.87.894-2.637-.334-.443A9.958 9.958 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-              Add to WhatsApp Order
-            </a>
-          </div>
-        </div>
-
+        <a href="menu.html" class="btn btn-primary">Order Harissa Pizza</a>
       </div>
+    </article>
+
+    <!-- Dish 2: Czochwaur Burger -->
+    <article class="magazine-row reveal">
+      <div class="magazine-media">
+        🍔
+      </div>
+      <div class="magazine-content">
+        <h2 class="magazine-heading">Czochwaur <em>Burger</em></h2>
+        <span class="magazine-price">₹280</span>
+        <p class="magazine-desc">Named after the traditional Kashmiri spice blend and bread craft, this burger features a handcrafted mutton patty heavily seasoned with local wazwan herbs. Topped with caramelized onions, crispy lettuce, and our secret herb-chutney mayonnaise, all sandwiched inside a soft local-style bun.</p>
+        <div class="sig-quote">
+          "The Story Behind the Dish: An homage to the local street vendors of Srinagar. We wanted to elevate the humble street snack into a gourmet dining burger while retaining its core aromatic profile."
+        </div>
+        <a href="menu.html" class="btn btn-primary">Order Czochwaur Burger</a>
+      </div>
+    </article>
+
+    <!-- Dish 3: Kashmiri Kahwa -->
+    <article class="magazine-row reveal">
+      <div class="magazine-media">
+        ☕
+      </div>
+      <div class="magazine-content">
+        <h2 class="magazine-heading">Kashmiri <em>Kahwa</em></h2>
+        <span class="magazine-price">₹120</span>
+        <p class="magazine-desc">More than a drink — it is a hospitality ritual. Handpicked local green tea leaves steeped slowly with real Kashmiri saffron strands, cinnamon bark, cardamom pods, and crushed sweet almonds. Served warm in matching glassware, it delivers the true essence of valley hospitality.</p>
+        <div class="sig-quote">
+          "The Story Behind the Dish: Every Kashmiri household starts and ends its day with Kahwa. Our recipe replicates the exact blend passed down through generations in the wazwan waza families."
+        </div>
+        <a href="menu.html" class="btn btn-primary">Order Kahwa Now</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- WhatsApp Floating Icon -->
+  <a href="https://wa.me/917780938743" class="whatsapp-float" target="_blank" aria-label="WhatsApp Support">
+    <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.53 0 8.21 3.69 8.21 8.21 0 2.2-.86 4.26-2.41 5.8-1.54 1.54-3.6 2.41-5.8 2.41-1.4 0-2.76-.36-3.97-1.03l-.28-.17-3.11.82.83-3.04-.18-.29A8.14 8.14 0 0 1 3.82 12c0-4.52 3.69-8.21 8.21-8.21z"/></svg>
+  </a>
+
+  <!-- Mobile Bottom Bar -->
+  <div class="mobile-bottom-nav">
+    <div class="mobile-bottom-nav-inner">
+      <a href="index.html" class="mobile-bottom-nav-item">
+        <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        <span>Home</span>
+      </a>
+      <a href="menu.html" class="mobile-bottom-nav-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.53c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.4z"/></svg>
+        <span>Menu</span>
+      </a>
+      <a href="contact.html#reserve" class="mobile-bottom-nav-item">
+        <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+        <span>Reserve</span>
+      </a>
+      <a href="tel:+919484104295" class="mobile-bottom-nav-item">
+        <svg viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1A11.36 11.36 0 0 1 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/></svg>
+        <span>Call</span>
+      </a>
+      <a href="https://wa.me/917780938743" class="mobile-bottom-nav-item">
+        <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.53 0 8.21 3.69 8.21 8.21 0 2.2-.86 4.26-2.41 5.8-1.54 1.54-3.6 2.41-5.8 2.41-1.4 0-2.76-.36-3.97-1.03l-.28-.17-3.11.82.83-3.04-.18-.29A8.14 8.14 0 0 1 3.82 12c0-4.52 3.69-8.21 8.21-8.21z"/></svg>
+        <span>WhatsApp</span>
+      </a>
     </div>
-  </section>
+  </div>
 
-  <!-- ═══════════ WAVE DIVIDER ═══════════ -->
-  
-
-  <!-- ═══════════ CHEF'S NOTE ═══════════ -->
-  <section class="chef-note">
-    <div class="container">
-      <div class="chef-note-inner reveal">
-        <span class="section-label" style="justify-content:center;">From Our Kitchen</span>
-        <h2 class="section-title" style="text-align:center;">Chef's Note</h2>
-        <span class="chef-quote-mark">&ldquo;</span>
-        <p class="chef-note-text">At Jhelum Cafe, every recipe carries a story. Our kitchen is a bridge between generations — where grandmother's Kashmiri wazwan secrets meet the bold flavors of global cuisine. We believe food should surprise you, comfort you, and bring you back for more. Each ingredient is sourced fresh from local markets, and every dish is prepared with the care and pride that Kashmir is known for.</p>
-        <div class="chef-note-author">
-          <div class="chef-note-line"></div>
-          <span class="chef-note-name">The Jhelum Cafe Kitchen</span>
-          <span class="chef-note-role">Budshah Bridge, Lal Chowk, Srinagar</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════ WAVE DIVIDER ═══════════ -->
-  
-
-  <!-- ═══════════ CTA SECTION ═══════════ -->
-  <section class="cta-section">
-    <div class="container reveal">
-      <span class="section-label" style="justify-content:center;">Explore More</span>
-      <h2 class="section-title">Ready to Dive Deeper?</h2>
-      <p class="section-subtitle" style="margin:0 auto 40px;text-align:center;">Discover our complete menu with over 50 dishes, or reserve a table for an unforgettable dining experience by the Jhelum River.</p>
-      <div class="cta-buttons">
-        <a href="menu.html" class="btn-primary">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-          Full Menu
-        </a>
-        <a href="contact.html" class="btn-outline">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Reserve a Table
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════ FOOTER ═══════════ -->
+  <!-- ============================
+       FOOTER
+  ============================ -->
   <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-brand-name">Jhelum Cafe & Fine Dine</div>
-          <p class="footer-brand-desc">A two-storey culinary wonder on the banks of the Jhelum River in the heart of Srinagar. Where Kashmir meets your cup.</p>
-          <div class="footer-socials">
-            <a href="https://www.instagram.com/jhelumcafe/" target="_blank" rel="noopener" aria-label="Instagram">
-              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            </a>
-            <a href="https://www.facebook.com/jhelumcafe" target="_blank" rel="noopener" aria-label="Facebook">
-              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            </a>
-            <a href="https://www.zomato.com/srinagar/jhelum-cafe-fine-dine-lal-chowk/order" target="_blank" rel="noopener" aria-label="Zomato"><span class="zomato-logo-letter">Z</span></a>
-          </div>
-        </div>
-        <div>
-          <h4 class="footer-heading">Quick Links</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="menu.html">Full Menu</a></li>
-            <li><a href="signatures.html">Signatures</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="reviews.html">Reviews</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="footer-heading">Get in Touch</h4>
-          <ul class="footer-links">
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="order.html">Order Online</a></li>
-            <li><a href="faq.html">FAQs</a></li>
-            <li><a href="tel:+919484104295">Call: 9484104295</a></li>
-            <li><a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20👋" target="_blank" rel="noopener">WhatsApp Us</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="footer-heading">Hours</h4>
-          <ul class="footer-hours">
-            <li><span>Mon – Sun</span></li>
-            <li>10:00 AM – 10:00 PM</li>
-            <li style="margin-top:12px;"><span>Open all 7 days</span></li>
-          </ul>
-          <p style="color:var(--muted);font-size:0.85rem;margin-top:16px;line-height:1.6;">Budshah Bridge, Maisuma,<br>Lal Chowk, Srinagar,<br>J&K 190001</p>
+    <div class="footer-inner container">
+      <div class="footer-brand">
+        <h3>Jhelum <span>Cafe & Fine Dine</span></h3>
+        <p>Srinagar's beloved riverside culinary wonder. Where traditional Kashmiri hospitality meets modern cafe culture.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/jhelumcafe/" target="_blank" aria-label="Instagram">📸</a>
+          <a href="https://www.facebook.com/jhelumcafe/" target="_blank" aria-label="Facebook">👤</a>
+          <a href="https://www.zomato.com/srinagar/jhelum-cafe-fine-dine-lal-chowk/order" target="_blank" aria-label="Zomato">Z</a>
         </div>
       </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 Jhelum Cafe & Fine Dine. All rights reserved.</span>
-        <span>Crafted with ❤️ in Srinagar, Kashmir</span>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="menu.html">Our Menu</a></li>
+          <li><a href="signatures.html">Signatures</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="reviews.html">Guest Reviews</a></li>
+          <li><a href="order.html">Order Online</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
       </div>
+      <div class="footer-col">
+        <h4>Hours & Location</h4>
+        <div class="footer-hours-list">
+          <div class="hours-row"><span>Monday - Sunday:</span> <span>10:00 AM - 10:00 PM</span></div>
+        </div>
+        <p style="margin-top: 1rem; color: var(--muted); font-size: 0.9rem; line-height: 1.5;">Budshah Bridge, Maisuma, Lal Chowk, Srinagar, J&K 190001</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Jhelum Cafe & Fine Dine. All Rights Reserved.</p>
     </div>
   </footer>
 
-  <!-- ═══════════ FLOATING WHATSAPP ═══════════ -->
-  <a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20👋" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.609l4.51-1.468A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.234 0-4.308-.724-5.993-1.95l-.42-.307-2.676.87.894-2.637-.334-.443A9.958 9.958 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-  </a>
-
-  <!-- ═══════════ BACK TO TOP ═══════════ -->
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">
-    <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
-  </button>
-
-  <!-- ═══════════ MOBILE BOTTOM NAV ═══════════ -->
-  <div class="mobile-bottom-nav">
-    <div class="mobile-bottom-nav-inner">
-      <a href="index.html" class="mobile-nav-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
-        Home
-      </a>
-      <a href="menu.html" class="mobile-nav-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-        Menu
-      </a>
-      <a href="contact.html" class="mobile-nav-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        Reserve
-      </a>
-      <a href="tel:+919484104295" class="mobile-nav-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        Call
-      </a>
-      <a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20👋" class="mobile-nav-item" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.609l4.51-1.468A11.956 11.956 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.234 0-4.308-.724-5.993-1.95l-.42-.307-2.676.87.894-2.637-.334-.443A9.958 9.958 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-        WhatsApp
-      </a>
-    </div>
-  </div>
-
-  <!-- ═══════════ JAVASCRIPT ═══════════ -->
-  <script>
-    // ─── Navbar scroll effect ───
-    const nav = document.getElementById('mainNav');
-    const backToTop = document.getElementById('backToTop');
-
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      nav.classList.toggle('scrolled', scrollY > 60);
-      backToTop.classList.toggle('visible', scrollY > 400);
-    });
-
-    // ─── Back to top ───
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // ─── Hamburger menu ───
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
-      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-    });
-
-    // Close mobile menu on link click
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
-
-    // ─── Intersection Observer for scroll animations ───
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px 0px -60px 0px',
-      threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          // Stagger animation for grid items
-          const delay = entry.target.closest('.signatures-grid') ? 
-            Array.from(entry.target.parentNode.children).indexOf(entry.target) * 100 : 0;
-          
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, delay);
-          
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // ─── Add active nav scroll styling on load ───
-    window.dispatchEvent(new Event('scroll'));
-  </script>
-
-
-  <!-- Hero Background Slideshow Script -->
-  <script>
-    (function() {
-      const slides = document.querySelectorAll('.hero-slideshow .hero-slide');
-      let currentSlide = 0;
-      function nextSlide() {
-        if (slides.length === 0) return;
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
-      }
-      if (slides.length > 0) {
-        setInterval(nextSlide, 5000);
-      }
-    })();
-  </script>
+  <script src="script.js"></script>
 </body>
-
 </html>
