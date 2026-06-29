@@ -875,6 +875,173 @@ ul { list-style: none; }
   fill: currentColor;
 }
 
+/* ─── Ambiance & Interior Gallery Grid ─── */
+.ambiance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 80px;
+}
+.ambiance-card {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid rgba(212, 168, 83, 0.08);
+  transition: var(--transition);
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+}
+.ambiance-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(212, 168, 83, 0.25);
+  box-shadow: var(--shadow-lg);
+}
+.ambiance-card[data-index="0"] {
+  grid-column: span 2;
+}
+.ambiance-img-wrapper {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  position: relative;
+}
+.ambiance-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ambiance-card:hover .ambiance-img-wrapper img {
+  transform: scale(1.05);
+}
+.ambiance-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 20, 25, 0.9) 0%, rgba(15, 20, 25, 0.2) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  opacity: 0.9;
+  transition: var(--transition);
+}
+.ambiance-card:hover .ambiance-overlay {
+  opacity: 1;
+  background: linear-gradient(to top, rgba(15, 20, 25, 0.95) 0%, rgba(15, 20, 25, 0.3) 70%, transparent 100%);
+}
+.ambiance-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+.ambiance-card-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.ambiance-view {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+.ambiance-card:hover .ambiance-view {
+  color: var(--primary);
+}
+
+/* ─── Lightbox Modal ─── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 20, 25, 0.98);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.lightbox.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: var(--radius);
+  border: 1px solid rgba(212, 168, 83, 0.15);
+  box-shadow: var(--shadow-lg);
+}
+.lightbox-caption {
+  margin-top: 16px;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--text);
+  text-align: center;
+}
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-size: 2.5rem;
+  color: var(--text);
+  opacity: 0.7;
+  transition: var(--transition);
+  z-index: 2010;
+}
+.lightbox-close:hover {
+  color: var(--primary);
+  opacity: 1;
+  transform: scale(1.1);
+}
+.lightbox-prev, .lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: var(--text);
+  opacity: 0.5;
+  padding: 16px 20px;
+  transition: var(--transition);
+  z-index: 2010;
+}
+.lightbox-prev:hover, .lightbox-next:hover {
+  color: var(--primary);
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+}
+.lightbox-prev {
+  left: 24px;
+}
+.lightbox-next {
+  right: 24px;
+}
+
 /* ═══════════════════════════════════════════
    RESPONSIVE
    ═══════════════════════════════════════════ */
@@ -885,6 +1052,8 @@ ul { list-style: none; }
   .insta-embed-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
   .gmaps-grid { grid-template-columns: repeat(3, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .ambiance-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .ambiance-card[data-index="0"] { grid-column: span 2; }
 }
 @media (max-width: 768px) {
   :root { --nav-height: 64px; }
@@ -899,6 +1068,14 @@ ul { list-style: none; }
   .insta-embed-wrapper iframe { min-height: 420px; }
   .gmaps-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
   .filter-btn { padding: 8px 16px; font-size: 0.8rem; }
+  .ambiance-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 48px; }
+  .ambiance-card[data-index="0"] { grid-column: span 2; }
+  .ambiance-img-wrapper { height: 280px; }
+  .lightbox-prev, .lightbox-next { padding: 8px 12px; font-size: 1.5rem; }
+  .lightbox-prev { left: 8px; }
+  .lightbox-next { right: 8px; }
+  .lightbox-close { top: 16px; right: 16px; font-size: 2rem; }
+  .lightbox-caption { font-size: 1rem; }
 }
 @media (max-width: 480px) {
   .hero { min-height: 280px; }
@@ -911,6 +1088,9 @@ ul { list-style: none; }
   .gmaps-card-label { font-size: 0.8rem; }
   .filter-bar { gap: 6px; }
   .filter-btn { padding: 7px 14px; font-size: 0.75rem; }
+  .ambiance-grid { grid-template-columns: 1fr; gap: 16px; }
+  .ambiance-card[data-index="0"] { grid-column: span 1; }
+  .ambiance-img-wrapper { height: 260px; }
 }
 </style>
 </head>
@@ -989,7 +1169,77 @@ ul { list-style: none; }
     <div class="filter-bar reveal">
       <button class="filter-btn active" data-filter="all">All</button>
       <button class="filter-btn" data-filter="instagram">Instagram</button>
+      <button class="filter-btn" data-filter="ambiance">Ambiance & Interiors</button>
       <button class="filter-btn" data-filter="gmaps">Google Maps Photos</button>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         AMBIANCE & INTERIOR GALLERY
+         ═══════════════════════════════════════ -->
+    <div class="gallery-section" id="ambianceSection" data-section="ambiance">
+      <div class="section-header reveal">
+        <div class="section-label">Our Space</div>
+        <h2 class="section-title">Step Inside Jhelum Cafe</h2>
+        <p class="section-subtitle">Experience our warm wooden ceilings, colorful stained glass windows, and traditional Kashmiri interior wainscotings.</p>
+      </div>
+      
+      <div class="ambiance-grid reveal">
+        <!-- Card 1 -->
+        <div class="ambiance-card" data-index="0">
+          <div class="ambiance-img-wrapper">
+            <img src="images/gallery_1.jpg" alt="Pine wood ceiling dining room" loading="lazy">
+          </div>
+          <div class="ambiance-overlay">
+            <span class="ambiance-tag">Ambiance</span>
+            <h3 class="ambiance-card-title">Ground Floor Dining</h3>
+            <span class="ambiance-view">View Photo</span>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="ambiance-card" data-index="1">
+          <div class="ambiance-img-wrapper">
+            <img src="images/gallery_2.jpg" alt="Wazwan dining room setup" loading="lazy">
+          </div>
+          <div class="ambiance-overlay">
+            <span class="ambiance-tag">Ambiance</span>
+            <h3 class="ambiance-card-title">First-Floor Layout</h3>
+            <span class="ambiance-view">View Photo</span>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="ambiance-card" data-index="2">
+          <div class="ambiance-img-wrapper">
+            <img src="images/gallery_3.jpg" alt="Illuminated wazwan counter" loading="lazy">
+          </div>
+          <div class="ambiance-overlay">
+            <span class="ambiance-tag">Ambiance</span>
+            <h3 class="ambiance-card-title">Wazwan Counter</h3>
+            <span class="ambiance-view">View Photo</span>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="ambiance-card" data-index="3">
+          <div class="ambiance-img-wrapper">
+            <img src="images/gallery_4.jpg" alt="Pine wood wainscot booth seating" loading="lazy">
+          </div>
+          <div class="ambiance-overlay">
+            <span class="ambiance-tag">Ambiance</span>
+            <h3 class="ambiance-card-title">Wooden Sofa Booths</h3>
+            <span class="ambiance-view">View Photo</span>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="ambiance-card" data-index="4">
+          <div class="ambiance-img-wrapper">
+            <img src="images/gallery_5.jpg" alt="First-floor spacious dining room" loading="lazy">
+          </div>
+          <div class="ambiance-overlay">
+            <span class="ambiance-tag">Ambiance</span>
+            <h3 class="ambiance-card-title">First-Floor Hall</h3>
+            <span class="ambiance-view">View Photo</span>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- ═══════════════════════════════════════
@@ -1594,6 +1844,7 @@ ul { list-style: none; }
   /* ─── Gallery Filter Tabs ─── */
   const filterBtns = document.querySelectorAll('.filter-btn');
   const instagramSection = document.getElementById('instagramSection');
+  const ambianceSection = document.getElementById('ambianceSection');
   const gmapsSection = document.getElementById('gmapsSection');
 
   filterBtns.forEach(btn => {
@@ -1606,18 +1857,99 @@ ul { list-style: none; }
 
       if (filter === 'all') {
         instagramSection.classList.remove('hidden-section');
+        ambianceSection.classList.remove('hidden-section');
         gmapsSection.classList.remove('hidden-section');
       } else if (filter === 'instagram') {
         instagramSection.classList.remove('hidden-section');
+        ambianceSection.classList.add('hidden-section');
+        gmapsSection.classList.add('hidden-section');
+      } else if (filter === 'ambiance') {
+        instagramSection.classList.add('hidden-section');
+        ambianceSection.classList.remove('hidden-section');
         gmapsSection.classList.add('hidden-section');
       } else if (filter === 'gmaps') {
         instagramSection.classList.add('hidden-section');
+        ambianceSection.classList.add('hidden-section');
         gmapsSection.classList.remove('hidden-section');
       }
 
       // Re-observe newly visible elements for animation
       document.querySelectorAll('.reveal:not(.visible)').forEach(el => revealObserver.observe(el));
     });
+  });
+
+  /* ─── Lightbox Modal ─── */
+  const ambianceCards = document.querySelectorAll('.ambiance-card');
+  const lightboxModal = document.getElementById('lightboxModal');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+
+  let currentIndex = 0;
+  const imagesData = [];
+
+  ambianceCards.forEach((card, index) => {
+    const img = card.querySelector('img');
+    const title = card.querySelector('.ambiance-card-title').textContent;
+    imagesData.push({
+      src: img.getAttribute('src'),
+      title: title
+    });
+
+    card.addEventListener('click', () => {
+      openLightbox(index);
+    });
+  });
+
+  function openLightbox(index) {
+    currentIndex = index;
+    updateLightboxContent();
+    lightboxModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightboxModal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function updateLightboxContent() {
+    const data = imagesData[currentIndex];
+    lightboxImg.setAttribute('src', data.src);
+    lightboxCaption.textContent = data.title;
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % imagesData.length;
+    updateLightboxContent();
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + imagesData.length) % imagesData.length;
+    updateLightboxContent();
+  }
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightboxNext.addEventListener('click', showNext);
+  lightboxPrev.addEventListener('click', showPrev);
+
+  lightboxModal.addEventListener('click', (e) => {
+    if (e.target === lightboxModal) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightboxModal.classList.contains('open')) return;
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+      showNext();
+    } else if (e.key === 'ArrowLeft') {
+      showPrev();
+    }
   });
 
   /* ─── Process Instagram Embeds ─── */
@@ -1640,5 +1972,17 @@ ul { list-style: none; }
 
 })();
 </script>
+
+<!-- Lightbox Modal -->
+<div class="lightbox" id="lightboxModal">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close Lightbox">&times;</button>
+  <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous Photo">&#10094;</button>
+  <div class="lightbox-content">
+    <img id="lightboxImg" src="" alt="Jhelum Cafe Ambiance">
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+  <button class="lightbox-next" id="lightboxNext" aria-label="Next Photo">&#10095;</button>
+</div>
+
 </body>
 </html>
