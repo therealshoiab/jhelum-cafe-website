@@ -50,6 +50,230 @@
     .footer-social a[aria-label="Facebook"], .footer-socials a[aria-label="Facebook"], .footer__social a[aria-label="Facebook"], .footer-social-link[aria-label="Facebook"], .footer-socials-list a[aria-label="Facebook"] {
       background: #1877F2 !important;
     }
+    /* Zomato Red with bold letter Z */
+    .footer-social a[aria-label="Zomato"], .footer-socials a[aria-label="Zomato"], .footer__social a[aria-label="Zomato"], .footer-social-link[aria-label="Zomato"], .footer-socials-list a[aria-label="Zomato"] {
+      background: #CB202D !important; /* Official Zomato Red */
+      font-family: 'Playfair Display', Georgia, serif !important;
+      font-weight: 900 !important;
+      font-size: 1.45rem !important;
+      line-height: 1 !important;
+      color: #ffffff !important;
+    }
+    .footer-social a:hover, .footer-socials a:hover, .footer__social a:hover, .footer-social-link:hover {
+      transform: translateY(-4px) scale(1.08) !important;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3) !important;
+      color: #ffffff !important;
+    }
+    .footer-social a svg, .footer-socials a svg, .footer__social a svg, .footer-social-link svg {
+      width: 20px !important;
+      height: 20px !important;
+      fill: currentColor !important;
+      stroke: none !important;
+    }
+    /* Rating Badges in Hero single-line (Image 2 Style) */
+    .hero-ratings {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      gap: 12px !important;
+      justify-content: center !important;
+      align-items: center !important;
+      width: 100% !important;
+      max-width: 600px !important;
+      margin: 0 auto 2.5rem !important;
+    }
+    .rating-badge {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      background: rgba(26, 35, 50, 0.85) !important;
+      backdrop-filter: blur(10px) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
+      border: 1px solid rgba(214, 168, 83, 0.2) !important;
+      padding: 8px 18px !important;
+      border-radius: 50px !important;
+      font-size: 0.9rem !important;
+      color: var(--text) !important;
+      white-space: nowrap !important;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+    }
+    @media (max-width: 480px) {
+      .hero-ratings {
+        gap: 6px !important;
+        padding: 0 10px !important;
+      }
+      .rating-badge {
+        padding: 6px 12px !important;
+        font-size: 0.72rem !important;
+        gap: 4px !important;
+      }
+    }
+
+    /* Global Hero Slideshow Styles */
+    .hero, .hero-menu, .page-hero {
+      position: relative !important;
+      overflow: hidden !important;
+      background: #0F1419 !important;
+    }
+    .hero-slideshow {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      z-index: 1 !important;
+      pointer-events: none !important;
+    }
+    .hero-slideshow .hero-slide {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      background-size: cover !important;
+      background-position: center !important;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out !important;
+    }
+    .hero-slideshow .hero-slide.active {
+      opacity: 1 !important;
+    }
+    .hero-overlay {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      background: linear-gradient(180deg, rgba(15, 20, 25, 0.5) 0%, rgba(15, 20, 25, 0.85) 100%) !important;
+      z-index: 2 !important;
+      pointer-events: none !important;
+    }
+    .hero-content, .hero__content {
+      position: relative !important;
+      z-index: 3 !important;
+    }
+
+    /* Remove decorative lines from headings globally */
+    .section-label::before,
+    .section-label::after,
+    .faq-section__label::before,
+    .faq-section__label::after,
+    .section-title::before,
+    .section-title::after {
+      display: none !important;
+      content: none !important;
+      width: 0 !important;
+      height: 0 !important;
+    }
+    .section-label, .faq-section__label {
+      gap: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    /* Uniform Glassmorphic Stat Cards (About Us Image 3) */
+    .stats-section .stat-card {
+      background: rgba(26, 35, 50, 0.45) !important;
+      backdrop-filter: blur(10px) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
+      border: 1px solid rgba(212, 168, 83, 0.15) !important;
+      border-radius: 16px !important;
+      padding: 2rem 1.5rem !important;
+      text-align: center !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: center !important;
+      min-height: 170px !important; /* Enforces identical height */
+      height: 100% !important;
+      box-shadow: var(--shadow) !important;
+      box-sizing: border-box !important;
+    }
+    .stats-section .stat-card::after {
+      display: none !important;
+      content: none !important;
+    }
+    .stats-section .stat-value {
+      font-size: clamp(1.1rem, 2vw, 1.45rem) !important; /* Safe size preventing overflow */
+      font-weight: 700 !important;
+      color: var(--primary) !important;
+      margin-bottom: 0.75rem !important;
+      line-height: 1.25 !important;
+      font-family: var(--font-body) !important;
+    }
+    .stats-section .stat-label {
+      font-size: 0.75rem !important;
+      color: var(--muted) !important;
+      text-transform: uppercase !important;
+      letter-spacing: 2px !important;
+      font-weight: 600 !important;
+      margin-top: auto !important;
+    }
+
+    /* Uniform Story Deco Cards (About Us Image 4) */
+    .story-deco-card {
+      background: rgba(26, 35, 50, 0.55) !important;
+      backdrop-filter: blur(8px) !important;
+      -webkit-backdrop-filter: blur(8px) !important;
+      border: 1px solid rgba(212, 168, 83, 0.12) !important;
+      border-radius: var(--radius-sm) !important;
+      padding: 1.5rem 1rem !important;
+      text-align: center !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: center !important;
+      min-height: 110px !important; /* Force same height */
+      height: 100% !important;
+      box-sizing: border-box !important;
+      transition: all 0.3s ease !important;
+    }
+    .story-deco-card:hover {
+      border-color: rgba(212, 168, 83, 0.3) !important;
+      transform: translateY(-3px) !important;
+    }
+
+
+    
+    html, body {
+      overflow-x: hidden !important;
+      max-width: 100% !important;
+      position: relative !important;
+    }
+    .num-font, .price, .stats-count, .stats-number, .dish-price, .rating-badge .score, .stars, .score {
+      font-family: var(--font-body) !important;
+      font-variant-numeric: tabular-nums;
+      font-weight: 700;
+    }
+    /* Brand Colored Social Icons (Image 3 Style) */
+    .footer-social, .footer-socials, .footer__social, .footer-socials-list {
+      display: flex !important;
+      gap: 14px !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      margin-top: 1rem !important;
+    }
+    .footer-social a, .footer-socials a, .footer__social a, .footer-social-link, .footer-socials-list a {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 42px !important;
+      height: 42px !important;
+      border-radius: 12px !important;
+      color: #ffffff !important;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      border: none !important;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
+      text-decoration: none !important;
+    }
+    /* Instagram Gradient Pink/Orange */
+    .footer-social a[aria-label="Instagram"], .footer-socials a[aria-label="Instagram"], .footer__social a[aria-label="Instagram"], .footer-social-link[aria-label="Instagram"], .footer-socials-list a[aria-label="Instagram"] {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+    }
+    /* Facebook Blue */
+    .footer-social a[aria-label="Facebook"], .footer-socials a[aria-label="Facebook"], .footer__social a[aria-label="Facebook"], .footer-social-link[aria-label="Facebook"], .footer-socials-list a[aria-label="Facebook"] {
+      background: #1877F2 !important;
+    }
     /* Zomato Red */
     .footer-social a[aria-label="Zomato"], .footer-socials a[aria-label="Zomato"], .footer__social a[aria-label="Zomato"], .footer-social-link[aria-label="Zomato"], .footer-socials-list a[aria-label="Zomato"] {
       background: #CB202D !important; /* Official Zomato Red */
@@ -1139,6 +1363,16 @@
 
   <!-- ═══════════════ HERO ═══════════════ -->
   <section class="hero">
+    <!-- Hero Background Slideshow -->
+    <div class="hero-slideshow">
+      <div class="hero-slide active" style="background-image: url('images/jhelum_1.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('images/jhelum_2.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('images/jhelum_3.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('images/jhelum_4.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('images/jhelum_5.jpg');"></div>
+    </div>
+    <div class="hero-overlay"></div>
+
     <div class="hero__pattern"></div>
     <div class="hero__dots hero__dots--left"></div>
     <div class="hero__dots hero__dots--right"></div>
@@ -1445,9 +1679,7 @@
             <a href="https://www.facebook.com/jhelumcafe" target="_blank" rel="noopener" aria-label="Facebook">
               <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
             </a>
-            <a href="https://www.zomato.com/srinagar/jhelum-cafe-fine-dine-lal-chowk/order" target="_blank" rel="noopener" aria-label="Zomato">
-              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19.54 5.08a10.61 10.61 0 0 0-4.07-2.5 2 2 0 0 0-1.89.28l-.63.47a.5.5 0 0 1-.6 0l-.63-.47a2 2 0 0 0-1.89-.28 10.61 10.61 0 0 0-4.07 2.5 1.5 1.5 0 0 0-.25 1.72l.47.78a.5.5 0 0 1 0 .52L3.5 12.27A10.84 10.84 0 0 0 12 22a10.84 10.84 0 0 0 8.5-9.73l-2.48-4.07a.5.5 0 0 1 0-.52l.47-.78a1.5 1.5 0 0 0-.25-1.72zm-7.54 12.5a5.58 5.58 0 0 1-5.58-5.58A5.58 5.58 0 0 1 12 6.42a5.58 5.58 0 0 1 5.58 5.58 5.58 5.58 0 0 1-5.58 5.58z"/></svg>
-            </a>
+            <a href="https://www.zomato.com/srinagar/jhelum-cafe-fine-dine-lal-chowk/order" target="_blank" rel="noopener" aria-label="Zomato"><span class="zomato-logo-letter">Z</span></a>
           </div>
         </div>
 
@@ -1735,5 +1967,23 @@
     }
   </script>
 
+
+  <!-- Hero Background Slideshow Script -->
+  <script>
+    (function() {
+      const slides = document.querySelectorAll('.hero-slideshow .hero-slide');
+      let currentSlide = 0;
+      function nextSlide() {
+        if (slides.length === 0) return;
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+      }
+      if (slides.length > 0) {
+        setInterval(nextSlide, 5000);
+      }
+    })();
+  </script>
 </body>
+
 </html>
