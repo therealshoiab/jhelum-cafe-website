@@ -10,7 +10,40 @@
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://jhelumcafe.com/faq.html">
 
-  <style>/* Global Mobile Scroll & Number Font Patch */
+  <style>
+    /* Clean Page Header Styles (Habit Cafe Style) */
+    body {
+      padding-top: 72px !important;
+    }
+    .clean-page-header {
+      padding: 5rem 0 3rem 0 !important;
+      text-align: center !important;
+      background: var(--bg) !important;
+      border-bottom: 1px solid rgba(212, 168, 83, 0.05) !important;
+      position: relative !important;
+      z-index: 10 !important;
+    }
+    .clean-page-title {
+      font-family: var(--font-display) !important;
+      font-size: clamp(2.5rem, 5vw, 3.5rem) !important;
+      font-weight: 700 !important;
+      color: var(--primary) !important;
+      margin-bottom: 0.75rem !important;
+      text-transform: capitalize !important;
+    }
+    .clean-page-title em {
+      font-style: italic !important;
+      color: #ffffff !important;
+    }
+    .clean-page-subtitle {
+      font-family: var(--font-body) !important;
+      font-size: clamp(0.95rem, 2vw, 1.15rem) !important;
+      color: var(--muted) !important;
+      max-width: 750px !important;
+      margin: 0 auto !important;
+      line-height: 1.6 !important;
+    }
+/* Global Mobile Scroll & Number Font Patch */
     html, body {
       overflow-x: hidden !important;
       max-width: 100% !important;
@@ -1362,26 +1395,12 @@
   </div>
 
   <!-- ═══════════════ HERO ═══════════════ -->
-  <section class="hero">
-    <!-- Hero Background Slideshow -->
-    <div class="hero-slideshow">
-      <div class="hero-slide active" style="background-image: url('images/jhelum_1.jpg');"></div>
-      <div class="hero-slide" style="background-image: url('images/jhelum_2.jpg');"></div>
-      <div class="hero-slide" style="background-image: url('images/jhelum_3.jpg');"></div>
-      <div class="hero-slide" style="background-image: url('images/jhelum_4.jpg');"></div>
-      <div class="hero-slide" style="background-image: url('images/jhelum_5.jpg');"></div>
+  <header class="clean-page-header">
+    <div class="container">
+      <h1 class="clean-page-title">Frequently Asked <em>Questions</em></h1>
+      <p class="clean-page-subtitle">Everything you need to know about dining with us at Jhelum Cafe & Fine Dine, right on the banks of the Jhelum River.</p>
     </div>
-    <div class="hero-overlay"></div>
-
-    <div class="hero__pattern"></div>
-    <div class="hero__dots hero__dots--left"></div>
-    <div class="hero__dots hero__dots--right"></div>
-    <div class="hero__content">
-      <div class="hero__badge">💬 We're Here to Help</div>
-      <h1 class="hero__title">Frequently Asked <em>Questions</em></h1>
-      <p class="hero__subtitle">Everything you need to know about dining with us at Jhelum Cafe & Fine Dine, right on the banks of the Jhelum River.</p>
-    </div>
-  </section>
+  </header>
 
   <!-- ═══════════════ WAVE DIVIDER ═══════════════ -->
   
