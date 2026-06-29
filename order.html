@@ -13,6 +13,264 @@
 
   <!-- Fonts -->
   <style>
+    /* 50K Rupee Premium Theme Overrides */
+    body {
+      padding-top: 72px !important;
+      background-color: #0F1419 !important;
+    }
+    .clean-page-header {
+      padding: 6rem 0 4rem 0 !important;
+      text-align: center !important;
+      background: linear-gradient(180deg, rgba(15, 20, 25, 0.8) 0%, rgba(15, 20, 25, 0.3) 100%) !important;
+      border-bottom: 1px solid rgba(212, 168, 83, 0.05) !important;
+      position: relative !important;
+      z-index: 10 !important;
+    }
+    .clean-page-title {
+      font-family: var(--font-display) !important;
+      font-size: clamp(2.5rem, 5vw, 3.8rem) !important;
+      font-weight: 700 !important;
+      color: var(--primary) !important;
+      margin-bottom: 1rem !important;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+    }
+    .clean-page-title em {
+      font-style: italic !important;
+      color: #ffffff !important;
+    }
+    .clean-page-subtitle {
+      font-family: var(--font-body) !important;
+      font-size: clamp(0.95rem, 2vw, 1.15rem) !important;
+      color: var(--muted) !important;
+      max-width: 750px !important;
+      margin: 0 auto !important;
+      line-height: 1.6 !important;
+      opacity: 0.9 !important;
+    }
+    .glass-panel, .specialty-card, .stat-card, .contact-card, .rating-card, .sig-card, .accordion__item, .review-card, .amenity-card, .menu-card, .platform-card, .delivery-card {
+      background: rgba(26, 35, 50, 0.45) !important;
+      backdrop-filter: blur(16px) !important;
+      -webkit-backdrop-filter: blur(16px) !important;
+      border: 1px solid rgba(212, 168, 83, 0.08) !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    }
+    .specialty-card:hover, .stat-card:hover, .contact-card:hover, .rating-card:hover, .sig-card:hover, .review-card:hover, .amenity-card:hover, .menu-card:hover, .platform-card:hover, .delivery-card:hover {
+      transform: translateY(-6px) !important;
+      border-color: rgba(212, 168, 83, 0.25) !important;
+      box-shadow: 0 12px 40px rgba(212, 168, 83, 0.1) !important;
+    }
+    .accordion__item.active {
+      border-color: rgba(212, 168, 83, 0.45) !important;
+      box-shadow: 0 10px 30px rgba(212, 168, 83, 0.12) !important;
+    }
+    
+    /* WhatsApp Order Builder Styles */
+    .order-builder-section {
+      padding: 6rem 0 !important;
+      background: #0F1419 !important;
+    }
+    .builder-grid {
+      display: grid !important;
+      grid-template-columns: 1.2fr 0.8fr !important;
+      gap: 3rem !important;
+      align-items: start !important;
+    }
+    @media (max-width: 992px) {
+      .builder-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+      }
+    }
+    .builder-panel, .builder-summary {
+      padding: 2.5rem !important;
+      border-radius: var(--radius) !important;
+    }
+    .panel-title {
+      font-family: var(--font-display) !important;
+      font-size: 1.6rem !important;
+      color: #ffffff !important;
+      margin-bottom: 2rem !important;
+      border-bottom: 1px solid rgba(212, 168, 83, 0.1) !important;
+      padding-bottom: 0.75rem !important;
+    }
+    .builder-items-list {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 1.25rem !important;
+    }
+    .builder-item {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      padding: 1.25rem !important;
+      background: rgba(15, 20, 25, 0.4) !important;
+      border: 1px solid rgba(212, 168, 83, 0.05) !important;
+      border-radius: var(--radius-sm) !important;
+      transition: all 0.3s ease !important;
+    }
+    .builder-item:hover {
+      border-color: rgba(212, 168, 83, 0.2) !important;
+      background: rgba(15, 20, 25, 0.6) !important;
+    }
+    .item-info {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 0.35rem !important;
+      text-align: left !important;
+    }
+    .item-name {
+      font-weight: 600 !important;
+      color: var(--text) !important;
+      font-size: 1.05rem !important;
+    }
+    .item-price {
+      color: var(--primary) !important;
+      font-weight: 700 !important;
+      font-family: var(--font-body) !important;
+    }
+    .item-badge {
+      font-size: 0.65rem !important;
+      text-transform: uppercase !important;
+      letter-spacing: 1px !important;
+      font-weight: 700 !important;
+      color: var(--muted) !important;
+    }
+    .item-badge.bestseller {
+      color: var(--primary) !important;
+    }
+    .item-qty-controls {
+      display: flex !important;
+      align-items: center !important;
+      gap: 1rem !important;
+      background: rgba(15, 20, 25, 0.8) !important;
+      padding: 0.5rem 1rem !important;
+      border-radius: 30px !important;
+      border: 1px solid rgba(212, 168, 83, 0.1) !important;
+    }
+    .qty-btn {
+      background: none !important;
+      border: none !important;
+      color: var(--primary) !important;
+      font-size: 1.2rem !important;
+      font-weight: 700 !important;
+      cursor: pointer !important;
+      width: 24px !important;
+      height: 24px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: all 0.2s ease !important;
+    }
+    .qty-btn:hover {
+      color: #ffffff !important;
+      transform: scale(1.2) !important;
+    }
+    .qty-val {
+      color: #ffffff !important;
+      font-weight: 700 !important;
+      min-width: 16px !important;
+      text-align: center !important;
+    }
+    .summary-list {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 1rem !important;
+      margin-bottom: 2rem !important;
+      min-height: 80px !important;
+    }
+    .summary-item {
+      display: flex !important;
+      justify-content: space-between !important;
+      font-size: 0.95rem !important;
+      color: var(--text) !important;
+      border-bottom: 1px dashed rgba(212, 168, 83, 0.1) !important;
+      padding-bottom: 0.5rem !important;
+    }
+    .empty-msg {
+      color: var(--muted) !important;
+      text-align: center !important;
+      font-style: italic !important;
+      margin-top: 1.5rem !important;
+    }
+    .summary-total {
+      display: flex !important;
+      justify-content: space-between !important;
+      font-size: 1.25rem !important;
+      font-weight: 700 !important;
+      color: #ffffff !important;
+      border-top: 1.5px solid rgba(212, 168, 83, 0.2) !important;
+      padding-top: 1rem !important;
+      margin-bottom: 2rem !important;
+    }
+    .total-price {
+      color: var(--primary) !important;
+    }
+    .customer-info-inputs {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 1rem !important;
+      margin-bottom: 2rem !important;
+    }
+    .customer-info-inputs input {
+      width: 100% !important;
+      padding: 0.85rem 1.25rem !important;
+      border-radius: var(--radius-sm) !important;
+      background: rgba(15, 20, 25, 0.6) !important;
+      border: 1px solid rgba(212, 168, 83, 0.1) !important;
+      color: #ffffff !important;
+      font-size: 0.95rem !important;
+      outline: none !important;
+      transition: all 0.3s ease !important;
+    }
+    .customer-info-inputs input:focus {
+      border-color: var(--primary) !important;
+      box-shadow: 0 0 10px rgba(212, 168, 83, 0.15) !important;
+    }
+    .whatsapp-send-btn {
+      width: 100% !important;
+      padding: 1rem !important;
+      border-radius: 30px !important;
+      border: none !important;
+      background: #25D366 !important;
+      color: #ffffff !important;
+      font-size: 1.05rem !important;
+      font-weight: 700 !important;
+      cursor: pointer !important;
+      transition: all 0.3s ease !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 0.5rem !important;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3) !important;
+    }
+    .whatsapp-send-btn:hover:not(:disabled) {
+      background: #128C7E !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 20px rgba(18, 140, 126, 0.4) !important;
+    }
+    .whatsapp-send-btn:disabled {
+      background: rgba(255, 255, 255, 0.05) !important;
+      color: var(--muted) !important;
+      cursor: not-allowed !important;
+      box-shadow: none !important;
+    }
+    
+    /* Reviews Summary Styles */
+    @media (max-width: 768px) {
+      .rating-summary-panel {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        padding: 2rem !important;
+      }
+      .summary-score-block {
+        border-right: none !important;
+        border-bottom: 1px solid rgba(212, 168, 83, 0.1) !important;
+        padding-right: 0 !important;
+        padding-bottom: 2rem !important;
+      }
+    }
+
     /* Clean Page Header Styles (Habit Cafe Style) */
     body {
       padding-top: 72px !important;
@@ -1381,9 +1639,112 @@
 
   
 
+  
   <!-- ============================
-       DELIVERY INFO
+       WHATSAPP ORDER BUILDER
   ============================ -->
+  <section class="order-builder-section">
+    <div class="container">
+      <div class="reveal" style="text-align: center; margin-bottom: 3.5rem;">
+        <span class="section-label">Interactive Direct Ordering</span>
+        <h2 class="section-title">WhatsApp <em>Order Builder</em></h2>
+        <p class="section-subtitle" style="margin:0 auto; max-width:700px;">Select your favorite items, adjust quantities, and click to send your order straight to our WhatsApp chat with no platform fees.</p>
+      </div>
+
+      <div class="builder-grid reveal">
+        <!-- Item Selection Panel -->
+        <div class="builder-panel glass-panel">
+          <h3 class="panel-title">Choose Dishes</h3>
+          <div class="builder-items-list">
+            <div class="builder-item" data-id="harissa_pizza" data-name="Harissa Special Pizza" data-price="350">
+              <div class="item-info">
+                <span class="item-badge bestseller">Bestseller</span>
+                <span class="item-name">Harissa Special Pizza</span>
+                <span class="item-price">₹350</span>
+              </div>
+              <div class="item-qty-controls">
+                <button class="qty-btn minus">-</button>
+                <span class="qty-val">0</span>
+                <button class="qty-btn plus">+</button>
+              </div>
+            </div>
+            <div class="builder-item" data-id="czochwaur_burger" data-name="Czochwaur Burger" data-price="280">
+              <div class="item-info">
+                <span class="item-badge bestseller">Bestseller</span>
+                <span class="item-name">Czochwaur Burger</span>
+                <span class="item-price">₹280</span>
+              </div>
+              <div class="item-qty-controls">
+                <button class="qty-btn minus">-</button>
+                <span class="qty-val">0</span>
+                <button class="qty-btn plus">+</button>
+              </div>
+            </div>
+            <div class="builder-item" data-id="butter_chicken" data-name="Butter Chicken" data-price="320">
+              <div class="item-info">
+                <span class="item-badge">Main</span>
+                <span class="item-name">Butter Chicken</span>
+                <span class="item-price">₹320</span>
+              </div>
+              <div class="item-qty-controls">
+                <button class="qty-btn minus">-</button>
+                <span class="qty-val">0</span>
+                <button class="qty-btn plus">+</button>
+              </div>
+            </div>
+            <div class="builder-item" data-id="kahwa" data-name="Traditional Kashmiri Kahwa" data-price="90">
+              <div class="item-info">
+                <span class="item-badge">Kahwa</span>
+                <span class="item-name">Traditional Kashmiri Kahwa</span>
+                <span class="item-price">₹90</span>
+              </div>
+              <div class="item-qty-controls">
+                <button class="qty-btn minus">-</button>
+                <span class="qty-val">0</span>
+                <button class="qty-btn plus">+</button>
+              </div>
+            </div>
+            <div class="builder-item" data-id="rogan_josh" data-name="Kashmiri Rogan Josh" data-price="450">
+              <div class="item-info">
+                <span class="item-badge bestseller">Mutton</span>
+                <span class="item-name">Kashmiri Rogan Josh</span>
+                <span class="item-price">₹450</span>
+              </div>
+              <div class="item-qty-controls">
+                <button class="qty-btn minus">-</button>
+                <span class="qty-val">0</span>
+                <button class="qty-btn plus">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Summary Panel -->
+        <div class="builder-summary glass-panel">
+          <h3 class="panel-title">Order Summary</h3>
+          <div class="summary-details">
+            <div class="summary-list" id="summaryList">
+              <p class="empty-msg">No items selected yet.</p>
+            </div>
+            <div class="summary-total">
+              <span>Total Amount:</span>
+              <span class="total-price" id="totalPrice">₹0</span>
+            </div>
+            <div class="customer-info-inputs">
+              <input type="text" id="custName" placeholder="Your Name" required>
+              <input type="text" id="custAddress" placeholder="Delivery Address in Srinagar" required>
+            </div>
+            <button class="whatsapp-send-btn" id="sendOrderBtn" disabled>
+              💬 Send Order via WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- === DELIVERY INFO === -->
   <section class="delivery-info">
     <div class="container">
       <div class="reveal">
@@ -1621,6 +1982,127 @@
       }
     })();
   </script>
+
+  <!-- WhatsApp Order Builder Logic -->
+  <script>
+    (function() {
+      const builderItems = document.querySelectorAll('.builder-item');
+      const summaryList = document.getElementById('summaryList');
+      const totalPriceEl = document.getElementById('totalPrice');
+      const sendOrderBtn = document.getElementById('sendOrderBtn');
+      const custNameInput = document.getElementById('custName');
+      const custAddressInput = document.getElementById('custAddress');
+
+      let orderCart = {};
+
+      builderItems.forEach(item => {
+        const id = item.dataset.id;
+        const name = item.dataset.name;
+        const price = parseInt(item.dataset.price);
+        const minusBtn = item.querySelector('.qty-btn.minus');
+        const plusBtn = item.querySelector('.qty-btn.plus');
+        const qtyVal = item.querySelector('.qty-val');
+
+        plusBtn.addEventListener('click', () => {
+          if (!orderCart[id]) {
+            orderCart[id] = { name, price, qty: 0 };
+          }
+          orderCart[id].qty++;
+          qtyVal.textContent = orderCart[id].qty;
+          updateOrderSummary();
+        });
+
+        minusBtn.addEventListener('click', () => {
+          if (orderCart[id] && orderCart[id].qty > 0) {
+            orderCart[id].qty--;
+            qtyVal.textContent = orderCart[id].qty;
+            if (orderCart[id].qty === 0) {
+              delete orderCart[id];
+            }
+            updateOrderSummary();
+          }
+        });
+      });
+
+      function updateOrderSummary() {
+        summaryList.innerHTML = '';
+        let total = 0;
+        let itemsCount = 0;
+
+        for (const id in orderCart) {
+          const item = orderCart[id];
+          const itemTotal = item.price * item.qty;
+          total += itemTotal;
+          itemsCount += item.qty;
+
+          const summaryItem = document.createElement('div');
+          summaryItem.className = 'summary-item';
+          summaryItem.innerHTML = `
+            <span>${item.name} x ${item.qty}</span>
+            <span>₹${itemTotal}</span>
+          `;
+          summaryList.appendChild(summaryItem);
+        }
+
+        if (itemsCount === 0) {
+          summaryList.innerHTML = '<p class="empty-msg">No items selected yet.</p>';
+          sendOrderBtn.disabled = true;
+        } else {
+          sendOrderBtn.disabled = false;
+        }
+
+        totalPriceEl.textContent = '₹' + total;
+        validateForm();
+      }
+
+      function validateForm() {
+        const hasItems = Object.keys(orderCart).length > 0;
+        const hasName = custNameInput.value.trim() !== '';
+        const hasAddress = custAddressInput.value.trim() !== '';
+        sendOrderBtn.disabled = !(hasItems && hasName && hasAddress);
+      }
+
+      custNameInput.addEventListener('input', validateForm);
+      custAddressInput.addEventListener('input', validateForm);
+
+      sendOrderBtn.addEventListener('click', () => {
+        let message = `*New Order - Jhelum Cafe* 🍽️
+
+`;
+        message += `*Customer Details:*
+`;
+        message += `• *Name:* ${custNameInput.value.trim()}
+`;
+        message += `• *Address:* ${custAddressInput.value.trim()}
+
+`;
+        message += `*Items Ordered:*
+`;
+
+        let total = 0;
+        for (const id in orderCart) {
+          const item = orderCart[id];
+          const itemTotal = item.price * item.qty;
+          total += itemTotal;
+          message += `• ${item.name} x ${item.qty} - ₹${itemTotal}
+`;
+        }
+        message += `
+*Total Amount:* ₹${total}
+`;
+        message += `*Delivery Fee:* Free
+`;
+        message += `*Grand Total:* ₹${total}
+
+`;
+        message += `Please confirm my order and share payment link. Thank you!`;
+
+        const encoded = encodeURIComponent(message);
+        window.open(`https://wa.me/917780938743?text=${encoded}`, '_blank');
+      });
+    })();
+  </script>
+
 </body>
 
 </html>
