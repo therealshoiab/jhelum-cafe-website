@@ -10,8 +10,7 @@
 <meta property="og:type" content="website">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
 
-<style>
-    /* Global Mobile Scroll & Number Font Patch */
+<style>/* Global Mobile Scroll & Number Font Patch */
     html, body {
       overflow-x: hidden !important;
       max-width: 100% !important;
@@ -21,6 +20,88 @@
       font-family: var(--font-body) !important;
       font-variant-numeric: tabular-nums;
       font-weight: 700;
+    }
+    /* Brand Colored Social Icons (Image 3 Style) */
+    .footer-social, .footer-socials, .footer__social, .footer-socials-list {
+      display: flex !important;
+      gap: 14px !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      margin-top: 1rem !important;
+    }
+    .footer-social a, .footer-socials a, .footer__social a, .footer-social-link, .footer-socials-list a {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 42px !important;
+      height: 42px !important;
+      border-radius: 12px !important;
+      color: #ffffff !important;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      border: none !important;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
+      text-decoration: none !important;
+    }
+    /* Instagram Gradient Pink/Orange */
+    .footer-social a[aria-label="Instagram"], .footer-socials a[aria-label="Instagram"], .footer__social a[aria-label="Instagram"], .footer-social-link[aria-label="Instagram"], .footer-socials-list a[aria-label="Instagram"] {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+    }
+    /* Facebook Blue */
+    .footer-social a[aria-label="Facebook"], .footer-socials a[aria-label="Facebook"], .footer__social a[aria-label="Facebook"], .footer-social-link[aria-label="Facebook"], .footer-socials-list a[aria-label="Facebook"] {
+      background: #1877F2 !important;
+    }
+    /* Zomato Red */
+    .footer-social a[aria-label="Zomato"], .footer-socials a[aria-label="Zomato"], .footer__social a[aria-label="Zomato"], .footer-social-link[aria-label="Zomato"], .footer-socials-list a[aria-label="Zomato"] {
+      background: #CB202D !important; /* Official Zomato Red */
+    }
+    .footer-social a:hover, .footer-socials a:hover, .footer__social a:hover, .footer-social-link:hover {
+      transform: translateY(-4px) scale(1.08) !important;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3) !important;
+      color: #ffffff !important;
+    }
+    .footer-social a svg, .footer-socials a svg, .footer__social a svg, .footer-social-link svg {
+      width: 20px !important;
+      height: 20px !important;
+      fill: currentColor !important;
+      stroke: none !important;
+    }
+    /* Rating Badges in Hero single-line (Image 2 Style) */
+    .hero-ratings {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      gap: 12px !important;
+      justify-content: center !important;
+      align-items: center !important;
+      width: 100% !important;
+      max-width: 600px !important;
+      margin: 0 auto 2.5rem !important;
+    }
+    .rating-badge {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      background: rgba(26, 35, 50, 0.85) !important;
+      backdrop-filter: blur(10px) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
+      border: 1px solid rgba(214, 168, 83, 0.2) !important;
+      padding: 8px 18px !important;
+      border-radius: 50px !important;
+      font-size: 0.9rem !important;
+      color: var(--text) !important;
+      white-space: nowrap !important;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+    }
+    @media (max-width: 480px) {
+      .hero-ratings {
+        gap: 6px !important;
+        padding: 0 10px !important;
+      }
+      .rating-badge {
+        padding: 6px 12px !important;
+        font-size: 0.72rem !important;
+        gap: 4px !important;
+      }
     }
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
