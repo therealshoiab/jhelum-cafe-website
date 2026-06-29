@@ -1376,10 +1376,7 @@ input { font-family: inherit; }
     <p class="hero-subtitle">Jhelum Cafe & Fine Dine</p>
     <h1>Our <em>Menu</em></h1>
     <p class="hero-desc">Kashmiri heritage meets modern cafe culture — every dish tells a story from the banks of the Jhelum.</p>
-    <div class="hero-search">
-      <span class="search-icon">🔍</span>
-      <input type="text" id="heroSearch" placeholder="Search for dishes, e.g. 'Harissa Pizza'..." autocomplete="off">
-    </div>
+
   </div>
 </section>
 
@@ -2159,7 +2156,7 @@ input { font-family: inherit; }
   let cart = {};
 
   // ── DOM References ──
-  const heroSearch = document.getElementById('heroSearch');
+  
   const stickySearch = document.getElementById('stickySearch');
   const filterPills = document.querySelectorAll('.filter-pill');
   const menuCards = document.querySelectorAll('.menu-card');
@@ -2181,14 +2178,8 @@ input { font-family: inherit; }
   let searchQuery = '';
 
   // ── Search sync ──
-  heroSearch.addEventListener('input', function() {
-    searchQuery = this.value.toLowerCase().trim();
-    stickySearch.value = this.value;
-    filterMenu();
-  });
   stickySearch.addEventListener('input', function() {
     searchQuery = this.value.toLowerCase().trim();
-    heroSearch.value = this.value;
     filterMenu();
   });
 
