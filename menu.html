@@ -39,7 +39,7 @@
       border-radius: 30px;
       background: rgba(26, 35, 50, 0.6);
       border: 1px solid rgba(212, 168, 83, 0.15);
-      color: #ffffff;
+      color: var(--text);
       outline: none;
       font-size: 0.95rem;
       transition: var(--transition);
@@ -68,7 +68,7 @@
       border-radius: 30px;
       border: 1px solid rgba(212, 168, 83, 0.15);
       background: rgba(26, 35, 50, 0.4);
-      color: var(--muted);
+      color: var(--text-muted);
       font-size: 0.85rem;
       font-weight: 600;
       white-space: nowrap;
@@ -129,12 +129,12 @@
 
     .dish-tag.veg {
       background: #27ae60;
-      color: #ffffff;
+      color: var(--text);
     }
 
     .dish-tag.nonveg {
       background: #c0392b;
-      color: #ffffff;
+      color: var(--text);
     }
 
     .dish-content {
@@ -155,7 +155,7 @@
       font-family: var(--font-display);
       font-size: 1.25rem;
       font-weight: 700;
-      color: #ffffff;
+      color: var(--text);
       line-height: 1.3;
     }
 
@@ -171,7 +171,7 @@
 
     .dish-description {
       font-size: 0.85rem;
-      color: var(--muted);
+      color: var(--text-muted);
       line-height: 1.5;
       margin-bottom: 1.5rem;
       display: -webkit-box;
@@ -298,7 +298,7 @@
     .close-cart {
       background: none;
       border: none;
-      color: #ffffff;
+      color: var(--text);
       font-size: 1.8rem;
       cursor: pointer;
     }
@@ -322,7 +322,7 @@
 
     .cart-item-info h4 {
       font-size: 0.95rem;
-      color: #ffffff;
+      color: var(--text);
       margin-bottom: 2px;
     }
 
@@ -405,6 +405,11 @@
   </style>
 </head>
 <body>
+  <!-- Dynamic Alert Promo Banner -->
+  <div class="announcement-alert" style="background: var(--primary); color: #FFFFFF; font-weight:600; text-align:center; padding: 8px 1rem; font-size:0.85rem; letter-spacing:0.5px; z-index:1005; position:relative;">
+    <span id="alertPromoText">Get 10% off on your first order directly via WhatsApp! 🍕</span>
+  </div>
+
 
   <!-- ============================
        NAVIGATION BAR
@@ -566,7 +571,7 @@
         <div class="footer-hours-list">
           <div class="hours-row"><span>Monday - Sunday:</span> <span>10:00 AM - 10:00 PM</span></div>
         </div>
-        <p style="margin-top: 1rem; color: var(--muted); font-size: 0.9rem; line-height: 1.5;">Budshah Bridge, Maisuma, Lal Chowk, Srinagar, J&K 190001</p>
+        <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Budshah Bridge, Maisuma, Lal Chowk, Srinagar, J&K 190001</p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -577,59 +582,36 @@
   <script src="script.js"></script>
   <script>
     // Menu Page Specific Javascript
-    const menuData = [
-      // BURGERS
-      { id: 'burger_italian', category: 'burgers', emoji: '🍔', isVeg: true, name: 'Cheesy Italian Burger', price: 260, desc: 'Italian herbs seasoning with premium cheese pull & delicious garden veg patty.' },
-      { id: 'burger_paneer', category: 'burgers', emoji: '🍔', isVeg: true, name: 'Paneer Burger', price: 280, desc: 'Thick paneer block grilled with spices, topped with onions, lettuce & house special sauce.' },
-      { id: 'burger_smoked_chick', category: 'burgers', emoji: '🍔', isVeg: false, name: 'Smoked Chicken Burger', price: 320, desc: 'Flame-grilled chicken patty seasoned with hickory smoke spices & cheddar cheese.' },
-      { id: 'burger_peri_chick', category: 'burgers', emoji: '🍔', isVeg: false, name: 'Peri Peri Chicken Burger', price: 320, desc: 'Hot & spicy peri peri grilled chicken patty, jalapeños & house salsa sauce.' },
-      { id: 'burger_crispy_chick', category: 'burgers', emoji: '🍔', isVeg: false, name: 'Crispy Fried Chicken Burger', price: 320, desc: 'Golden crunchy chicken breast fillet dipped in dynamic buttermilk sauce.' },
-      { id: 'burger_czochwaur', category: 'burgers', emoji: '🍔', isVeg: false, name: 'Czochwaur Burger', price: 280, desc: 'Local wazwan-spiced minced meat patty inside traditional bread with special herbs.', bestseller: true },
-      { id: 'burger_lambert', category: 'burgers', emoji: '🍔', isVeg: false, name: 'Lambert Burger', price: 300, desc: 'Classic double-patty tower burger with caramelized onions & melted cheese sauce.', bestseller: true },
+    const rawMenu = window.getJhelumMenu();
+    const menuData = rawMenu.map(item => {
+      let cat = 'burgers';
+      if (item.category === 'Pizzas') cat = 'pizzas';
+      else if (item.category === 'Wraps & Sandwiches') cat = 'wraps';
+      else if (item.category === 'Main Course') cat = 'main';
+      else if (item.category === 'Breakfast') cat = 'breakfast';
+      else if (item.category === 'Beverages') cat = 'beverages';
+      else if (item.category === 'Desserts') cat = 'desserts';
+      else if (item.category === 'Bestsellers') cat = 'bestsellers';
       
-      // PIZZAS
-      { id: 'pizza_harissa', category: 'pizzas', emoji: '🍕', isVeg: false, name: 'Harissa Special Pizza', price: 350, desc: 'Slow-cooked traditional winter harissa spread, mozzarella, and dynamic Kashmiri spices.', bestseller: true },
-      { id: 'pizza_margherita', category: 'pizzas', emoji: '🍕', isVeg: true, name: 'Margherita Pizza', price: 250, desc: 'Rich Neapolitan-style tomato base, fresh basil oil, and premium mozzarella.' },
-      { id: 'pizza_chick_tikka', category: 'pizzas', emoji: '🍕', isVeg: false, name: 'Chicken Tikka Pizza', price: 320, desc: 'Saffron-marinated chicken tikka chunks, red bell peppers, onions & green chilies.' },
-      { id: 'pizza_paneer_tikka', category: 'pizzas', emoji: '🍕', isVeg: true, name: 'Paneer Tikka Pizza', price: 290, desc: 'Spiced paneer tikka cubes, capsicum, olives & fresh coriander.' },
-      { id: 'pizza_bbq_chick', category: 'pizzas', emoji: '🍕', isVeg: false, name: 'BBQ Chicken Pizza', price: 340, desc: 'Smoked barbecue chicken strips, sweet corn, jalapeños & premium cheese.' },
-
-      // WRAPS
-      { id: 'wrap_mince_chick', category: 'wraps', emoji: '🌯', isVeg: false, name: 'Mince Chicken Wrap', price: 220, desc: 'Seasoned minced chicken wazwan-style wrap loaded with salad, mayo & green chutney.' },
-      { id: 'wrap_paneer_supreme', category: 'wraps', emoji: '🌯', isVeg: true, name: 'Paneer Supreme Wrap', price: 200, desc: 'Crispy paneer strips, sliced capsicum & dynamic tandoori mayo wrap.' },
-      { id: 'sandwich_chick_club', category: 'wraps', emoji: '🥪', isVeg: false, name: 'Chicken Club Sandwich', price: 240, desc: 'Triple-decker sandwich with chicken shreds, egg, lettuce, tomato & cheese slice.' },
-      { id: 'sandwich_veg_club', category: 'wraps', emoji: '🥪', isVeg: true, name: 'Veg Club Sandwich', price: 200, desc: 'Triple-decker loaded with garden vegetables, green mint spread & cheese.' },
-      { id: 'roll_shawarma', category: 'wraps', emoji: '🌯', isVeg: false, name: 'Chicken Shawarma Roll', price: 230, desc: 'Shaved roasted chicken wrapped in thin flatbread with garlic sauce & pickles.' },
-
-      // MAIN COURSE
-      { id: 'main_butter_chick', category: 'main', emoji: '🍛', isVeg: false, name: 'Butter Chicken', price: 320, desc: 'Tender tandoori chicken pieces in creamy tomato-butter wazwan gravy.', bestseller: true },
-      { id: 'main_rogan_josh', category: 'main', emoji: '🍛', isVeg: false, name: 'Rogan Josh', price: 350, desc: 'Slow-cooked lamb wazwan signature in red chili gravy with ginger & fennel flavor.' },
-      { id: 'main_yakhni', category: 'main', emoji: '🍛', isVeg: false, name: 'Yakhni', price: 330, desc: 'Authentic Kashmiri wazwan mutton cooked in creamy yogurt-saffron gravy.' },
-      { id: 'main_paneer_butter', category: 'main', emoji: '🍛', isVeg: true, name: 'Paneer Butter Masala', price: 270, desc: 'Cottage cheese chunks cooked in rich creamy cashew & tomato gravy.' },
-      { id: 'main_dal_makhani', category: 'main', emoji: '🍛', isVeg: true, name: 'Dal Makhani', price: 220, desc: 'Slow-cooked black lentils in rich butter & cream base wazwan style.' },
-      { id: 'main_biryani', category: 'main', emoji: '🍛', isVeg: false, name: 'Chicken Biryani', price: 300, desc: 'Basmati rice cooked with whole wazwan spices & layered with chicken masala.' },
-
-      // BREAKFAST
-      { id: 'breakfast_english', category: 'breakfast', emoji: '🍳', isVeg: false, name: 'English Breakfast', price: 350, desc: 'Eggs cooked to order, sausages, baked beans, grilled tomatoes & hash browns.' },
-      { id: 'breakfast_pancake', category: 'breakfast', emoji: '🥞', isVeg: true, name: 'Pancake Stack', price: 220, desc: 'Three fluffy pancakes served with pure maple syrup & fresh cream.' },
-      { id: 'breakfast_omelette', category: 'breakfast', emoji: '🍳', isVeg: false, name: 'Masala Omelette', price: 150, desc: 'Fluffy eggs whisked with green chilies, onions & coriander with butter toast.' },
-      { id: 'breakfast_toast', category: 'breakfast', emoji: '🍞', isVeg: true, name: 'French Toast', price: 180, desc: 'Golden batter-fried bread served with powdered sugar & wild berry compote.' },
-
-      // BEVERAGES
-      { id: 'bev_orange_mojito', category: 'beverages', emoji: '🍹', isVeg: true, name: 'Mint Orange Mojito', price: 150, desc: 'Fresh mint leaves muddled with oranges, lime juice & sparkling soda.' },
-      { id: 'bev_hot_choc', category: 'beverages', emoji: '☕', isVeg: true, name: 'Hot Chocolate', price: 160, desc: 'Steamed milk with rich melted Belgian dark chocolate & mini marshmallows.' },
-      { id: 'bev_oreo_shake', category: 'beverages', emoji: '🥤', isVeg: true, name: 'Oreo Shake', price: 180, desc: 'Thick vanilla milkshake blended with Oreo cookies, cream & chocolate drizzle.' },
-      { id: 'bev_blue_shoes', category: 'beverages', emoji: '🍹', isVeg: true, name: 'Blue Shoes Mojito', price: 170, desc: 'Refreshing blue curacao syrup mixed with mint leaves, lemon slices & soda.' },
-      { id: 'bev_kahwa', category: 'beverages', emoji: '☕', isVeg: true, name: 'Kashmiri Kahwa', price: 120, desc: 'Authentic green tea leaves infused with saffron strands, cinnamon, cardamom & almonds.' },
-      { id: 'bev_lime_soda', category: 'beverages', emoji: '🍹', isVeg: true, name: 'Fresh Lime Soda', price: 100, desc: 'Classic lemon fizz served sweet, salted or mixed.' },
-      { id: 'bev_dry_shake', category: 'beverages', emoji: '🥤', isVeg: true, name: 'Dry Fruit Shake', price: 200, desc: 'Thick shake blended with saffron paste, almonds, pistachios & cashews.' },
-
-      // DESSERTS
-      { id: 'dessert_lava', category: 'desserts', emoji: '🍰', isVeg: true, name: 'Chocolate Lava Cake', price: 220, desc: 'Warm chocolate cake with a molten chocolate core, served with vanilla ice cream.' },
-      { id: 'dessert_phirni', category: 'desserts', emoji: '🍨', isVeg: true, name: 'Phirni', price: 120, desc: 'Traditional chilled Kashmiri ground-rice pudding flavored with saffron & cardamom.' },
-      { id: 'dessert_sundae', category: 'desserts', emoji: '🍨', isVeg: true, name: 'Brownie Sundae', price: 200, desc: 'Warm fudge brownie topped with vanilla ice cream, hot chocolate fudge & nuts.' },
-      { id: 'dessert_gulab', category: 'desserts', emoji: '🍨', isVeg: true, name: 'Gulab Jamun', price: 100, desc: 'Two hot berry-sized milk dumplings steeped in rose cardamom syrup.' }
-    ];
+      let emoji = '🍛';
+      if (item.name.toLowerCase().includes('pizza')) emoji = '🍕';
+      else if (item.name.toLowerCase().includes('burger')) emoji = '🍔';
+      else if (item.name.toLowerCase().includes('wrap') || item.name.toLowerCase().includes('sandwich')) emoji = '🌯';
+      else if (item.name.toLowerCase().includes('kahwa') || item.name.toLowerCase().includes('chocolate')) emoji = '☕';
+      else if (item.name.toLowerCase().includes('cake') || item.name.toLowerCase().includes('phirni')) emoji = '🍨';
+      
+      return {
+        id: item.id,
+        category: cat,
+        emoji: emoji,
+        isVeg: item.veg,
+        name: item.name,
+        price: item.price,
+        desc: item.description,
+        bestseller: item.bestseller,
+        outOfStock: item.outOfStock
+      };
+    });
 
     let cart = {};
 
@@ -661,20 +643,28 @@
       });
 
       if (filtered.length === 0) {
-        menuGrid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--muted); padding: 4rem 0;">No dishes found matching your criteria.</div>`;
+        menuGrid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--text-muted); padding: 4rem 0;">No dishes found matching your criteria.</div>`;
         return;
       }
 
       filtered.forEach(item => {
         const qty = cart[item.id] ? cart[item.id].qty : 0;
         const card = document.createElement('div');
-        card.className = 'dish-card glass-panel reveal visible';
+        card.className = `dish-card glass-panel reveal visible ${item.outOfStock ? 'out-of-stock' : ''}`;
+        
+        const actionBtn = item.outOfStock 
+          ? `<button class="add-btn out-of-stock" disabled style="background:#E0E0E0 !important; border-color:#E0E0E0 !important; color:#9E9E9E !important; cursor:not-allowed;">Out of Stock</button>`
+          : `<button class="add-btn ${qty > 0 ? 'added' : ''}" data-id="${item.id}">
+               ${qty > 0 ? '✓ Added' : '+ Add to Order'}
+             </button>`;
+
         card.innerHTML = `
           <div class="dish-img-placeholder">
             ${item.emoji}
             <div class="dish-tags">
               <span class="dish-tag ${item.isVeg ? 'veg' : 'nonveg'}">${item.isVeg ? 'VEG 🟢' : 'NON-VEG 🔴'}</span>
               ${item.bestseller ? '<span class="dish-tag">BESTSELLER</span>' : ''}
+              ${item.outOfStock ? '<span class="dish-tag" style="background:#E05244;">OUT OF STOCK</span>' : ''}
             </div>
           </div>
           <div class="dish-content">
@@ -684,9 +674,7 @@
             </div>
             <p class="dish-description">${item.desc}</p>
             <div class="dish-action">
-              <button class="add-btn ${qty > 0 ? 'added' : ''}" data-id="${item.id}">
-                ${qty > 0 ? '✓ Added' : '+ Add to Order'}
-              </button>
+              ${actionBtn}
             </div>
           </div>
         `;
@@ -779,7 +767,7 @@
       });
 
       if (totalQty === 0) {
-        cartItemsContainer.innerHTML = `<div style="text-align: center; color: var(--muted); padding: 3rem 0;">Your cart is empty.</div>`;
+        cartItemsContainer.innerHTML = `<div style="text-align: center; color: var(--text-muted); padding: 3rem 0;">Your cart is empty.</div>`;
         whatsappCheckout.disabled = true;
       } else {
         whatsappCheckout.disabled = false;

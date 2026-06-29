@@ -54,7 +54,7 @@
       padding: 1.25rem 1.5rem;
       background: none;
       border: none;
-      color: #ffffff;
+      color: var(--text);
       font-weight: 600;
       font-size: 1.05rem;
       display: flex;
@@ -92,13 +92,18 @@
 
     .accordion-content p {
       font-size: 0.9rem;
-      color: var(--muted);
+      color: var(--text-muted);
       line-height: 1.6;
       padding-bottom: 1.25rem;
     }
   </style>
 </head>
 <body>
+  <!-- Dynamic Alert Promo Banner -->
+  <div class="announcement-alert" style="background: var(--primary); color: #FFFFFF; font-weight:600; text-align:center; padding: 8px 1rem; font-size:0.85rem; letter-spacing:0.5px; z-index:1005; position:relative;">
+    <span id="alertPromoText">Get 10% off on your first order directly via WhatsApp! 🍕</span>
+  </div>
+
 
   <!-- ============================
        NAVIGATION BAR
@@ -417,7 +422,7 @@
         <div class="footer-hours-list">
           <div class="hours-row"><span>Monday - Sunday:</span> <span>10:00 AM - 10:00 PM</span></div>
         </div>
-        <p style="margin-top: 1rem; color: var(--muted); font-size: 0.9rem; line-height: 1.5;">Budshah Bridge, Maisuma, Lal Chowk, Srinagar, J&K 190001</p>
+        <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Budshah Bridge, Maisuma, Lal Chowk, Srinagar, J&K 190001</p>
       </div>
     </div>
     <div class="footer-bottom">

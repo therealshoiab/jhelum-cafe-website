@@ -71,7 +71,7 @@
       font-family: var(--font-display);
       font-size: clamp(3rem, 6.5vw, 5.2rem); /* Giant Playfair heading */
       font-weight: 700;
-      color: #ffffff;
+      color: var(--text);
       line-height: 1.05;
       margin-bottom: 1rem;
       letter-spacing: -1px;
@@ -133,6 +133,11 @@
   </style>
 </head>
 <body>
+  <!-- Dynamic Alert Promo Banner -->
+  <div class="announcement-alert" style="background: var(--primary); color: #FFFFFF; font-weight:600; text-align:center; padding: 8px 1rem; font-size:0.85rem; letter-spacing:0.5px; z-index:1005; position:relative;">
+    <span id="alertPromoText">Get 10% off on your first order directly via WhatsApp! 🍕</span>
+  </div>
+
 
   <!-- ============================
        NAVIGATION BAR
@@ -289,7 +294,7 @@
         <div class="footer-hours-list">
           <div class="hours-row"><span>Monday - Sunday:</span> <span>10:00 AM - 10:00 PM</span></div>
         </div>
-        <p style="margin-top: 1rem; color: var(--muted); font-size: 0.9rem; line-height: 1.5;">Budshah Bridge, Maisuma, Lal Chowk, Srinagar, J&K 190001</p>
+        <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Budshah Bridge, Maisuma, Lal Chowk, Srinagar, J&K 190001</p>
       </div>
     </div>
     <div class="footer-bottom">

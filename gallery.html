@@ -29,7 +29,7 @@
       border-radius: 30px;
       border: 1px solid rgba(212, 168, 83, 0.15);
       background: rgba(26, 35, 50, 0.4);
-      color: var(--muted);
+      color: var(--text-muted);
       font-size: 0.85rem;
       font-weight: 600;
       cursor: pointer;
@@ -80,7 +80,7 @@
 
     .gallery-media {
       height: var(--h, 250px);
-      background: linear-gradient(135deg, rgba(26, 35, 50, 0.8) 0%, rgba(15, 20, 25, 0.95) 100%);
+      background: var(--surface);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -122,7 +122,7 @@
     .gallery-overlay h3 {
       font-family: var(--font-display);
       font-size: 1.3rem;
-      color: #ffffff;
+      color: var(--text);
       margin-bottom: 0.5rem;
     }
 
@@ -158,7 +158,7 @@
       right: 30px;
       background: none;
       border: none;
-      color: #ffffff;
+      color: var(--text);
       font-size: 2.5rem;
       cursor: pointer;
     }
@@ -169,7 +169,7 @@
       transform: translateY(-50%);
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.1);
-      color: #ffffff;
+      color: var(--text);
       font-size: 2rem;
       width: 60px;
       height: 60px;
@@ -202,6 +202,11 @@
   </style>
 </head>
 <body>
+  <!-- Dynamic Alert Promo Banner -->
+  <div class="announcement-alert" style="background: var(--primary); color: #FFFFFF; font-weight:600; text-align:center; padding: 8px 1rem; font-size:0.85rem; letter-spacing:0.5px; z-index:1005; position:relative;">
+    <span id="alertPromoText">Get 10% off on your first order directly via WhatsApp! 🍕</span>
+  </div>
+
 
   <!-- ============================
        NAVIGATION BAR
@@ -397,7 +402,7 @@
         <div class="footer-hours-list">
           <div class="hours-row"><span>Monday - Sunday:</span> <span>10:00 AM - 10:00 PM</span></div>
         </div>
-        <p style="margin-top: 1rem; color: var(--muted); font-size: 0.9rem; line-height: 1.5;">Budshah Bridge, Maisuma, Lal Chowk, Srinagar, J&K 190001</p>
+        <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">Budshah Bridge, Maisuma, Lal Chowk, Srinagar, J&K 190001</p>
       </div>
     </div>
     <div class="footer-bottom">

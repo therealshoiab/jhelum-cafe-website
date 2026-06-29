@@ -916,7 +916,7 @@
     }
 
     .rating-badge .platform {
-      color: var(--muted);
+      color: var(--text-muted);
       font-weight: 400;
       font-size: 0.8rem;
     }
@@ -1093,7 +1093,7 @@
 
     .section-subtitle {
       font-size: 1.05rem;
-      color: var(--muted);
+      color: var(--text-muted);
       max-width: 600px;
       line-height: 1.7;
     }
@@ -1155,11 +1155,11 @@
       z-index: 2;
     }
     .why-card h3 {
-      color: var(--text);
+      color: #ffffff !important;
       text-shadow: 0 2px 4px rgba(0,0,0,0.5);
     }
     .why-card p {
-      color: rgba(240, 237, 230, 0.85);
+      color: rgba(255, 255, 255, 0.85) !important;
       text-shadow: 0 1px 3px rgba(0,0,0,0.5);
     }
 
@@ -1201,12 +1201,12 @@
       font-family: var(--font-display);
       font-size: 1.35rem;
       font-weight: 700;
-      color: var(--text);
+      color: #ffffff;
       margin-bottom: 0.75rem;
     }
 
     .why-card p {
-      color: var(--muted);
+      color: rgba(255, 255, 255, 0.85);
       font-size: 0.92rem;
       line-height: 1.7;
     }
@@ -1333,7 +1333,7 @@
     }
 
     .dish-desc {
-      color: var(--muted);
+      color: var(--text-muted);
       font-size: 0.88rem;
       line-height: 1.6;
     }
@@ -1519,7 +1519,7 @@
 
     .review-author-info .author-source {
       font-size: 0.78rem;
-      color: var(--muted);
+      color: var(--text-muted);
     }
 
     /* ============================================
@@ -1545,7 +1545,7 @@
     }
 
     .order-strip p {
-      color: var(--muted);
+      color: var(--text-muted);
       font-size: 1rem;
       margin-bottom: 2rem;
     }
@@ -1629,7 +1629,7 @@
     }
 
     .footer-brand p {
-      color: var(--muted);
+      color: var(--text-muted);
       font-size: 0.9rem;
       line-height: 1.7;
       margin-bottom: 1.5rem;
@@ -1651,7 +1651,7 @@
       align-items: center;
       justify-content: center;
       transition: var(--transition);
-      color: var(--muted);
+      color: var(--text-muted);
     }
 
     .footer-social a:hover {
@@ -1684,7 +1684,7 @@
     }
 
     .footer-col ul li a {
-      color: var(--muted);
+      color: var(--text-muted);
       font-size: 0.88rem;
       transition: var(--transition);
     }
@@ -1697,7 +1697,7 @@
     .footer-hours-item {
       display: flex;
       justify-content: space-between;
-      color: var(--muted);
+      color: var(--text-muted);
       font-size: 0.88rem;
       margin-bottom: 0.4rem;
     }
@@ -1720,7 +1720,7 @@
     }
 
     .footer-bottom p {
-      color: var(--muted);
+      color: var(--text-muted);
       font-size: 0.82rem;
     }
 
@@ -1836,7 +1836,7 @@
       flex-direction: column;
       align-items: center;
       gap: 3px;
-      color: var(--muted);
+      color: var(--text-muted);
       font-size: 0.65rem;
       font-weight: 600;
       text-decoration: none;
@@ -1992,7 +1992,7 @@
     }
     .author-source {
       font-size: 0.82rem;
-      color: var(--muted);
+      color: var(--text-muted);
       font-weight: 500;
     }
     /* Green Stars */
@@ -2018,6 +2018,11 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Dynamic Alert Promo Banner -->
+  <div class="announcement-alert" style="background: var(--primary); color: #FFFFFF; font-weight:600; text-align:center; padding: 8px 1rem; font-size:0.85rem; letter-spacing:0.5px; z-index:1005; position:relative;">
+    <span id="alertPromoText">Get 10% off on your first order directly via WhatsApp! 🍕</span>
+  </div>
+
 
   <!-- ============================================
        NAVIGATION
@@ -2179,7 +2184,7 @@
       <h2 class="section-title reveal">Crowd Favourites</h2>
       <p class="section-subtitle center reveal">The dishes our guests can't stop ordering — each one crafted with authentic Kashmiri ingredients and a bold creative twist.</p>
 
-      <div class="bestsellers-grid">
+      <div class="bestsellers-grid" id="homeBestsellersGrid">
         <!-- Harissa Special Pizza -->
         <div class="dish-card reveal reveal-delay-1">
           <div class="dish-image-placeholder">
@@ -2573,6 +2578,44 @@
 
           const encoded = encodeURIComponent(msg);
           window.open(`https://wa.me/917780938743?text=${encoded}`, '_blank');
+        });
+      }
+
+      // Dynamic Bestsellers loading from CMS
+      const bestsellersGrid = document.getElementById('homeBestsellersGrid');
+      if (bestsellersGrid) {
+        const menu = window.getJhelumMenu();
+        const bestsellers = menu.filter(item => item.bestseller && !item.outOfStock).slice(0, 4);
+        
+        bestsellersGrid.innerHTML = '';
+        bestsellers.forEach((item, idx) => {
+          const card = document.createElement('div');
+          card.className = `dish-card reveal reveal-delay-${idx + 1} active`;
+          
+          let emoji = '🍛';
+          if (item.name.toLowerCase().includes('pizza')) emoji = '🍕';
+          else if (item.name.toLowerCase().includes('burger')) emoji = '🍔';
+          else if (item.name.toLowerCase().includes('wrap') || item.name.toLowerCase().includes('sandwich')) emoji = '🌯';
+          else if (item.name.toLowerCase().includes('kahwa') || item.name.toLowerCase().includes('chocolate')) emoji = '☕';
+          else if (item.name.toLowerCase().includes('cake') || item.name.toLowerCase().includes('phirni')) emoji = '🍨';
+          
+          card.innerHTML = `
+            <div class="dish-image-placeholder" style="background:rgba(197, 155, 39, 0.05); color:var(--primary); font-size:3.5rem; display:flex; align-items:center; justify-content:center; height:180px; border-radius:var(--radius-sm) var(--radius-sm) 0 0; position:relative;">
+              ${emoji}
+              <span class="dish-bestseller-tag" style="position:absolute; top:12px; left:12px; background:var(--primary); color:white; font-size:0.7rem; font-weight:700; padding:4px 8px; border-radius:4px; text-transform:uppercase;">Bestseller</span>
+            </div>
+            <div class="dish-info" style="padding:1.5rem; background:var(--surface); border: 1px solid var(--border-color); border-top:none; border-radius:0 0 var(--radius-sm) var(--radius-sm);">
+              <div class="dish-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                <div class="dish-name" style="font-family:var(--font-display); font-size:1.15rem; color:var(--text); display:flex; align-items:center; gap:8px;">
+                  <span class="${item.veg ? 'veg-dot' : 'nonveg-dot'}"></span>
+                  ${item.name}
+                </div>
+                <span class="dish-price" style="font-weight:700; color:var(--primary);">₹${item.price}</span>
+              </div>
+              <p class="dish-desc" style="color:var(--text-muted); font-size:0.9rem; line-height:1.5; text-align:left;">${item.description}</p>
+            </div>
+          `;
+          bestsellersGrid.appendChild(card);
         });
       }
     });
