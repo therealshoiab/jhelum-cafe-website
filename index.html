@@ -309,89 +309,49 @@
       justify-content: center;
       text-align: center;
       overflow: hidden;
-      background: linear-gradient(165deg, #0F1419 0%, #141c26 30%, #1A2332 60%, #0F1419 100%);
     }
 
-    /* Ambient glow effects */
-    .hero::before {
-      content: '';
+    .hero-slideshow {
       position: absolute;
-      top: -30%;
-      left: -10%;
-      width: 60%;
-      height: 60%;
-      background: radial-gradient(ellipse, rgba(212, 168, 83, 0.06) 0%, transparent 70%);
-      pointer-events: none;
-      animation: ambientFloat 12s ease-in-out infinite;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -20%;
-      right: -10%;
-      width: 50%;
-      height: 50%;
-      background: radial-gradient(ellipse, rgba(192, 57, 43, 0.04) 0%, transparent 70%);
-      pointer-events: none;
-      animation: ambientFloat 15s ease-in-out infinite reverse;
-    }
-
-    @keyframes ambientFloat {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      33% { transform: translate(30px, -20px) scale(1.05); }
-      66% { transform: translate(-20px, 15px) scale(0.95); }
-    }
-
-    /* River wave background animation */
-    .hero-river-waves {
-      position: absolute;
-      bottom: 0;
+      top: 0;
       left: 0;
       right: 0;
+      bottom: 0;
       width: 100%;
-      height: 200px;
-      overflow: hidden;
+      height: 100%;
       z-index: 1;
     }
 
-    .hero-river-waves svg {
+    .hero-slide {
       position: absolute;
-      bottom: 0;
-      width: 200%;
+      top: 0;
+      left: 0;
+      width: 100%;
       height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0;
+      transition: opacity 1.8s ease-in-out;
     }
 
-    .hero-wave-1 {
-      animation: riverFlow1 8s linear infinite;
+    .hero-slide.active {
+      opacity: 1;
     }
 
-    .hero-wave-2 {
-      animation: riverFlow2 12s linear infinite;
-    }
-
-    .hero-wave-3 {
-      animation: riverFlow3 16s linear infinite;
-    }
-
-    @keyframes riverFlow1 {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    @keyframes riverFlow2 {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    @keyframes riverFlow3 {
-      0% { transform: translateX(-50%); }
-      100% { transform: translateX(0); }
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at center, rgba(15, 20, 25, 0.5) 0%, rgba(15, 20, 25, 0.8) 70%, #0F1419 100%);
+      z-index: 2;
     }
 
     .hero-content {
       position: relative;
-      z-index: 2;
+      z-index: 3;
       max-width: 860px;
       padding: 0 2rem;
     }
@@ -400,8 +360,8 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(212, 168, 83, 0.1);
-      border: 1px solid rgba(212, 168, 83, 0.25);
+      background: rgba(212, 168, 83, 0.15);
+      border: 1px solid rgba(212, 168, 83, 0.35);
       border-radius: 50px;
       padding: 6px 20px;
       font-size: 0.8rem;
@@ -413,6 +373,7 @@
       animation: fadeSlideUp 1s ease forwards;
       animation-delay: 0.2s;
       opacity: 0;
+      backdrop-filter: blur(5px);
     }
 
     .hero-title {
@@ -430,14 +391,12 @@
     .hero-title .gold {
       color: var(--primary);
       display: block;
-      font-style: italic;
     }
 
     .hero-tagline {
       font-family: var(--font-display);
       font-size: clamp(1.1rem, 2.5vw, 1.6rem);
       font-weight: 400;
-      font-style: italic;
       color: var(--muted);
       margin-bottom: 2rem;
       animation: fadeSlideUp 1s ease forwards;
@@ -546,53 +505,17 @@
       box-shadow: 0 8px 30px rgba(212, 168, 83, 0.15);
     }
 
-    /* Scroll Indicator */
-    .scroll-indicator {
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 3;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      animation: fadeSlideUp 1s ease forwards;
-      animation-delay: 1.4s;
-      opacity: 0;
-    }
-
-    .scroll-indicator span {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      color: var(--muted);
-    }
-
-    .scroll-arrow {
-      width: 24px;
-      height: 36px;
-      border: 2px solid rgba(212, 168, 83, 0.4);
-      border-radius: 12px;
-      position: relative;
-    }
-
-    .scroll-arrow::before {
+    /* Hero Slideshow Overlay Blend */
+    .hero::after {
       content: '';
       position: absolute;
-      top: 6px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 3px;
-      height: 8px;
-      background: var(--primary);
-      border-radius: 3px;
-      animation: scrollBounce 1.8s ease-in-out infinite;
-    }
-
-    @keyframes scrollBounce {
-      0%, 100% { opacity: 1; transform: translateX(-50%) translateY(0); }
-      50% { opacity: 0.3; transform: translateX(-50%) translateY(12px); }
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 150px;
+      background: linear-gradient(to top, #0F1419, transparent);
+      z-index: 2;
+      pointer-events: none;
     }
 
     @keyframes fadeSlideUp {
@@ -1074,7 +997,6 @@
       font-size: 0.95rem;
       line-height: 1.8;
       margin-bottom: 1.5rem;
-      font-style: italic;
       opacity: 0.9;
     }
 
@@ -1597,18 +1519,15 @@
        HERO SECTION
   ============================================ -->
   <section class="hero" id="hero">
-    <!-- Animated river waves in background -->
-    <div class="hero-river-waves">
-      <svg class="hero-wave-1" viewBox="0 0 2880 200" preserveAspectRatio="none">
-        <path d="M0,100 C240,150 480,50 720,100 C960,150 1200,50 1440,100 C1680,150 1920,50 2160,100 C2400,150 2640,50 2880,100 L2880,200 L0,200 Z" fill="var(--primary)" fill-opacity="0.06"/>
-      </svg>
-      <svg class="hero-wave-2" viewBox="0 0 2880 200" preserveAspectRatio="none">
-        <path d="M0,120 C360,80 720,160 1080,120 C1440,80 1800,160 2160,120 C2520,80 2700,140 2880,120 L2880,200 L0,200 Z" fill="var(--primary)" fill-opacity="0.04"/>
-      </svg>
-      <svg class="hero-wave-3" viewBox="0 0 2880 200" preserveAspectRatio="none">
-        <path d="M0,140 C480,100 960,180 1440,140 C1920,100 2400,170 2880,140 L2880,200 L0,200 Z" fill="var(--primary)" fill-opacity="0.03"/>
-      </svg>
+    <!-- Hero slideshow background -->
+    <div class="hero-slideshow">
+      <div class="hero-slide active" style="background-image: url('images/jhelum_3.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('images/jhelum_1.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('images/jhelum_2.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('images/jhelum_4.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('images/jhelum_5.jpg');"></div>
     </div>
+    <div class="hero-overlay"></div>
 
     <div class="hero-content">
       <div class="hero-badge">
@@ -1646,10 +1565,6 @@
       </div>
     </div>
 
-    <div class="scroll-indicator">
-      <span>Scroll</span>
-      <div class="scroll-arrow"></div>
-    </div>
   </section>
 
   <!-- ============================================
@@ -2136,6 +2051,19 @@
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
+    });
+
+    // ---- Hero slideshow rotation ----
+    document.addEventListener('DOMContentLoaded', () => {
+      const slides = document.querySelectorAll('.hero-slide');
+      if (slides.length > 0) {
+        let currentSlide = 0;
+        setInterval(() => {
+          slides[currentSlide].classList.remove('active');
+          currentSlide = (currentSlide + 1) % slides.length;
+          slides[currentSlide].classList.add('active');
+        }, 5000);
+      }
     });
   </script>
 </body>

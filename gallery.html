@@ -266,7 +266,6 @@ ul { list-style: none; }
   margin-bottom: 16px;
 }
 .hero h1 em {
-  font-style: italic;
   color: var(--primary);
 }
 .hero-subtitle {
@@ -383,238 +382,103 @@ ul { list-style: none; }
 }
 
 /* ═══════════════════════════════════════════
-   MASONRY GALLERY GRID
+   INSTAGRAM EMBED GRID
    ═══════════════════════════════════════════ */
-.gallery-grid {
-  columns: 4;
-  column-gap: 16px;
+.insta-embed-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
 }
-.gallery-tile {
-  break-inside: avoid;
-  margin-bottom: 16px;
+.insta-embed-card {
+  background: var(--surface);
   border-radius: var(--radius);
   overflow: hidden;
-  position: relative;
-  cursor: pointer;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  border: 1px solid rgba(212, 168, 83, 0.08);
+  transition: var(--transition);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
-.gallery-tile:hover {
-  transform: scale(1.02);
-  box-shadow: var(--shadow-lg);
+.insta-embed-card:hover {
+  border-color: rgba(212, 168, 83, 0.2);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
 }
-.tile-inner {
+.insta-embed-wrapper {
   width: 100%;
-  display: block;
+  overflow: hidden;
+  background: #1A2332;
   position: relative;
+  min-height: 480px;
 }
-/* Varied heights for masonry feel */
-.gallery-tile.tall .tile-inner { padding-top: 140%; }
-.gallery-tile.medium .tile-inner { padding-top: 110%; }
-.gallery-tile.short .tile-inner { padding-top: 85%; }
-.gallery-tile.square .tile-inner { padding-top: 100%; }
-
-.tile-gradient {
-  position: absolute;
-  inset: 0;
-  border-radius: var(--radius);
+.insta-embed-wrapper iframe {
+  width: 100%;
+  min-height: 480px;
+  border: none;
 }
-/* Subtle texture overlay for depth */
-.tile-gradient::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 2px,
-    rgba(255,255,255,0.015) 2px,
-    rgba(255,255,255,0.015) 4px
-  );
-  pointer-events: none;
-  border-radius: var(--radius);
+.insta-embed-info {
+  padding: 16px 20px;
+  border-top: 1px solid rgba(212, 168, 83, 0.06);
 }
-
-/* Label overlay */
-.tile-label {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  padding: 40px 20px 20px;
-  background: linear-gradient(to top, rgba(15, 20, 25, 0.85) 0%, transparent 100%);
-  border-radius: 0 0 var(--radius) var(--radius);
+.insta-embed-caption {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
-.tile-label h3 {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
+.insta-embed-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.insta-embed-category {
+  font-size: 0.7rem;
   font-weight: 600;
-  color: var(--text);
-  margin-bottom: 4px;
-}
-.tile-label span {
-  font-size: 0.75rem;
   color: var(--primary);
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  font-weight: 600;
+  padding: 3px 10px;
+  background: rgba(212, 168, 83, 0.1);
+  border-radius: 20px;
 }
-
-/* Hover overlay */
-.tile-hover {
-  position: absolute;
-  inset: 0;
-  background: rgba(212, 168, 83, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  border-radius: var(--radius);
-}
-.tile-hover-icon {
-  width: 56px; height: 56px;
-  border-radius: 50%;
-  background: rgba(212, 168, 83, 0.9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--bg);
-  font-weight: 700;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transform: scale(0.8);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 24px rgba(212, 168, 83, 0.4);
-}
-.gallery-tile:hover .tile-hover {
-  opacity: 1;
-}
-.gallery-tile:hover .tile-hover-icon {
-  transform: scale(1);
-}
-/* Fade out items when filtering */
-.gallery-tile.hidden {
-  display: none;
-}
-
-/* ═══════════════════════════════════════════
-   LIGHTBOX
-   ═══════════════════════════════════════════ */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(15, 20, 25, 0.95);
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
-}
-.lightbox.open {
-  opacity: 1;
-  pointer-events: all;
-}
-.lightbox-content {
-  max-width: 800px;
-  width: 90%;
-  text-align: center;
-  position: relative;
-}
-.lightbox-display {
-  width: 100%;
-  aspect-ratio: 4/3;
-  border-radius: var(--radius);
-  position: relative;
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-}
-.lightbox-gradient {
-  position: absolute;
-  inset: 0;
-  border-radius: var(--radius);
-}
-.lightbox-gradient::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 3px,
-    rgba(255,255,255,0.02) 3px,
-    rgba(255,255,255,0.02) 6px
-  );
-  pointer-events: none;
-  border-radius: var(--radius);
-}
-.lightbox-info {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  padding: 40px 32px 28px;
-  background: linear-gradient(to top, rgba(15, 20, 25, 0.9) 0%, transparent 100%);
-  text-align: left;
-}
-.lightbox-info h3 {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  color: var(--text);
-  margin-bottom: 4px;
-}
-.lightbox-info span {
-  font-size: 0.8rem;
-  color: var(--primary);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 600;
-}
-.lightbox-close {
-  position: absolute;
-  top: -60px; right: 0;
-  width: 48px; height: 48px;
-  border-radius: 50%;
-  background: rgba(240, 237, 230, 0.1);
-  color: var(--text);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 300;
-  transition: var(--transition);
-  border: 1px solid rgba(240, 237, 230, 0.1);
-}
-.lightbox-close:hover {
-  background: var(--secondary);
-  border-color: var(--secondary);
-}
-.lightbox-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 52px; height: 52px;
-  border-radius: 50%;
-  background: rgba(240, 237, 230, 0.08);
-  color: var(--text);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  transition: var(--transition);
-  border: 1px solid rgba(240, 237, 230, 0.1);
-}
-.lightbox-arrow:hover {
-  background: rgba(212, 168, 83, 0.2);
-  border-color: var(--primary);
-  color: var(--primary);
-}
-.lightbox-prev { left: -76px; }
-.lightbox-next { right: -76px; }
-.lightbox-counter {
-  margin-top: 20px;
-  font-size: 0.875rem;
+.insta-embed-likes {
+  font-size: 0.75rem;
   color: var(--muted);
-  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
+.insta-embed-likes svg {
+  width: 14px;
+  height: 14px;
+  fill: var(--secondary);
+}
+.insta-embed-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: var(--primary);
+  font-weight: 500;
+  margin-top: 8px;
+  transition: var(--transition);
+}
+.insta-embed-link:hover {
+  color: var(--text);
+}
+.insta-embed-link svg {
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
+}
+
+/* Section filter visibility */
+.gallery-section { display: block; }
+.gallery-section.hidden-section { display: none; }
 
 /* ═══════════════════════════════════════════
    INSTAGRAM SECTION
@@ -646,63 +510,6 @@ ul { list-style: none; }
   margin-bottom: 40px;
   font-size: 1rem;
 }
-.insta-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 12px;
-  margin-bottom: 40px;
-}
-.insta-tile {
-  aspect-ratio: 1;
-  border-radius: 16px;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-}
-.insta-tile:hover {
-  transform: scale(1.05);
-  box-shadow: var(--shadow-md);
-}
-.insta-tile-bg {
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-}
-.insta-tile::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0);
-  transition: var(--transition);
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.insta-tile:hover::after {
-  background: rgba(212, 168, 83, 0.15);
-}
-/* Instagram icon overlay on hover */
-.insta-icon-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 2;
-}
-.insta-tile:hover .insta-icon-overlay {
-  opacity: 1;
-}
-.insta-icon-overlay svg {
-  width: 32px;
-  height: 32px;
-  fill: var(--text);
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
-}
 
 .insta-cta {
   text-align: center;
@@ -730,6 +537,139 @@ ul { list-style: none; }
   width: 20px; height: 20px;
   fill: currentColor;
 }
+
+/* ═══════════════════════════════════════════
+   GOOGLE MAPS PHOTOS SECTION
+   ═══════════════════════════════════════════ */
+.gmaps-section {
+  position: relative;
+  overflow: hidden;
+}
+.gmaps-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 50% 60% at 50% 100%, rgba(212, 168, 83, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+.gmaps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.gmaps-card {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  border: 1px solid rgba(212, 168, 83, 0.08);
+}
+.gmaps-card:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(212, 168, 83, 0.2);
+}
+.gmaps-card-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+}
+.gmaps-card-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 3px,
+    rgba(255,255,255,0.02) 3px,
+    rgba(255,255,255,0.02) 6px
+  );
+  border-radius: var(--radius);
+  pointer-events: none;
+}
+.gmaps-card-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.gmaps-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  transition: var(--transition);
+}
+.gmaps-card:hover .gmaps-card-icon {
+  background: rgba(212, 168, 83, 0.3);
+  transform: scale(1.1);
+}
+.gmaps-card-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: var(--text);
+}
+.gmaps-card-label {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+.gmaps-card-hint {
+  font-size: 0.65rem;
+  color: rgba(240, 237, 230, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+}
+.gmaps-see-all {
+  text-align: center;
+  margin-top: 8px;
+}
+.gmaps-see-all a {
+  font-size: 0.9rem;
+  color: var(--primary);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+.gmaps-see-all a:hover {
+  color: var(--text);
+  gap: 10px;
+}
+.gmaps-see-all a svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  transition: var(--transition);
+}
+
+/* Gradient presets for maps cards */
+.gmap-grad-1 { background: linear-gradient(135deg, #D4A853 0%, #b8863a 50%, #8B6914 100%); }
+.gmap-grad-2 { background: linear-gradient(135deg, #C0392B 0%, #96281b 50%, #6e1d14 100%); }
+.gmap-grad-3 { background: linear-gradient(135deg, #1A2332 0%, #2C3E50 50%, #34495E 100%); }
+.gmap-grad-4 { background: linear-gradient(160deg, #D4A853 0%, #C0392B 100%); }
+.gmap-grad-5 { background: linear-gradient(200deg, #2C3E50 0%, #1A2332 50%, #D4A853 100%); }
+.gmap-grad-6 { background: linear-gradient(180deg, #C0392B 0%, #D4A853 100%); }
 
 /* ═══════════════════════════════════════════
    FOOTER
@@ -942,38 +882,33 @@ ul { list-style: none; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .mobile-menu { display: flex; }
-  .gallery-grid { columns: 3; }
+  .insta-embed-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .gmaps-grid { grid-template-columns: repeat(3, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-  .lightbox-prev { left: 12px; }
-  .lightbox-next { right: 12px; }
-  .insta-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 768px) {
   :root { --nav-height: 64px; }
   .mobile-bottom-nav { display: block; }
   .whatsapp-float { bottom: 90px; right: 20px; width: 52px; height: 52px; }
   .back-to-top { bottom: 90px; left: 20px; width: 42px; height: 42px; }
-  .gallery-grid { columns: 2; column-gap: 12px; }
-  .gallery-tile { margin-bottom: 12px; }
   .section-padding { padding: 60px 0; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer { padding-bottom: 80px; }
-  .lightbox-prev { left: 8px; width: 42px; height: 42px; }
-  .lightbox-next { right: 8px; width: 42px; height: 42px; }
-  .lightbox-close { top: -50px; width: 40px; height: 40px; }
-  .insta-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .insta-embed-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .insta-embed-wrapper { min-height: 420px; }
+  .insta-embed-wrapper iframe { min-height: 420px; }
+  .gmaps-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
   .filter-btn { padding: 8px 16px; font-size: 0.8rem; }
 }
 @media (max-width: 480px) {
-  .gallery-grid { columns: 2; column-gap: 10px; }
-  .gallery-tile { margin-bottom: 10px; }
-  .tile-label { padding: 28px 14px 14px; }
-  .tile-label h3 { font-size: 0.9rem; }
-  .tile-label span { font-size: 0.65rem; }
   .hero { min-height: 280px; }
-  .insta-grid { grid-template-columns: repeat(2, 1fr); }
-  .lightbox-content { width: 95%; }
-  .lightbox-info h3 { font-size: 1.15rem; }
+  .insta-embed-grid { grid-template-columns: 1fr; gap: 20px; }
+  .insta-embed-wrapper { min-height: 480px; }
+  .insta-embed-wrapper iframe { min-height: 480px; }
+  .gmaps-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .gmaps-card-icon { width: 38px; height: 38px; }
+  .gmaps-card-icon svg { width: 18px; height: 18px; }
+  .gmaps-card-label { font-size: 0.8rem; }
   .filter-bar { gap: 6px; }
   .filter-btn { padding: 7px 14px; font-size: 0.75rem; }
 }
@@ -1040,7 +975,7 @@ ul { list-style: none; }
 </div>
 
 <!-- ═══════════════════════════════════════════
-     GALLERY SECTION
+     GALLERY SECTION — FILTER & CONTENT
      ═══════════════════════════════════════════ -->
 <section class="section-padding" id="gallery">
   <div class="container">
@@ -1053,184 +988,201 @@ ul { list-style: none; }
     <!-- Filter Tabs -->
     <div class="filter-bar reveal">
       <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="food">Food</button>
-      <button class="filter-btn" data-filter="ambiance">Ambiance</button>
-      <button class="filter-btn" data-filter="events">Events</button>
-      <button class="filter-btn" data-filter="team">Team</button>
+      <button class="filter-btn" data-filter="instagram">Instagram</button>
+      <button class="filter-btn" data-filter="gmaps">Google Maps Photos</button>
     </div>
 
-    <!-- Masonry Gallery Grid -->
-    <div class="gallery-grid" id="galleryGrid">
-
-      <!-- FOOD TILE 1 — Harissa Special Pizza -->
-      <div class="gallery-tile tall reveal" data-category="food" data-index="0">
-        <div class="tile-inner">
-          <div class="tile-gradient" style="background: linear-gradient(135deg, #D4A853 0%, #C0392B 60%, #8B0000 100%);"></div>
-          <div class="tile-label">
-            <h3>Harissa Special Pizza</h3>
-            <span>Food</span>
-          </div>
-          <div class="tile-hover">
-            <div class="tile-hover-icon">View</div>
-          </div>
-        </div>
+    <!-- ═══════════════════════════════════════
+         INSTAGRAM GALLERY
+         ═══════════════════════════════════════ -->
+    <div class="gallery-section" id="instagramSection" data-section="instagram">
+      <div class="section-header reveal">
+        <div class="section-label">Follow Us</div>
+        <h2 class="insta-handle"><span>@</span>jhelumcafe</h2>
+        <p class="insta-tagline">From Our Instagram — real posts, real flavors, real moments from our kitchen and hall.</p>
       </div>
 
-      <!-- AMBIANCE TILE 1 — Riverside View -->
-      <div class="gallery-tile medium reveal reveal-delay-1" data-category="ambiance" data-index="1">
-        <div class="tile-inner">
-          <div class="tile-gradient" style="background: linear-gradient(160deg, #1A2332 0%, #2C3E50 50%, #1e3a4a 100%);"></div>
-          <div class="tile-label">
-            <h3>Riverside View</h3>
-            <span>Ambiance</span>
+      <div class="insta-embed-grid">
+
+        <!-- Post 1: Conference Hall Booking -->
+        <div class="insta-embed-card reveal">
+          <div class="insta-embed-wrapper">
+            <iframe src="https://www.instagram.com/p/CtGvVk8rW5B/embed/" width="100%" height="480" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>
           </div>
-          <div class="tile-hover">
-            <div class="tile-hover-icon">View</div>
+          <div class="insta-embed-info">
+            <p class="insta-embed-caption">"Your conference, our exceptional hall. Book now and create an unforgettable event!"</p>
+            <div class="insta-embed-meta">
+              <span class="insta-embed-category">Events</span>
+              <span class="insta-embed-likes">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                96
+              </span>
+            </div>
+            <a href="https://www.instagram.com/p/CtGvVk8rW5B/" target="_blank" rel="noopener noreferrer" class="insta-embed-link">
+              View on Instagram
+              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </a>
           </div>
         </div>
-      </div>
 
-      <!-- FOOD TILE 2 — Czochwaur Burger -->
-      <div class="gallery-tile short reveal reveal-delay-2" data-category="food" data-index="2">
-        <div class="tile-inner">
-          <div class="tile-gradient" style="background: linear-gradient(200deg, #D4A853 0%, #b8863a 40%, #C0392B 100%);"></div>
-          <div class="tile-label">
-            <h3>Czochwaur Burger</h3>
-            <span>Food</span>
+        <!-- Post 2: Winter Soup (Reel) -->
+        <div class="insta-embed-card reveal reveal-delay-1">
+          <div class="insta-embed-wrapper">
+            <iframe src="https://www.instagram.com/reel/ClyhnOujQQ0/embed/" width="100%" height="480" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>
           </div>
-          <div class="tile-hover">
-            <div class="tile-hover-icon">View</div>
+          <div class="insta-embed-info">
+            <p class="insta-embed-caption">"Peeps can never go wrong with a bowl of soup these winters!"</p>
+            <div class="insta-embed-meta">
+              <span class="insta-embed-category">Food</span>
+              <span class="insta-embed-likes">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                66
+              </span>
+            </div>
+            <a href="https://www.instagram.com/reel/ClyhnOujQQ0/" target="_blank" rel="noopener noreferrer" class="insta-embed-link">
+              View on Instagram
+              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </a>
           </div>
         </div>
-      </div>
 
-      <!-- EVENTS TILE 1 — Anniversary Night -->
-      <div class="gallery-tile square reveal reveal-delay-3" data-category="events" data-index="3">
-        <div class="tile-inner">
-          <div class="tile-gradient" style="background: linear-gradient(135deg, #D4A853 0%, #b5432a 50%, #8B0000 100%);"></div>
-          <div class="tile-label">
-            <h3>Anniversary Night</h3>
-            <span>Events</span>
+        <!-- Post 3: Engagement Party -->
+        <div class="insta-embed-card reveal reveal-delay-2">
+          <div class="insta-embed-wrapper">
+            <iframe src="https://www.instagram.com/p/ChhmtfhviVr/embed/" width="100%" height="480" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>
           </div>
-          <div class="tile-hover">
-            <div class="tile-hover-icon">View</div>
+          <div class="insta-embed-info">
+            <p class="insta-embed-caption">"Getting engaged is more than just an exciting event. We bring your dreams to life."</p>
+            <div class="insta-embed-meta">
+              <span class="insta-embed-category">Events</span>
+              <span class="insta-embed-likes">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                167
+              </span>
+            </div>
+            <a href="https://www.instagram.com/p/ChhmtfhviVr/" target="_blank" rel="noopener noreferrer" class="insta-embed-link">
+              View on Instagram
+              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </a>
           </div>
         </div>
-      </div>
 
-      <!-- TEAM TILE 1 — Our Team -->
-      <div class="gallery-tile medium reveal" data-category="team" data-index="4">
-        <div class="tile-inner">
-          <div class="tile-gradient" style="background: linear-gradient(145deg, #1A2332 0%, #4a5d6e 50%, #6B7B8D 100%);"></div>
-          <div class="tile-label">
-            <h3>Our Team</h3>
-            <span>Team</span>
+        <!-- Post 4: Chicken Special -->
+        <div class="insta-embed-card reveal">
+          <div class="insta-embed-wrapper">
+            <iframe src="https://www.instagram.com/p/CizLPHbLaXp/embed/" width="100%" height="480" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>
           </div>
-          <div class="tile-hover">
-            <div class="tile-hover-icon">View</div>
+          <div class="insta-embed-info">
+            <p class="insta-embed-caption">"Your day might not be perfect but our chicken sure is!"</p>
+            <div class="insta-embed-meta">
+              <span class="insta-embed-category">Food</span>
+              <span class="insta-embed-likes">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                74
+              </span>
+            </div>
+            <a href="https://www.instagram.com/p/CizLPHbLaXp/" target="_blank" rel="noopener noreferrer" class="insta-embed-link">
+              View on Instagram
+              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </a>
           </div>
         </div>
-      </div>
 
-      <!-- FOOD TILE 3 — Butter Chicken -->
-      <div class="gallery-tile tall reveal reveal-delay-1" data-category="food" data-index="5">
-        <div class="tile-inner">
-          <div class="tile-gradient" style="background: linear-gradient(180deg, #C0392B 0%, #D4A853 50%, #e8c77b 100%);"></div>
-          <div class="tile-label">
-            <h3>Butter Chicken</h3>
-            <span>Food</span>
+        <!-- Post 5: Happy Dining -->
+        <div class="insta-embed-card reveal reveal-delay-1">
+          <div class="insta-embed-wrapper">
+            <iframe src="https://www.instagram.com/p/Cdkk6ZKPUOR/embed/" width="100%" height="480" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>
           </div>
-          <div class="tile-hover">
-            <div class="tile-hover-icon">View</div>
+          <div class="insta-embed-info">
+            <p class="insta-embed-caption">"Happy Dinning !!"</p>
+            <div class="insta-embed-meta">
+              <span class="insta-embed-category">Food</span>
+              <span class="insta-embed-likes">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                43
+              </span>
+            </div>
+            <a href="https://www.instagram.com/p/Cdkk6ZKPUOR/" target="_blank" rel="noopener noreferrer" class="insta-embed-link">
+              View on Instagram
+              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </a>
           </div>
         </div>
-      </div>
 
-      <!-- AMBIANCE TILE 2 — Fine Dining Basement -->
-      <div class="gallery-tile square reveal reveal-delay-2" data-category="ambiance" data-index="6">
-        <div class="tile-inner">
-          <div class="tile-gradient" style="background: linear-gradient(225deg, #2C3E50 0%, #1A2332 50%, #0F1419 100%);"></div>
-          <div class="tile-label">
-            <h3>Fine Dining Basement</h3>
-            <span>Ambiance</span>
+        <!-- Post 6: Ambiance -->
+        <div class="insta-embed-card reveal reveal-delay-2">
+          <div class="insta-embed-wrapper">
+            <iframe src="https://www.instagram.com/p/CdXtLV-vt_N/embed/" width="100%" height="480" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>
           </div>
-          <div class="tile-hover">
-            <div class="tile-hover-icon">View</div>
+          <div class="insta-embed-info">
+            <p class="insta-embed-caption">"Enjoy your food while you adore the ambience."</p>
+            <div class="insta-embed-meta">
+              <span class="insta-embed-category">Ambiance</span>
+              <span class="insta-embed-likes">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                31
+              </span>
+            </div>
+            <a href="https://www.instagram.com/p/CdXtLV-vt_N/" target="_blank" rel="noopener noreferrer" class="insta-embed-link">
+              View on Instagram
+              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </a>
           </div>
         </div>
-      </div>
 
-      <!-- EVENTS TILE 2 — Birthday Celebrations -->
-      <div class="gallery-tile short reveal reveal-delay-3" data-category="events" data-index="7">
-        <div class="tile-inner">
-          <div class="tile-gradient" style="background: linear-gradient(170deg, #e0b960 0%, #D4A853 30%, #8B0000 100%);"></div>
-          <div class="tile-label">
-            <h3>Birthday Celebrations</h3>
-            <span>Events</span>
+        <!-- Post 7: Live Music Event -->
+        <div class="insta-embed-card reveal">
+          <div class="insta-embed-wrapper">
+            <iframe src="https://www.instagram.com/p/CawKGupD6tq/embed/" width="100%" height="480" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>
           </div>
-          <div class="tile-hover">
-            <div class="tile-hover-icon">View</div>
+          <div class="insta-embed-info">
+            <p class="insta-embed-caption">"Isn't @junaidmusic_ one of the most magical voices in Kashmir."</p>
+            <div class="insta-embed-meta">
+              <span class="insta-embed-category">Events</span>
+              <span class="insta-embed-likes">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                78
+              </span>
+            </div>
+            <a href="https://www.instagram.com/p/CawKGupD6tq/" target="_blank" rel="noopener noreferrer" class="insta-embed-link">
+              View on Instagram
+              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </a>
           </div>
         </div>
-      </div>
 
-      <!-- AMBIANCE TILE 3 — Colourful Cafe Upstairs -->
-      <div class="gallery-tile tall reveal" data-category="ambiance" data-index="8">
-        <div class="tile-inner">
-          <div class="tile-gradient" style="background: linear-gradient(300deg, #1A2332 0%, #243447 40%, #2C3E50 80%, #1e3a4a 100%);"></div>
-          <div class="tile-label">
-            <h3>Colourful Cafe Upstairs</h3>
-            <span>Ambiance</span>
+        <!-- Post 8: Kashmiri Vibe -->
+        <div class="insta-embed-card reveal reveal-delay-1">
+          <div class="insta-embed-wrapper">
+            <iframe src="https://www.instagram.com/p/CdVTPR3vhd1/embed/" width="100%" height="480" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>
           </div>
-          <div class="tile-hover">
-            <div class="tile-hover-icon">View</div>
+          <div class="insta-embed-info">
+            <p class="insta-embed-caption">"When in Kashmir, Relax the kashmiri way."</p>
+            <div class="insta-embed-meta">
+              <span class="insta-embed-category">Ambiance</span>
+              <span class="insta-embed-likes">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                49
+              </span>
+            </div>
+            <a href="https://www.instagram.com/p/CdVTPR3vhd1/" target="_blank" rel="noopener noreferrer" class="insta-embed-link">
+              View on Instagram
+              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </a>
           </div>
         </div>
+
       </div>
 
-      <!-- FOOD TILE 4 — Kashmiri Kahwa -->
-      <div class="gallery-tile medium reveal reveal-delay-1" data-category="food" data-index="9">
-        <div class="tile-inner">
-          <div class="tile-gradient" style="background: linear-gradient(45deg, #D4A853 0%, #e2c47a 30%, #C0392B 100%);"></div>
-          <div class="tile-label">
-            <h3>Kashmiri Kahwa</h3>
-            <span>Food</span>
-          </div>
-          <div class="tile-hover">
-            <div class="tile-hover-icon">View</div>
-          </div>
-        </div>
+      <!-- Follow CTA -->
+      <div class="insta-cta reveal">
+        <a href="https://www.instagram.com/jhelumcafe/" target="_blank" rel="noopener noreferrer" class="btn-instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          Follow on Instagram
+        </a>
       </div>
-
-      <!-- EVENTS TILE 3 — Family Gatherings -->
-      <div class="gallery-tile square reveal reveal-delay-2" data-category="events" data-index="10">
-        <div class="tile-inner">
-          <div class="tile-gradient" style="background: linear-gradient(200deg, #D4A853 0%, #c4883a 40%, #8B0000 100%);"></div>
-          <div class="tile-label">
-            <h3>Family Gatherings</h3>
-            <span>Events</span>
-          </div>
-          <div class="tile-hover">
-            <div class="tile-hover-icon">View</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- TEAM TILE 2 — Kitchen Heroes -->
-      <div class="gallery-tile short reveal reveal-delay-3" data-category="team" data-index="11">
-        <div class="tile-inner">
-          <div class="tile-gradient" style="background: linear-gradient(135deg, #2a3d50 0%, #6B7B8D 50%, #1A2332 100%);"></div>
-          <div class="tile-label">
-            <h3>Kitchen Heroes</h3>
-            <span>Team</span>
-          </div>
-          <div class="tile-hover">
-            <div class="tile-hover-icon">View</div>
-          </div>
-        </div>
-      </div>
-
     </div>
+
   </div>
 </section>
 
@@ -1243,66 +1195,221 @@ ul { list-style: none; }
 </div>
 
 <!-- ═══════════════════════════════════════════
-     INSTAGRAM SECTION
+     GOOGLE MAPS PHOTOS SECTION
      ═══════════════════════════════════════════ -->
-<section class="instagram-section section-padding">
+<section class="gmaps-section section-padding gallery-section" id="gmapsSection" data-section="gmaps">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-label">Follow Us</div>
-      <h2 class="insta-handle"><span>@</span>jhelumcafe</h2>
-      <p class="insta-tagline">Follow our journey on Instagram — behind the scenes, daily specials, and riverside moments.</p>
+      <div class="section-label">Visitor Photos</div>
+      <h2 class="section-title">Photos from Google Maps</h2>
+      <p class="section-subtitle">Real photos shared by visitors on Google Maps — see Jhelum Cafe through the eyes of our guests.</p>
     </div>
 
-    <!-- Instagram Grid -->
-    <div class="insta-grid reveal">
-      <!-- Insta Tile 1 -->
-      <div class="insta-tile">
-        <div class="insta-tile-bg" style="background: linear-gradient(135deg, #D4A853 0%, #C0392B 100%);"></div>
-        <div class="insta-icon-overlay">
-          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    <div class="gmaps-grid reveal">
+      <!-- Card 1 -->
+      <a href="https://maps.app.goo.gl/S4BuB3Rh11U8eGGv6" target="_blank" rel="noopener noreferrer" class="gmaps-card">
+        <div class="gmaps-card-bg gmap-grad-1"></div>
+        <div class="gmaps-card-content">
+          <div class="gmaps-card-icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-7 9c0-2.67 5.33-4 7-4s7 1.33 7 4v1H5v-1zm9-13.5c0-.83-.67-1.5-1.5-1.5h-1c-.83 0-1.5.67-1.5 1.5V9h-1.5c-.83 0-1.5.67-1.5 1.5v1c0 .83.67 1.5 1.5 1.5H10v1.5c0 .83.67 1.5 1.5 1.5h1c.83 0 1.5-.67 1.5-1.5V13h1.5c.83 0 1.5-.67 1.5-1.5v-1c0-.83-.67-1.5-1.5-1.5H14V7.5z"/></svg></div>
+          <span class="gmaps-card-label">Photo 1</span>
+          <span class="gmaps-card-hint">View on Maps</span>
         </div>
-      </div>
-      <!-- Insta Tile 2 -->
-      <div class="insta-tile">
-        <div class="insta-tile-bg" style="background: linear-gradient(180deg, #1A2332 0%, #2C3E50 100%);"></div>
-        <div class="insta-icon-overlay">
-          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <!-- Card 2 -->
+      <a href="https://maps.app.goo.gl/5gLHBVgZEvuh8R6x9" target="_blank" rel="noopener noreferrer" class="gmaps-card">
+        <div class="gmaps-card-bg gmap-grad-2"></div>
+        <div class="gmaps-card-content">
+          <div class="gmaps-card-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></div>
+          <span class="gmaps-card-label">Photo 2</span>
+          <span class="gmaps-card-hint">View on Maps</span>
         </div>
-      </div>
-      <!-- Insta Tile 3 -->
-      <div class="insta-tile">
-        <div class="insta-tile-bg" style="background: linear-gradient(225deg, #D4A853 0%, #8B0000 100%);"></div>
-        <div class="insta-icon-overlay">
-          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <!-- Card 3 -->
+      <a href="https://maps.app.goo.gl/nqkCjrnqGGeWukxW8" target="_blank" rel="noopener noreferrer" class="gmaps-card">
+        <div class="gmaps-card-bg gmap-grad-3"></div>
+        <div class="gmaps-card-content">
+          <div class="gmaps-card-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></div>
+          <span class="gmaps-card-label">Photo 3</span>
+          <span class="gmaps-card-hint">View on Maps</span>
         </div>
-      </div>
-      <!-- Insta Tile 4 -->
-      <div class="insta-tile">
-        <div class="insta-tile-bg" style="background: linear-gradient(135deg, #2C3E50 0%, #1A2332 50%, #D4A853 100%);"></div>
-        <div class="insta-icon-overlay">
-          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <!-- Card 4 -->
+      <a href="https://maps.app.goo.gl/hjE1UtvRPS46X8Li7" target="_blank" rel="noopener noreferrer" class="gmaps-card">
+        <div class="gmaps-card-bg gmap-grad-4"></div>
+        <div class="gmaps-card-content">
+          <div class="gmaps-card-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></div>
+          <span class="gmaps-card-label">Photo 4</span>
+          <span class="gmaps-card-hint">View on Maps</span>
         </div>
-      </div>
-      <!-- Insta Tile 5 -->
-      <div class="insta-tile">
-        <div class="insta-tile-bg" style="background: linear-gradient(160deg, #C0392B 0%, #D4A853 100%);"></div>
-        <div class="insta-icon-overlay">
-          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <!-- Card 5 -->
+      <a href="https://maps.app.goo.gl/jks3moTyBPkU8irR9" target="_blank" rel="noopener noreferrer" class="gmaps-card">
+        <div class="gmaps-card-bg gmap-grad-5"></div>
+        <div class="gmaps-card-content">
+          <div class="gmaps-card-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></div>
+          <span class="gmaps-card-label">Photo 5</span>
+          <span class="gmaps-card-hint">View on Maps</span>
         </div>
-      </div>
-      <!-- Insta Tile 6 -->
-      <div class="insta-tile">
-        <div class="insta-tile-bg" style="background: linear-gradient(180deg, #1A2332 0%, #6B7B8D 100%);"></div>
-        <div class="insta-icon-overlay">
-          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <!-- Card 6 -->
+      <a href="https://maps.app.goo.gl/RqsRKGAQJHhL8Xvq8" target="_blank" rel="noopener noreferrer" class="gmaps-card">
+        <div class="gmaps-card-bg gmap-grad-6"></div>
+        <div class="gmaps-card-content">
+          <div class="gmaps-card-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></div>
+          <span class="gmaps-card-label">Photo 6</span>
+          <span class="gmaps-card-hint">View on Maps</span>
         </div>
-      </div>
+      </a>
+      <!-- Card 7 -->
+      <a href="https://maps.app.goo.gl/GdsEN1R7KHzgDkqY6" target="_blank" rel="noopener noreferrer" class="gmaps-card">
+        <div class="gmaps-card-bg gmap-grad-1"></div>
+        <div class="gmaps-card-content">
+          <div class="gmaps-card-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></div>
+          <span class="gmaps-card-label">Photo 7</span>
+          <span class="gmaps-card-hint">View on Maps</span>
+        </div>
+      </a>
+      <!-- Card 8 -->
+      <a href="https://maps.app.goo.gl/yp8zCiGuZL1wH6uk6" target="_blank" rel="noopener noreferrer" class="gmaps-card">
+        <div class="gmaps-card-bg gmap-grad-2"></div>
+        <div class="gmaps-card-content">
+          <div class="gmaps-card-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></div>
+          <span class="gmaps-card-label">Photo 8</span>
+          <span class="gmaps-card-hint">View on Maps</span>
+        </div>
+      </a>
+      <!-- Card 9 -->
+      <a href="https://maps.app.goo.gl/oezMt1ncKtHnZj5V7" target="_blank" rel="noopener noreferrer" class="gmaps-card">
+        <div class="gmaps-card-bg gmap-grad-3"></div>
+        <div class="gmaps-card-content">
+          <div class="gmaps-card-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></div>
+          <span class="gmaps-card-label">Photo 9</span>
+          <span class="gmaps-card-hint">View on Maps</span>
+        </div>
+      </a>
+      <!-- Card 10 -->
+      <a href="https://maps.app.goo.gl/mWWhccK7i2T1PmYg8" target="_blank" rel="noopener noreferrer" class="gmaps-card">
+        <div class="gmaps-card-bg gmap-grad-4"></div>
+        <div class="gmaps-card-content">
+          <div class="gmaps-card-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></div>
+          <span class="gmaps-card-label">Photo 10</span>
+          <span class="gmaps-card-hint">View on Maps</span>
+        </div>
+      </a>
+      <!-- Card 11 -->
+      <a href="https://maps.app.goo.gl/ojeZegZCtqhN4vJz9" target="_blank" rel="noopener noreferrer" class="gmaps-card">
+        <div class="gmaps-card-bg gmap-grad-5"></div>
+        <div class="gmaps-card-content">
+          <div class="gmaps-card-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></div>
+          <span class="gmaps-card-label">Photo 11</span>
+          <span class="gmaps-card-hint">View on Maps</span>
+        </div>
+      </a>
+      <!-- Card 12 -->
+      <a href="https://maps.app.goo.gl/JkgArdhQvbdoxEX19" target="_blank" rel="noopener noreferrer" class="gmaps-card">
+        <div class="gmaps-card-bg gmap-grad-6"></div>
+        <div class="gmaps-card-content">
+          <div class="gmaps-card-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></div>
+          <span class="gmaps-card-label">Photo 12</span>
+          <span class="gmaps-card-hint">View on Maps</span>
+        </div>
+      </a>
+      <!-- Card 13 -->
+      <a href="https://maps.app.goo.gl/uqK1PWnRCY5G7Ms68" target="_blank" rel="noopener noreferrer" class="gmaps-card">
+        <div class="gmaps-card-bg gmap-grad-1"></div>
+        <div class="gmaps-card-content">
+          <div class="gmaps-card-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></div>
+          <span class="gmaps-card-label">Photo 13</span>
+          <span class="gmaps-card-hint">View on Maps</span>
+        </div>
+      </a>
+      <!-- Card 14 -->
+      <a href="https://maps.app.goo.gl/kzH4qcoFpTLxBauv8" target="_blank" rel="noopener noreferrer" class="gmaps-card">
+        <div class="gmaps-card-bg gmap-grad-2"></div>
+        <div class="gmaps-card-content">
+          <div class="gmaps-card-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></div>
+          <span class="gmaps-card-label">Photo 14</span>
+          <span class="gmaps-card-hint">View on Maps</span>
+        </div>
+      </a>
+      <!-- Card 15 -->
+      <a href="https://maps.app.goo.gl/5gLHBVgZEvuh8R6x9" target="_blank" rel="noopener noreferrer" class="gmaps-card">
+        <div class="gmaps-card-bg gmap-grad-3"></div>
+        <div class="gmaps-card-content">
+          <div class="gmaps-card-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></div>
+          <span class="gmaps-card-label">Photo 15</span>
+          <span class="gmaps-card-hint">View on Maps</span>
+        </div>
+      </a>
+      <!-- Card 16 -->
+      <a href="https://maps.app.goo.gl/Ytox5EAGFXzUFdTQA" target="_blank" rel="noopener noreferrer" class="gmaps-card">
+        <div class="gmaps-card-bg gmap-grad-4"></div>
+        <div class="gmaps-card-content">
+          <div class="gmaps-card-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></div>
+          <span class="gmaps-card-label">Photo 16</span>
+          <span class="gmaps-card-hint">View on Maps</span>
+        </div>
+      </a>
+      <!-- Card 17 -->
+      <a href="https://maps.app.goo.gl/j22BrAG7SZJUXDuTA" target="_blank" rel="noopener noreferrer" class="gmaps-card">
+        <div class="gmaps-card-bg gmap-grad-5"></div>
+        <div class="gmaps-card-content">
+          <div class="gmaps-card-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></div>
+          <span class="gmaps-card-label">Photo 17</span>
+          <span class="gmaps-card-hint">View on Maps</span>
+        </div>
+      </a>
+      <!-- Card 18 -->
+      <a href="https://maps.app.goo.gl/7hT8r8H1BEfsRkcK7" target="_blank" rel="noopener noreferrer" class="gmaps-card">
+        <div class="gmaps-card-bg gmap-grad-6"></div>
+        <div class="gmaps-card-content">
+          <div class="gmaps-card-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></div>
+          <span class="gmaps-card-label">Photo 18</span>
+          <span class="gmaps-card-hint">View on Maps</span>
+        </div>
+      </a>
+      <!-- Card 19 -->
+      <a href="https://maps.app.goo.gl/GSgBXuGy13Q69JLb9" target="_blank" rel="noopener noreferrer" class="gmaps-card">
+        <div class="gmaps-card-bg gmap-grad-1"></div>
+        <div class="gmaps-card-content">
+          <div class="gmaps-card-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></div>
+          <span class="gmaps-card-label">Photo 19</span>
+          <span class="gmaps-card-hint">View on Maps</span>
+        </div>
+      </a>
+      <!-- Card 20 -->
+      <a href="https://maps.app.goo.gl/G8WzekNSQeFEnnsX8" target="_blank" rel="noopener noreferrer" class="gmaps-card">
+        <div class="gmaps-card-bg gmap-grad-2"></div>
+        <div class="gmaps-card-content">
+          <div class="gmaps-card-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></div>
+          <span class="gmaps-card-label">Photo 20</span>
+          <span class="gmaps-card-hint">View on Maps</span>
+        </div>
+      </a>
+      <!-- Card 21 -->
+      <a href="https://maps.app.goo.gl/aK1k2yLQT29PA6BF6" target="_blank" rel="noopener noreferrer" class="gmaps-card">
+        <div class="gmaps-card-bg gmap-grad-3"></div>
+        <div class="gmaps-card-content">
+          <div class="gmaps-card-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></div>
+          <span class="gmaps-card-label">Photo 21</span>
+          <span class="gmaps-card-hint">View on Maps</span>
+        </div>
+      </a>
+      <!-- Card 22 -->
+      <a href="https://maps.app.goo.gl/S6VwebroqToeuka58" target="_blank" rel="noopener noreferrer" class="gmaps-card">
+        <div class="gmaps-card-bg gmap-grad-4"></div>
+        <div class="gmaps-card-content">
+          <div class="gmaps-card-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg></div>
+          <span class="gmaps-card-label">Photo 22</span>
+          <span class="gmaps-card-hint">View on Maps</span>
+        </div>
+      </a>
     </div>
 
-    <div class="insta-cta reveal">
-      <a href="https://www.instagram.com/jhelumcafe/" target="_blank" rel="noopener noreferrer" class="btn-instagram">
-        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-        Follow on Instagram
+    <div class="gmaps-see-all reveal">
+      <a href="https://www.google.com/maps/place/Jhelum+Cafe+And+Fine+Dine/@34.0717826,74.807295" target="_blank" rel="noopener noreferrer">
+        See all photos on Google Maps
+        <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
       </a>
     </div>
   </div>
@@ -1377,29 +1484,6 @@ ul { list-style: none; }
 </footer>
 
 <!-- ═══════════════════════════════════════════
-     LIGHTBOX
-     ═══════════════════════════════════════════ -->
-<div class="lightbox" id="lightbox">
-  <div class="lightbox-content">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
-    <button class="lightbox-arrow lightbox-prev" id="lightboxPrev" aria-label="Previous">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-    </button>
-    <button class="lightbox-arrow lightbox-next" id="lightboxNext" aria-label="Next">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 6 15 12 9 18"/></svg>
-    </button>
-    <div class="lightbox-display" id="lightboxDisplay">
-      <div class="lightbox-gradient" id="lightboxGradient"></div>
-      <div class="lightbox-info">
-        <h3 id="lightboxTitle"></h3>
-        <span id="lightboxCategory"></span>
-      </div>
-    </div>
-    <div class="lightbox-counter" id="lightboxCounter"></div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════
      FLOATING WHATSAPP BUTTON
      ═══════════════════════════════════════════ -->
 <a href="https://wa.me/917780938743?text=Hi%20Jhelum%20Cafe!%20👋" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
@@ -1452,6 +1536,11 @@ ul { list-style: none; }
 </div>
 
 <!-- ═══════════════════════════════════════════
+     INSTAGRAM EMBED SCRIPT
+     ═══════════════════════════════════════════ -->
+<script async src="//www.instagram.com/embed.js"></script>
+
+<!-- ═══════════════════════════════════════════
      JAVASCRIPT
      ═══════════════════════════════════════════ -->
 <script>
@@ -1502,9 +1591,10 @@ ul { list-style: none; }
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-  /* ─── Gallery Filter ─── */
+  /* ─── Gallery Filter Tabs ─── */
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const galleryTiles = document.querySelectorAll('.gallery-tile');
+  const instagramSection = document.getElementById('instagramSection');
+  const gmapsSection = document.getElementById('gmapsSection');
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -1514,110 +1604,39 @@ ul { list-style: none; }
 
       const filter = btn.dataset.filter;
 
-      galleryTiles.forEach(tile => {
-        if (filter === 'all' || tile.dataset.category === filter) {
-          tile.classList.remove('hidden');
-        } else {
-          tile.classList.add('hidden');
-        }
-      });
-    });
-  });
-
-  /* ─── Lightbox ─── */
-  const lightbox = document.getElementById('lightbox');
-  const lightboxGradient = document.getElementById('lightboxGradient');
-  const lightboxTitle = document.getElementById('lightboxTitle');
-  const lightboxCategory = document.getElementById('lightboxCategory');
-  const lightboxCounter = document.getElementById('lightboxCounter');
-  const lightboxClose = document.getElementById('lightboxClose');
-  const lightboxPrev = document.getElementById('lightboxPrev');
-  const lightboxNext = document.getElementById('lightboxNext');
-
-  // Build gallery data array
-  const galleryData = [];
-  galleryTiles.forEach(tile => {
-    const gradient = tile.querySelector('.tile-gradient');
-    const title = tile.querySelector('.tile-label h3');
-    const category = tile.querySelector('.tile-label span');
-    galleryData.push({
-      gradient: gradient.getAttribute('style'),
-      title: title.textContent,
-      category: category.textContent,
-      element: tile
-    });
-  });
-
-  let currentIndex = 0;
-  let visibleIndices = [];
-
-  function updateVisibleIndices() {
-    visibleIndices = [];
-    galleryTiles.forEach((tile, i) => {
-      if (!tile.classList.contains('hidden')) {
-        visibleIndices.push(i);
+      if (filter === 'all') {
+        instagramSection.classList.remove('hidden-section');
+        gmapsSection.classList.remove('hidden-section');
+      } else if (filter === 'instagram') {
+        instagramSection.classList.remove('hidden-section');
+        gmapsSection.classList.add('hidden-section');
+      } else if (filter === 'gmaps') {
+        instagramSection.classList.add('hidden-section');
+        gmapsSection.classList.remove('hidden-section');
       }
-    });
-  }
 
-  function showLightbox(index) {
-    updateVisibleIndices();
-    const posInVisible = visibleIndices.indexOf(index);
-    if (posInVisible === -1) return;
-    currentIndex = posInVisible;
-    updateLightboxContent();
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function updateLightboxContent() {
-    const realIndex = visibleIndices[currentIndex];
-    const data = galleryData[realIndex];
-    lightboxGradient.setAttribute('style', data.gradient);
-    lightboxTitle.textContent = data.title;
-    lightboxCategory.textContent = data.category;
-    lightboxCounter.textContent = (currentIndex + 1) + ' / ' + visibleIndices.length;
-  }
-
-  function closeLightbox() {
-    lightbox.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  function prevSlide() {
-    currentIndex = (currentIndex - 1 + visibleIndices.length) % visibleIndices.length;
-    updateLightboxContent();
-  }
-
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % visibleIndices.length;
-    updateLightboxContent();
-  }
-
-  // Click on tile to open lightbox
-  galleryTiles.forEach(tile => {
-    tile.addEventListener('click', () => {
-      const idx = parseInt(tile.dataset.index);
-      showLightbox(idx);
+      // Re-observe newly visible elements for animation
+      document.querySelectorAll('.reveal:not(.visible)').forEach(el => revealObserver.observe(el));
     });
   });
 
-  lightboxClose.addEventListener('click', closeLightbox);
-  lightboxPrev.addEventListener('click', prevSlide);
-  lightboxNext.addEventListener('click', nextSlide);
-
-  // Close on backdrop click
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
+  /* ─── Process Instagram Embeds ─── */
+  window.addEventListener('load', () => {
+    if (window.instgrm && window.instgrm.Embeds) {
+      window.instgrm.Embeds.process();
+    }
   });
 
-  // Keyboard support
-  document.addEventListener('keydown', (e) => {
-    if (!lightbox.classList.contains('open')) return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') prevSlide();
-    if (e.key === 'ArrowRight') nextSlide();
-  });
+  // Also re-process when Instagram script loads after page
+  const checkInstagram = setInterval(() => {
+    if (window.instgrm && window.instgrm.Embeds) {
+      window.instgrm.Embeds.process();
+      clearInterval(checkInstagram);
+    }
+  }, 1000);
+
+  // Clear interval after 15 seconds regardless
+  setTimeout(() => clearInterval(checkInstagram), 15000);
 
 })();
 </script>
